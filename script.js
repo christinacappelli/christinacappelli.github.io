@@ -220,7 +220,7 @@ Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via
         role: "Direction and Technical Development",
         folder: "allinone",
         videoUrl: "https://vimeo.com/888251357",
-        images: ["poc.jpeg", "show-1.jpeg"],
+        images: ["poc.jpeg", "show1.jpeg"],
       },
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
@@ -255,7 +255,6 @@ The installation explores how digital environments distort our sense of self, qu
         videoUrl: "https://vimeo.com/1061865042",
         images: [
           "distort3.jpg",
-          "hero-image.jpg",
           "navigation.jpg",
           "soulcapture copy.jpg",
           "testing2.jpeg",
@@ -309,7 +308,6 @@ Photography utilizes 35mm film for texture, creating an authentic vintage feel w
           "hero.jpeg",
           "icon.jpeg",
           "instafeed.jpeg",
-          "logo.jpeg",
           "pallete.jpeg",
         ],
       },
