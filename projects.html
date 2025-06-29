@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Christina Cappelli</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Christina Cappelli</a>
+            <nav class="nav">
+                <a href="projects.html" class="nav-link active">Projects</a>
+                <a href="cv.html" class="nav-link">CV</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="projects-main">
+        <section class="projects-hero">
+            <div class="container">
+                <h1 class="page-title">Projects</h1>
+                <!-- <p class="page-subtitle">Interactive installations, biodesign experiments, and creative technology explorations</p> -->
+            </div>
+        </section>
+
+        <section class="projects-content">
+            <div class="container">
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+                    <h3>Filter by Category:</h3>
+                    <div class="filter-tags">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="interactive">Interactive</button>
+                        <button class="filter-btn" data-filter="biodesign">Biodesign</button>
+                        <button class="filter-btn" data-filter="digital-art">Digital Art</button>
+                        <button class="filter-btn" data-filter="research">Research</button>
+                        <button class="filter-btn" data-filter="collaborative">Collaborative</button>
+                        <button class="filter-btn" data-filter="commercial">Commercial</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid">
+                    <!-- Dumpling House -->
+                    <div class="project-card" data-tags="interactive collaborative digital-art">
+                        <div class="project-media">
+                            <img src="images/dumplinghouse/show1.jpeg" alt="Dumpling House gameplay">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2023</div>
+                            <h3 class="project-title">Dumpling House</h3>
+                            <p class="project-description">A fresh take on Bomberman set in a bustling Chinese restaurant. Two waitresses compete using exploding dumplings in this arcade game built with Unity and CNC fabrication.</p>
+                            <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">CNC</span>
+                                <span class="tag">Game Design</span>
+                            </div>
+                            <div class="project-team">Team: Wenxiao Ding, Xiangrui Zeng</div>
+                            <div class="project-exhibitions">NYU ITP Winter Show 2023, Wonderville Bar</div>
+                        </div>
+                    </div>
+
+                    <!-- All in One -->
+                    <div class="project-card" data-tags="interactive research digital-art">
+                        <div class="project-media">
+                            <img src="images/allinone/show-1.jpeg" alt="All in One installation">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2023</div>
+                            <h3 class="project-title">All in One</h3>
+                            <p class="project-description">An interactive installation simulating bacterial quorum sensing through nose tracking. Participants become part of a living ecosystem, triggering digital autoinducers that create collective bioluminescence.</p>
+                            <div class="project-tags">
+                                <span class="tag">ML5 PoseNet</span>
+                                <span class="tag">p5.js</span>
+                                <span class="tag">Projection Mapping</span>
+                            </div>
+                            <div class="project-exhibitions">NYU ITP Winter Show 2023</div>
+                        </div>
+                    </div>
+
+                    <!-- Liminal Lens -->
+                    <div class="project-card" data-tags="interactive research digital-art">
+                        <div class="project-media">
+                            <img src="images/liminallens/show1.jpeg" alt="Liminal Lens">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2022</div>
+                            <h3 class="project-title">Liminal Lens</h3>
+                            <p class="project-description">Visualizes collective movements of Volvox algae through dual-screen setup, contrasting microscopic footage with real-time viewer tracking to explore scale and ecological perception.</p>
+                            <div class="project-tags">
+                                <span class="tag">openFrameworks</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Computer Vision</span>
+                            </div>
+                            <div class="project-exhibitions">NYU ITP Winter Show 2022</div>
+                        </div>
+                    </div>
+
+                    <!-- Dream Collector -->
+                    <div class="project-card" data-tags="interactive collaborative digital-art">
+                        <div class="project-media">
+                            <img src="images/dreamcollector/webapp.jpeg" alt="Dream Collector interface">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2025</div>
+                            <h3 class="project-title">Dream Collector</h3>
+                            <p class="project-description">A web app and TouchDesigner installation using AI to transform dream memories into vivid visuals. Users interact through hand gestures to reveal and navigate dreamscapes.</p>
+                            <div class="project-tags">
+                                <span class="tag">OpenAI</span>
+                                <span class="tag">TouchDesigner</span>
+                                <span class="tag">Mediapipe</span>
+                            </div>
+                            <div class="project-team">Team: Euijin Lee, Jess Shen, Junqi Zhang</div>
+                            <div class="project-exhibitions">Art-A-Hack™ 2025 at SVA Graduate Center</div>
+                        </div>
+                    </div>
+
+                    <!-- The Void -->
+                    <div class="project-card" data-tags="interactive digital-art research">
+                        <div class="project-media">
+                            <img src="images/thevoid/hero-image.jpg" alt="The Void distortion effect">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2025</div>
+                            <h3 class="project-title">The Void</h3>
+                            <p class="project-description">Interactive exploration of digital identity using real-time webcam distortion. Critiques how constant self-curation distorts authenticity through recursive visual feedback loops.</p>
+                            <div class="project-tags">
+                                <span class="tag">openFrameworks</span>
+                                <span class="tag">GLSL Shaders</span>
+                                <span class="tag">Real-time</span>
+                            </div>
+                            <div class="project-exhibitions">Grace Exhibition Space - Cult of Consumption</div>
+                        </div>
+                    </div>
+
+                    <!-- Mycelium Rock Wall -->
+                    <div class="project-card" data-tags="biodesign collaborative research">
+                        <div class="project-media">
+                            <img src="images/rockwall/hero.jpeg" alt="Mycelium climbing holds">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2025</div>
+                            <h3 class="project-title">Mycelium Rock Wall</h3>
+                            <p class="project-description">Modular climbing wall with holds grown from mycelium. A sustainable alternative to plastic, offering fully compostable, bio-educational climbing installation with custom-shaped rocks.</p>
+                            <div class="project-tags">
+                                <span class="tag">Mycelium</span>
+                                <span class="tag">Vacuum Forming</span>
+                                <span class="tag">Sustainable Design</span>
+                            </div>
+                            <div class="project-team">Team: Grace Morenko, Khush Space, Genspace Biomaterials Studio</div>
+                            <div class="project-exhibitions">BWAC Gallery Fungi Group Exhibition 2025</div>
+                        </div>
+                    </div>
+
+                    <!-- Exoplanets -->
+                    <div class="project-card" data-tags="research commercial digital-art">
+                        <div class="project-media">
+                            <img src="images/exoplanets/akroterra.jpg" alt="Exoplanets">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2024-2025</div>
+                            <h3 class="project-title">Exoplanets</h3>
+                            <p class="project-description">Speculative science visualization exploring extraterrestrial environments. Creates visually dynamic exoplanetary worlds that bridge the gap between scientific research and imagination.</p>
+                            <div class="project-tags">
+                                <span class="tag">Generative AI</span>
+                                <span class="tag">Science Communication</span>
+                                <span class="tag">Prompt Engineering</span>
+                            </div>
+                            <div class="project-team">Berggruen Institute, Public/Official, Two-Eyed People</div>
+                            <div class="project-exhibitions">Proxima Kósmos Initiative</div>
+                        </div>
+                    </div>
+
+                    <!-- Tessé -->
+                    <div class="project-card" data-tags="commercial digital-art">
+                        <div class="project-media">
+                            <img src="images/tesse/hero.jpeg" alt="Tessé brand identity">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2024</div>
+                            <h3 class="project-title">Tessé</h3>
+                            <p class="project-description">Modern brand identity blending vintage soul with editorial edge. Features cherry motifs, 35mm photography, and a playful color palette of cherry red, teal blue, and golden yellow.</p>
+                            <div class="project-tags">
+                                <span class="tag">Brand Identity</span>
+                                <span class="tag">Art Direction</span>
+                                <span class="tag">Editorial Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biome Boba -->
+                    <div class="project-card" data-tags="biodesign research digital-art">
+                        <div class="project-media">
+                            <img src="images/biomeboba/hero.jpeg" alt="Biome Boba concept">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2024</div>
+                            <h3 class="project-title">Biome Boba</h3>
+                            <p class="project-description">Speculative synthetic biology project exploring personalized boba beverages infused with microbial ecosystems. Examines extremophiles and microbial adaptation for biotech innovation.</p>
+                            <div class="project-tags">
+                                <span class="tag">Synthetic Biology</span>
+                                <span class="tag">PCR</span>
+                                <span class="tag">Spectrometry</span>
+                            </div>
+                            <div class="project-team">MIT Media Lab certification, Genspace collaboration</div>
+                        </div>
+                    </div>
+
+                    <!-- Dying Bloom -->
+                    <div class="project-card" data-tags="biodesign research">
+                        <div class="project-media">
+                            <img src="images/dyingbloom/show.jpeg" alt="Dying Bloom bio-succulent">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-year">2022-2024</div>
+                            <h3 class="project-title">Dying Bloom</h3>
+                            <p class="project-description">Self-destructible bio-designed succulent using agar-based materials colored with beet and matcha powder, scented with herbs and flower water. Focuses on sustainable, biodegradable design.</p>
+                            <div class="project-tags">
+                                <span class="tag">Biomaterials</span>
+                                <span class="tag">Agar</span>
+                                <span class="tag">Sustainable Design</span>
+                            </div>
+                            <div class="project-awards">NYU Prototyping Fund Grant recipient (2 years), NSF recognition</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Modal -->
+        <div class="project-modal" id="project-modal">
+            <div class="modal-backdrop"></div>
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close">&times;</button>
+                <div class="modal-header">
+                    <div class="modal-year"></div>
+                    <h2 class="modal-title"></h2>
+                    <div class="modal-tags-container"></div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-info">
+                        <div class="modal-description"></div>
+                        <div class="modal-details">
+                            <div class="modal-team"></div>
+                            <div class="modal-exhibitions"></div>
+                            <div class="modal-awards"></div>
+                        </div>
+                    </div>
+                    <div class="modal-media-section">
+                        <div class="modal-video" id="modal-video">
+                            <h3>Video</h3>
+                            <div class="video-container">
+                                <iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="modal-gallery">
+                            <h3>Gallery</h3>
+                            <div class="gallery-grid" id="gallery-grid">
+                                <!-- Images will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <div class="lightbox-backdrop"></div>
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightbox-close">&times;</button>
+                <img class="lightbox-image" id="lightbox-image" src="" alt="">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+            </div>
+        </div>
+
+        <footer class="simple-footer">
+            <div class="container">
+                <p>&copy; 2025 Christina Cappelli. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
