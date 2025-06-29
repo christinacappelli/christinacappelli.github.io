@@ -201,8 +201,13 @@ The ultimate goal is to emerge victorious by using the power of exploding dumpli
         role: "Arcade build, death animations, dumpling explosions, Designer, Programmer, Fabricator",
         folder: "dumplinghouse",
         videoUrl: "https://vimeo.com/836983554",
-        videoUrl: "https://vimeo.com/836950712?p=0s",
-        images: ["show1.jpeg", "show2.jpg"],
+        images: [
+          "show1.jpeg",
+          "show2.jpg",
+          "show3.jpeg",
+          "show4.jpeg",
+          "poster.jpeg",
+        ],
       },
       "All in One": {
         description: `An interaction that simulates bacterial quorum sensing to transform microbial communication into an embodied, participatory experience. By prompting unfamiliar movement through nose tracking, the piece encourages participants to momentarily inhabit a non-human perspective, revealing how collective intelligence operates beyond individual control.
@@ -236,7 +241,7 @@ Using hand gestures, you peel back a virtual veil to reveal your dreamscapes and
 The TouchDesigner interaction includes: paintbrush functionality to reveal dreams using hand distance between pointer finger and thumb, clearing "painting" with both hands up and spread, and navigation through dream images using thumbs up/down gestures.`,
         role: "Programmer and TouchDesigner developer",
         folder: "dreamcollector",
-        videoUrl: "https://vimeo.com/123456792", // Replace with actual Vimeo URL
+        // videoUrl: "https://vimeo.com/123456792", // Replace with actual Vimeo URL
         images: ["webapp.jpeg", "working.jpg"],
       },
       "The Void": {
@@ -436,17 +441,84 @@ The project explores themes of impermanence, sustainability, and the beauty of d
     const lightboxCaption = document.getElementById('lightbox-caption');
     const lightboxClose = document.getElementById('lightbox-close');
     const lightboxBackdrop = document.querySelector('.lightbox-backdrop');
+    
+    let currentImageIndex = 0;
+    let currentProjectImages = [];
+    let currentProjectTitle = '';
 
     function openLightbox(imageSrc, imageAlt) {
+        // Find which project this image belongs to and set up navigation
+        for (const [title, project] of Object.entries(projectData)) {
+            if (project.images && project.folder) {
+                const imageFound = project.images.some(img => imageSrc.includes(img));
+                if (imageFound) {
+                    currentProjectTitle = title;
+                    currentProjectImages = project.images.map(img => ({
+                        src: `images/${project.folder}/${img}`,
+                        alt: `${title} - ${img}`
+                    }));
+                    currentImageIndex = currentProjectImages.findIndex(img => img.src === imageSrc);
+                    break;
+                }
+            }
+        }
+        
         lightboxImage.src = imageSrc;
         lightboxImage.alt = imageAlt;
         lightboxCaption.textContent = imageAlt;
         lightbox.classList.add('active');
+        
+        // Update navigation visibility
+        updateLightboxNavigation();
     }
 
     function closeLightbox() {
         lightbox.classList.remove('active');
         lightboxImage.src = '';
+        currentImageIndex = 0;
+        currentProjectImages = [];
+        currentProjectTitle = '';
+    }
+    
+    function showPreviousImage() {
+        if (currentProjectImages.length > 1) {
+            currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+            const currentImage = currentProjectImages[currentImageIndex];
+            lightboxImage.src = currentImage.src;
+            lightboxImage.alt = currentImage.alt;
+            lightboxCaption.textContent = currentImage.alt;
+            updateLightboxNavigation();
+        }
+    }
+    
+    function showNextImage() {
+        if (currentProjectImages.length > 1) {
+            currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+            const currentImage = currentProjectImages[currentImageIndex];
+            lightboxImage.src = currentImage.src;
+            lightboxImage.alt = currentImage.alt;
+            lightboxCaption.textContent = currentImage.alt;
+            updateLightboxNavigation();
+        }
+    }
+    
+    function updateLightboxNavigation() {
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const counter = document.getElementById('lightbox-counter');
+        
+        if (currentProjectImages.length > 1) {
+            if (prevBtn) prevBtn.style.display = 'block';
+            if (nextBtn) nextBtn.style.display = 'block';
+            if (counter) {
+                counter.textContent = `${currentImageIndex + 1} / ${currentProjectImages.length}`;
+                counter.style.display = 'block';
+            }
+        } else {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+            if (counter) counter.style.display = 'none';
+        }
     }
 
     // Lightbox event listeners
@@ -456,6 +528,18 @@ The project explores themes of impermanence, sustainability, and the beauty of d
 
     if (lightboxBackdrop) {
         lightboxBackdrop.addEventListener('click', closeLightbox);
+    }
+    
+    // Navigation button listeners
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', showPreviousImage);
+    }
+    
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', showNextImage);
     }
 
     // Add click listeners to project cards
@@ -482,6 +566,15 @@ The project explores themes of impermanence, sustainability, and the beauty of d
                 closeLightbox();
             } else if (modal.classList.contains('active')) {
                 closeModal();
+            }
+        } else if (lightbox.classList.contains('active')) {
+            // Arrow key navigation in lightbox
+            if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                showPreviousImage();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                showNextImage();
             }
         }
     });

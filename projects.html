@@ -36,8 +36,6 @@
                         <button class="filter-btn active" data-filter="all">All</button>
                         <button class="filter-btn" data-filter="interactive">Interactive</button>
                         <button class="filter-btn" data-filter="biodesign">Biodesign</button>
-                        <button class="filter-btn" data-filter="digital-art">Digital Art</button>
-                        <button class="filter-btn" data-filter="research">Research</button>
                         <button class="filter-btn" data-filter="collaborative">Collaborative</button>
                         <button class="filter-btn" data-filter="commercial">Commercial</button>
                     </div>
@@ -46,7 +44,7 @@
                 <!-- Projects Grid -->
                 <div class="projects-grid">
                     <!-- Dumpling House -->
-                    <div class="project-card" data-tags="interactive collaborative digital-art">
+                    <div class="project-card" data-tags="interactive collaborative">
                         <div class="project-media">
                             <img src="images/dumplinghouse/show1.jpeg" alt="Dumpling House gameplay">
                         </div>
@@ -65,7 +63,7 @@
                     </div>
 
                     <!-- All in One -->
-                    <div class="project-card" data-tags="interactive research digital-art">
+                    <div class="project-card" data-tags="interactive">
                         <div class="project-media">
                             <img src="images/allinone/show-1.jpeg" alt="All in One installation">
                         </div>
@@ -83,7 +81,7 @@
                     </div>
 
                     <!-- Liminal Lens -->
-                    <div class="project-card" data-tags="interactive research digital-art">
+                    <div class="project-card" data-tags="interactive">
                         <div class="project-media">
                             <img src="images/liminallens/show1.jpeg" alt="Liminal Lens">
                         </div>
@@ -101,7 +99,7 @@
                     </div>
 
                     <!-- Dream Collector -->
-                    <div class="project-card" data-tags="interactive collaborative digital-art">
+                    <div class="project-card" data-tags="interactive collaborative">
                         <div class="project-media">
                             <img src="images/dreamcollector/webapp.jpeg" alt="Dream Collector interface">
                         </div>
@@ -120,7 +118,7 @@
                     </div>
 
                     <!-- The Void -->
-                    <div class="project-card" data-tags="interactive digital-art research">
+                    <div class="project-card" data-tags="interactive">
                         <div class="project-media">
                             <img src="images/thevoid/hero-image.jpg" alt="The Void distortion effect">
                         </div>
@@ -138,7 +136,7 @@
                     </div>
 
                     <!-- Mycelium Rock Wall -->
-                    <div class="project-card" data-tags="biodesign collaborative research">
+                    <div class="project-card" data-tags="biodesign collaborative">
                         <div class="project-media">
                             <img src="images/rockwall/hero.jpeg" alt="Mycelium climbing holds">
                         </div>
@@ -157,7 +155,7 @@
                     </div>
 
                     <!-- Exoplanets -->
-                    <div class="project-card" data-tags="research commercial digital-art">
+                    <div class="project-card" data-tags="commercial">
                         <div class="project-media">
                             <img src="images/exoplanets/akroterra.jpg" alt="Exoplanets">
                         </div>
@@ -176,7 +174,7 @@
                     </div>
 
                     <!-- Tessé -->
-                    <div class="project-card" data-tags="commercial digital-art">
+                    <div class="project-card" data-tags="commercial">
                         <div class="project-media">
                             <img src="images/tesse/hero.jpeg" alt="Tessé brand identity">
                         </div>
@@ -193,7 +191,7 @@
                     </div>
 
                     <!-- Biome Boba -->
-                    <div class="project-card" data-tags="biodesign research digital-art">
+                    <div class="project-card" data-tags="biodesign">
                         <div class="project-media">
                             <img src="images/biomeboba/hero.jpeg" alt="Biome Boba concept">
                         </div>
@@ -211,7 +209,7 @@
                     </div>
 
                     <!-- Dying Bloom -->
-                    <div class="project-card" data-tags="biodesign research">
+                    <div class="project-card" data-tags="biodesign">
                         <div class="project-media">
                             <img src="images/dyingbloom/show.jpeg" alt="Dying Bloom bio-succulent">
                         </div>
@@ -273,8 +271,11 @@
             <div class="lightbox-backdrop"></div>
             <div class="lightbox-content">
                 <button class="lightbox-close" id="lightbox-close">&times;</button>
+                <button class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</button>
+                <button class="lightbox-nav lightbox-next" id="lightbox-next">›</button>
                 <img class="lightbox-image" id="lightbox-image" src="" alt="">
                 <div class="lightbox-caption" id="lightbox-caption"></div>
+                <div class="lightbox-counter" id="lightbox-counter"></div>
             </div>
         </div>
 
