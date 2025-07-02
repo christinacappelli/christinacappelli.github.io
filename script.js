@@ -227,7 +227,7 @@ Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
 
-Built with openFrameworks and C++, the piece runs across a dual-screen setup: One screen plays recorded microscopic footage of Volvox algae in motion. The second screen uses real-time algae location tracking to generate animated digital lines (resembling drifting snow), overlaid with webcam-based outlines of nearby viewers.
+Built with openFrameworks, the piece runs across a dual-screen setup: One screen plays recorded microscopic footage of Volvox algae in motion. The second screen uses real-time algae location tracking to generate animated digital lines (resembling drifting snow), overlaid with webcam-based outlines of nearby viewers.
 
 This pairing contrasts direct biological observation with an abstracted, reactive digital system, inviting viewers to explore their presence in relation to something far smaller yet no less alive.`,
         role: "Direction and Technical Development",
@@ -273,8 +273,8 @@ Initial concept by @arranzniko with help from @amy_art_architecture. In 2025, @b
         // videoUrl: "https://vimeo.com/123456794", // Replace with actual Vimeo URL
         images: [
           "closeup.jpeg",
-          "forming0.jpeg",
-          "forming1.jpeg",
+        //   "forming0.jpeg",
+        //   "forming1.jpeg",
           "hero.jpeg",
           "show.jpeg",
           "show1.jpeg",
@@ -288,6 +288,10 @@ The result is a series of exoplanetary worlds that push the boundaries of scient
 The design approach uses visual parallels to connect Earth-based phenomena with speculative extraterrestrial worlds, creating scientifically plausible yet imaginatively rich environments.`,
         role: "Research & Generative Design",
         folder: "exoplanets",
+        link: {
+          url: "https://proxima-kosmos.com/",
+          text: "Proxima Kósmos Phase 1"
+        },
         // videoUrl: "https://vimeo.com/123456795", // Replace with actual Vimeo URL
         images: [
           "akroterra.jpg",
@@ -321,7 +325,7 @@ Inspired by extremophiles, it examines microbial adaptation in extreme environme
 The project bridges speculative design with real laboratory research, exploring the intersection of biotechnology, personalized medicine, and consumer products in an accessible, engaging format.`,
         role: "Researcher & Designer",
         folder: "biomeboba",
-        videoUrl: "https://vimeo.com/946667064",
+        // videoUrl: "https://vimeo.com/946667064",
         images: ["gallery.jpeg", "hero.jpeg"],
       },
       "Dying Bloom": {
@@ -373,12 +377,15 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         const modalExhibitions = document.querySelector('.modal-exhibitions');
         const modalAwards = document.querySelector('.modal-awards');
         const modalAwardsItem = document.querySelector('.modal-awards-item');
+        const modalLink = document.querySelector('.modal-link');
+        const modalLinkItem = document.querySelector('.modal-link-item');
 
         // Clear all content
         modalRole.textContent = '';
         modalTeam.textContent = '';
         modalExhibitions.textContent = '';
         modalAwards.textContent = '';
+        modalLink.innerHTML = '';
 
         // Populate role
         if (projectData[title]?.role) {
@@ -410,6 +417,19 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             modalAwardsItem.style.display = 'block';
         } else {
             modalAwardsItem.style.display = 'none';
+        }
+
+        // Populate link
+        if (projectData[title]?.link) {
+            const linkElement = document.createElement('a');
+            linkElement.href = projectData[title].link.url;
+            linkElement.textContent = projectData[title].link.text;
+            linkElement.target = '_blank';
+            linkElement.rel = 'noopener noreferrer';
+            modalLink.appendChild(linkElement);
+            modalLinkItem.style.display = 'block';
+        } else {
+            modalLinkItem.style.display = 'none';
         }
 
         // Populate video
@@ -488,8 +508,8 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         }
         
         lightboxImage.src = imageSrc;
-        lightboxImage.alt = imageAlt;
-        lightboxCaption.textContent = imageAlt;
+        lightboxImage.alt = '';
+        lightboxCaption.textContent = '';
         lightbox.classList.add('active');
         
         // Update navigation visibility
@@ -509,8 +529,8 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
             const currentImage = currentProjectImages[currentImageIndex];
             lightboxImage.src = currentImage.src;
-            lightboxImage.alt = currentImage.alt;
-            lightboxCaption.textContent = currentImage.alt;
+            lightboxImage.alt = '';
+            lightboxCaption.textContent = '';
             updateLightboxNavigation();
         }
     }
@@ -520,8 +540,8 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
             const currentImage = currentProjectImages[currentImageIndex];
             lightboxImage.src = currentImage.src;
-            lightboxImage.alt = currentImage.alt;
-            lightboxCaption.textContent = currentImage.alt;
+            lightboxImage.alt = '';
+            lightboxCaption.textContent = '';
             updateLightboxNavigation();
         }
     }
