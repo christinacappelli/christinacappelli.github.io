@@ -113,18 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 const toggleButton = document.createElement('button');
                 toggleButton.className = 'mobile-menu-toggle';
                 toggleButton.innerHTML = '☰';
-                toggleButton.style.cssText = `
-                    background: none;
-                    border: none;
-                    font-size: 1.5rem;
-                    cursor: pointer;
-                    display: block;
-                `;
                 
                 header.appendChild(toggleButton);
                 
                 toggleButton.addEventListener('click', () => {
-                    nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+                    const isActive = nav.classList.contains('active');
+                    
+                    if (isActive) {
+                        nav.classList.remove('active');
+                        toggleButton.classList.remove('active');
+                    } else {
+                        nav.classList.add('active');
+                        toggleButton.classList.add('active');
+                    }
                 });
             }
         } else {
@@ -132,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
             if (toggleButton) {
                 toggleButton.remove();
             }
-            nav.style.display = 'flex';
+            nav.classList.remove('active');
+            nav.style.display = '';
         }
     };
     
