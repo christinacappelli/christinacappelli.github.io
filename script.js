@@ -352,7 +352,11 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         
         // Use detailed description if available, otherwise use card description
         const detailedDescription = projectData[title]?.description || description;
-        document.querySelector('.modal-description').textContent = detailedDescription;
+        const modalDescriptionElement = document.querySelector('.modal-description');
+        
+        // Split description into paragraphs for better formatting
+        const paragraphs = detailedDescription.split('\n\n').filter(p => p.trim());
+        modalDescriptionElement.innerHTML = paragraphs.map(p => `<p>${p.trim()}</p>`).join('');
 
         // Copy tags
         const modalTagsContainer = document.querySelector('.modal-tags-container');
@@ -361,29 +365,49 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             modalTagsContainer.appendChild(tag.cloneNode(true));
         });
 
-        // Copy additional info
+        // Populate details with improved structure
+        const modalRole = document.querySelector('.modal-role');
         const modalTeam = document.querySelector('.modal-team');
         const modalExhibitions = document.querySelector('.modal-exhibitions');
         const modalAwards = document.querySelector('.modal-awards');
+        const modalAwardsItem = document.querySelector('.modal-awards-item');
 
-        modalTeam.innerHTML = '';
-        modalExhibitions.innerHTML = '';
-        modalAwards.innerHTML = '';
+        // Clear all content
+        modalRole.textContent = '';
+        modalTeam.textContent = '';
+        modalExhibitions.textContent = '';
+        modalAwards.textContent = '';
 
-        if (team) {
-            modalTeam.innerHTML = `<strong>Team:</strong> ${team.textContent.replace('Team: ', '')}`;
-        }
-        
+        // Populate role
         if (projectData[title]?.role) {
-            modalTeam.innerHTML += `<br><strong>Role:</strong> ${projectData[title].role}`;
+            modalRole.textContent = projectData[title].role;
+            modalRole.parentElement.style.display = 'block';
+        } else {
+            modalRole.parentElement.style.display = 'none';
         }
 
+        // Populate team
+        if (team) {
+            modalTeam.textContent = team.textContent.replace('Team: ', '');
+            modalTeam.parentElement.style.display = 'block';
+        } else {
+            modalTeam.parentElement.style.display = 'none';
+        }
+
+        // Populate exhibitions
         if (exhibitions) {
-            modalExhibitions.innerHTML = `<strong>Exhibitions:</strong> ${exhibitions.textContent}`;
+            modalExhibitions.textContent = exhibitions.textContent;
+            modalExhibitions.parentElement.style.display = 'block';
+        } else {
+            modalExhibitions.parentElement.style.display = 'none';
         }
 
+        // Populate awards
         if (awards) {
-            modalAwards.innerHTML = `<strong>Awards:</strong> ${awards.textContent}`;
+            modalAwards.textContent = awards.textContent;
+            modalAwardsItem.style.display = 'block';
+        } else {
+            modalAwardsItem.style.display = 'none';
         }
 
         // Populate video
