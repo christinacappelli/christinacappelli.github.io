@@ -249,9 +249,11 @@ Using hand gestures, you peel back a virtual veil to reveal your dreamscapes and
 The TouchDesigner interaction includes: paintbrush functionality to reveal dreams using hand distance between pointer finger and thumb, clearing "painting" with both hands up and spread, and navigation through dream images using thumbs up/down gestures.`,
         role: "Programmer and TouchDesigner developer",
         folder: "dreamcollector",
-        // videoUrl: "https://vimeo.com/123456792", // Replace with actual Vimeo URL
-        images: ["webapp.jpeg", "working.jpg"],
+        videoUrl: "https://vimeo.com/1098886681?p=0s",
+        images: ["dream.png", "nightmare.png", "webapp.jpeg", "working.jpg"
+            ,],
       },
+
       "The Void": {
         description: `An interactive exploration of digital identity that reveals how constant self-curation distorts authenticity, exposing a feedback loop where identity becomes shaped by the systems mediating it. Labels like "Soul Decay" and "Hollow Salvation" critique consumerism's parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to.
 
