@@ -211,7 +211,7 @@ The ultimate goal is to emerge victorious by using the power of exploding dumpli
           "poster.jpeg",
         ],
       },
-      "All in One": {
+      "Language of Light": {
         description: `An interaction that simulates bacterial quorum sensing to transform microbial communication into an embodied, participatory experience. By prompting unfamiliar movement through nose tracking, the piece encourages participants to momentarily inhabit a non-human perspective, revealing how collective intelligence operates beyond individual control.
 
 Visualizing the invisible language of bacteria through glowing trails of light. Participants become part of a living ecosystem, their movements triggering digital "autoinducers" that simulate bacterial quorum sensing. As more people move in harmony, the space reaches a threshold, erupting in collective bioluminescence. 
@@ -220,9 +220,9 @@ Inspired by the symbiotic relationship between Vibrio fischeri and the bobtail s
 
 Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via webcam, mapping each participant's nose position to simulate microbial motion. Each tracked point generates glowing particle trails, and once a quorum is reached, the visual intensity spikes, mirroring biological communication through collective action.`,
         role: "Direction and Technical Development",
-        folder: "allinone",
-        videoUrl: "https://vimeo.com/888251357",
-        images: ["poc.jpeg", "show1.jpeg"],
+        folder: "languageoflight",
+        // videoUrl: "https://vimeo.com/888251357",
+        images: ["aboutend.png", "sho2.png", "shot1.png"],
       },
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
