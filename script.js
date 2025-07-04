@@ -221,8 +221,14 @@ Inspired by the symbiotic relationship between Vibrio fischeri and the bobtail s
 Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via webcam, mapping each participant's nose position to simulate microbial motion. Each tracked point generates glowing particle trails, and once a quorum is reached, the visual intensity spikes, mirroring biological communication through collective action.`,
         role: "Direction and Technical Development",
         folder: "languageoflight",
-        // videoUrl: "https://vimeo.com/888251357",
-        images: ["aboutend.png", "sho2.png", "shot1.png"],
+        videoUrl: "https://vimeo.com/1098883316?p=0s",
+        images: [
+          "sho2.png",
+          "shot1.png",
+          "final.png",
+          "text1.png",
+          "text2.png",
+        ],
       },
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
@@ -273,8 +279,8 @@ Initial concept by @arranzniko with help from @amy_art_architecture. In 2025, @b
         // videoUrl: "https://vimeo.com/123456794", // Replace with actual Vimeo URL
         images: [
           "closeup.jpeg",
-        //   "forming0.jpeg",
-        //   "forming1.jpeg",
+          //   "forming0.jpeg",
+          //   "forming1.jpeg",
           "hero.jpeg",
           "show.jpeg",
           "show1.jpeg",
@@ -290,7 +296,7 @@ The design approach uses visual parallels to connect Earth-based phenomena with 
         folder: "exoplanets",
         link: {
           url: "https://proxima-kosmos.com/",
-          text: "Proxima Kósmos Phase 1"
+          text: "Proxima Kósmos Phase 1",
         },
         // videoUrl: "https://vimeo.com/123456795", // Replace with actual Vimeo URL
         images: [
@@ -310,12 +316,7 @@ Photography utilizes 35mm film for texture, creating an authentic vintage feel w
         role: "Art Director & Designer",
         folder: "tesse",
         // videoUrl: "https://vimeo.com/123456796", // Replace with actual Vimeo URL
-        images: [
-          "hero.jpeg",
-          "icon.jpeg",
-          "instafeed.jpeg",
-          "pallete.jpeg",
-        ],
+        images: ["hero.jpeg", "icon.jpeg", "instafeed.jpeg", "pallete.jpeg"],
       },
       "Biome Boba": {
         description: `Personalized boba beverages infused with microbial ecosystems tailored to your health. This speculative synthetic biology project explores how microbial ecosystems from targeted body biomes could be harnessed for novel therapeutic applications, reimagining the future of personalized wellness.
