@@ -1040,6 +1040,72 @@ body {
     font-size: 0.8rem;
 }
 
+/* Resume Button Styles */
+.resume-button-container {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.resume-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.resume-button:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+}
+
+.resume-button.active {
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.resume-button .button-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.resume-button.active .button-icon {
+    transform: rotate(180deg);
+}
+
+.resume-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+    opacity: 0;
+}
+
+.resume-section.expanded {
+    max-height: none;
+    opacity: 1;
+    animation: expandSection 0.5s ease-out;
+}
+
+@keyframes expandSection {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 2000px;
+        opacity: 1;
+    }
+}
+
 /* Projects Page Styles */
 .projects-main {
     margin-top: 80px;
@@ -2251,6 +2317,22 @@ body {
     
     .timeline-item::before {
         left: -1.25rem;
+    }
+    
+    .resume-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .resume-button-container {
+        margin: 2rem 0;
+        padding: 0 1rem;
+    }
+    
+    .resume-section {
+        padding: 0 1rem;
     }
 }
 

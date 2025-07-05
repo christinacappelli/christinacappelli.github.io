@@ -625,4 +625,38 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             }
         }
     });
+    
+    // Resume button functionality
+    const resumeToggle = document.getElementById('resume-toggle');
+    const professionalExperience = document.getElementById('professional-experience');
+    
+    if (resumeToggle && professionalExperience) {
+        resumeToggle.addEventListener('click', function() {
+            const isExpanded = professionalExperience.style.display !== 'none';
+            
+            if (isExpanded) {
+                // Collapse
+                professionalExperience.classList.remove('expanded');
+                resumeToggle.classList.remove('active');
+                setTimeout(() => {
+                    professionalExperience.style.display = 'none';
+                }, 300);
+            } else {
+                // Expand
+                professionalExperience.style.display = 'block';
+                resumeToggle.classList.add('active');
+                setTimeout(() => {
+                    professionalExperience.classList.add('expanded');
+                }, 10);
+                
+                // Smooth scroll to the expanded section
+                setTimeout(() => {
+                    professionalExperience.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start' 
+                    });
+                }, 100);
+            }
+        });
+    }
 });
