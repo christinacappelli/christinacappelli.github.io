@@ -1619,6 +1619,98 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 }
 
+/* Modal Process Section */
+.modal-process {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    overflow: hidden;
+    border-radius: 2px;
+    margin-top: 2rem;
+}
+
+.modal-process h3 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: transparent;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.process-description {
+    padding: 1.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 0.9rem;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.process-sections {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.process-section {
+    background: transparent;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.process-section:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+.process-section h4 {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.02em;
+}
+
+.process-section p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    font-weight: 300;
+    margin: 0;
+}
+
+.process-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.process-image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    border-radius: 2px;
+}
+
+.process-image:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    filter: grayscale(0%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
 /* Lightbox */
 .lightbox {
     position: fixed;
@@ -1991,6 +2083,22 @@ body {
     
     .gallery-image {
         height: 80px;
+    }
+    
+    .process-sections {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .process-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .process-image {
+        height: 60px;
     }
     
     .video-container {

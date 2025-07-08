@@ -240,6 +240,30 @@ This pairing contrasts direct biological observation with an abstracted, reactiv
         folder: "liminallens",
         videoUrl: "https://vimeo.com/791984894",
         images: ["show1.jpeg", "show2.jpeg", "show3.jpeg", "show4.jpeg"],
+        process: {
+          description: `The development process involved several key phases: capturing high-quality microscopic footage of live Volvox algae colonies, developing blob tracking algorithms in openFrameworks to detect and follow algae movement patterns, creating the dual-screen interactive system that maps biological motion to digital abstractions, and extensive testing to calibrate the webcam thresholding for optimal human-outline detection.
+
+The technical challenge was translating microscopic biological data into responsive digital art while maintaining the poetic relationship between viewer and organism.`,
+          images: ["process1.jpeg", "process2.jpeg", "process3.jpeg"],
+          sections: [
+            {
+              title: "Microscopy & Data Capture",
+              description: "Recorded live Volvox algae using microscopy equipment, capturing their natural collective movement patterns."
+            },
+            {
+              title: "Blob Tracking Development", 
+              description: "Developed custom algorithms in openFrameworks to detect and track algae positions in real-time video."
+            },
+            {
+              title: "Interactive System Design",
+              description: "Created dual-screen setup with webcam thresholding to overlay human silhouettes with algae-generated visual effects."
+            },
+            {
+              title: "Installation Testing",
+              description: "Extensive calibration and testing to optimize the interaction between biological footage and digital abstractions."
+            }
+          ]
+        }
       },
       "Dream Collector": {
         description: `A web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. 
@@ -465,6 +489,61 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             document.querySelector('.modal-gallery').style.display = 'none';
         }
 
+        // Populate process section
+        const modalProcess = document.getElementById('modal-process');
+        const processDescription = document.getElementById('process-description');
+        const processSections = document.getElementById('process-sections');
+        const processGallery = document.getElementById('process-gallery');
+        
+        if (projectData[title]?.process) {
+            const processData = projectData[title].process;
+            
+            // Add process description
+            if (processData.description) {
+                processDescription.innerHTML = `<p>${processData.description}</p>`;
+                processDescription.style.display = 'block';
+            } else {
+                processDescription.style.display = 'none';
+            }
+            
+            // Add process sections
+            if (processData.sections && processData.sections.length > 0) {
+                processSections.innerHTML = '';
+                processData.sections.forEach(section => {
+                    const sectionElement = document.createElement('div');
+                    sectionElement.className = 'process-section';
+                    sectionElement.innerHTML = `
+                        <h4>${section.title}</h4>
+                        <p>${section.description}</p>
+                    `;
+                    processSections.appendChild(sectionElement);
+                });
+                processSections.style.display = 'grid';
+            } else {
+                processSections.style.display = 'none';
+            }
+            
+            // Add process images
+            if (processData.images && processData.images.length > 0) {
+                processGallery.innerHTML = '';
+                processData.images.forEach(imageName => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = `images/${projectData[title].folder}/${imageName}`;
+                    imgElement.alt = `${title} Process - ${imageName}`;
+                    imgElement.className = 'process-image';
+                    imgElement.addEventListener('click', () => openLightbox(imgElement.src, imgElement.alt));
+                    processGallery.appendChild(imgElement);
+                });
+                processGallery.style.display = 'grid';
+            } else {
+                processGallery.style.display = 'none';
+            }
+            
+            modalProcess.style.display = 'block';
+        } else {
+            modalProcess.style.display = 'none';
+        }
+
         // Show modal
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -494,15 +573,25 @@ The project explores themes of impermanence, sustainability, and the beauty of d
     let currentProjectTitle = '';
 
     function openLightbox(imageSrc, imageAlt) {
-        // Find which project this image belongs to and set up navigation
+        // Find which project this image belongs to and determine if it's a gallery or process image
         for (const [title, project] of Object.entries(projectData)) {
-            if (project.images && project.folder) {
-                const imageFound = project.images.some(img => imageSrc.includes(img));
-                if (imageFound) {
+            if (project.folder) {
+                // Check if it's a gallery image
+                if (project.images && project.images.some(img => imageSrc.includes(img))) {
                     currentProjectTitle = title;
                     currentProjectImages = project.images.map(img => ({
                         src: `images/${project.folder}/${img}`,
                         alt: `${title} - ${img}`
+                    }));
+                    currentImageIndex = currentProjectImages.findIndex(img => img.src === imageSrc);
+                    break;
+                }
+                // Check if it's a process image
+                else if (project.process && project.process.images && project.process.images.some(img => imageSrc.includes(img))) {
+                    currentProjectTitle = title;
+                    currentProjectImages = project.process.images.map(img => ({
+                        src: `images/${project.folder}/${img}`,
+                        alt: `${title} Process - ${img}`
                     }));
                     currentImageIndex = currentProjectImages.findIndex(img => img.src === imageSrc);
                     break;
