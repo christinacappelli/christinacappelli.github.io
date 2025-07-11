@@ -222,6 +222,10 @@ Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via
         role: "Direction and Technical Development",
         folder: "languageoflight",
         videoUrl: "https://vimeo.com/1098883316?p=0s",
+        link: {
+          url: "https://vimeo.com/826412484?share=copy",
+          text: "Watch Thesis Presentation"
+        },
         images: [
           "sho2.png",
           "shot1.png",
@@ -229,6 +233,25 @@ Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via
           "text1.png",
           "text2.png",
         ],
+        process: {
+          description: `Language of Light evolved from my master's thesis research exploring the intersection of biological systems and interactive art. Originally titled "All in One," this work examines how microbial communication can be translated into human-scale interactive experiences. The development process involved extensive research into bacterial quorum sensing, prototyping with ML5 PoseNet for motion tracking, and iterative testing to create an intuitive yet scientifically grounded interaction.
+
+The project bridges scientific research with experiential design, using nose tracking as an unconventional input method to encourage participants to embody non-human perspectives and explore collective intelligence through movement.`,
+          sections: [
+            {
+              title: "Thesis Research & Development",
+              description: "Conducted extensive research into bacterial quorum sensing mechanisms, particularly the Vibrio fischeri and bobtail squid symbiosis, translating scientific concepts into interactive design principles."
+            },
+            {
+              title: "Motion Tracking Implementation",
+              description: "Developed nose tracking system using ML5 PoseNet to create an unconventional and embodied interaction method that encourages participants to move in unfamiliar ways."
+            },
+            {
+              title: "User Testing & Iteration",
+              description: "Conducted multiple testing sessions to refine the interaction sensitivity, visual feedback timing, and overall user experience to ensure both scientific accuracy and engaging interaction."
+            }
+          ]
+        }
       },
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
