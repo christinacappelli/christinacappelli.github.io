@@ -221,18 +221,12 @@ Inspired by the symbiotic relationship between Vibrio fischeri and the bobtail s
 Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via webcam, mapping each participant's nose position to simulate microbial motion. Each tracked point generates glowing particle trails, and once a quorum is reached, the visual intensity spikes, mirroring biological communication through collective action.`,
         role: "Direction and Technical Development",
         folder: "languageoflight",
-        videoUrl: "https://vimeo.com/1098883316?p=0s",
+        //videoUrl: "https://vimeo.com/1098883316?p=0s",
         link: {
           url: "https://vimeo.com/826412484?share=copy",
-          text: "Watch Thesis Presentation"
+          text: "Watch Thesis Presentation",
         },
-        images: [
-          "sho2.png",
-          "shot1.png",
-          "final.png",
-          "text1.png",
-          "text2.png",
-        ],
+        images: ["inprogress.png"],
         process: {
           description: `Language of Light evolved from my master's thesis research exploring the intersection of biological systems and interactive art. Originally titled "All in One," this work examines how microbial communication can be translated into human-scale interactive experiences. The development process involved extensive research into bacterial quorum sensing, prototyping with ML5 PoseNet for motion tracking, and iterative testing to create an intuitive yet scientifically grounded interaction.
 
@@ -240,18 +234,21 @@ The project bridges scientific research with experiential design, using nose tra
           sections: [
             {
               title: "Thesis Research & Development",
-              description: "Conducted extensive research into bacterial quorum sensing mechanisms, particularly the Vibrio fischeri and bobtail squid symbiosis, translating scientific concepts into interactive design principles."
+              description:
+                "Conducted extensive research into bacterial quorum sensing mechanisms, particularly the Vibrio fischeri and bobtail squid symbiosis, translating scientific concepts into interactive design principles.",
             },
             {
               title: "Motion Tracking Implementation",
-              description: "Developed nose tracking system using ML5 PoseNet to create an unconventional and embodied interaction method that encourages participants to move in unfamiliar ways."
+              description:
+                "Developed nose tracking system using ML5 PoseNet to create an unconventional and embodied interaction method that encourages participants to move in unfamiliar ways.",
             },
             {
               title: "User Testing & Iteration",
-              description: "Conducted multiple testing sessions to refine the interaction sensitivity, visual feedback timing, and overall user experience to ensure both scientific accuracy and engaging interaction."
-            }
-          ]
-        }
+              description:
+                "Conducted multiple testing sessions to refine the interaction sensitivity, visual feedback timing, and overall user experience to ensure both scientific accuracy and engaging interaction.",
+            },
+          ],
+        },
       },
       "Liminal Lens": {
         description: `An interactive installation that visualizes the collective movements of Volvox algae to reveal the hidden rhythms of natural life. Translating microscopic dynamics into immersive visuals, it invites viewers to reflect on scale, perception, and their role as cohabitants in an ecological space beyond human control.
@@ -271,22 +268,26 @@ The technical challenge was translating microscopic biological data into respons
           sections: [
             {
               title: "Microscopy & Data Capture",
-              description: "Recorded live Volvox algae using microscopy equipment, capturing their natural collective movement patterns."
+              description:
+                "Recorded live Volvox algae using microscopy equipment, capturing their natural collective movement patterns.",
             },
             {
-              title: "Blob Tracking Development", 
-              description: "Developed custom algorithms in openFrameworks to detect and track algae positions in real-time video."
+              title: "Blob Tracking Development",
+              description:
+                "Developed custom algorithms in openFrameworks to detect and track algae positions in real-time video.",
             },
             {
               title: "Interactive System Design",
-              description: "Created dual-screen setup with webcam thresholding to overlay human silhouettes with algae-generated visual effects."
+              description:
+                "Created dual-screen setup with webcam thresholding to overlay human silhouettes with algae-generated visual effects.",
             },
             {
               title: "Installation Testing",
-              description: "Extensive calibration and testing to optimize the interaction between biological footage and digital abstractions."
-            }
-          ]
-        }
+              description:
+                "Extensive calibration and testing to optimize the interaction between biological footage and digital abstractions.",
+            },
+          ],
+        },
       },
       "Dream Collector": {
         description: `A web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. 
@@ -297,8 +298,7 @@ The TouchDesigner interaction includes: paintbrush functionality to reveal dream
         role: "Programmer and TouchDesigner developer",
         folder: "dreamcollector",
         videoUrl: "https://vimeo.com/1098886681?p=0s",
-        images: ["dream.png", "nightmare.png", "webapp.jpeg", "working.jpg"
-            ,],
+        images: ["dream.png", "nightmare.png", "webapp.jpeg", "working.jpg"],
       },
 
       "The Void": {
@@ -355,6 +355,85 @@ The design approach uses visual parallels to connect Earth-based phenomena with 
           "nous.jpg",
           "pago.jpg",
         ],
+        planets: {
+          Akroterra: {
+            name: "Akroterra",
+            image: "akroterra.jpg",
+            alias: "Ice Cave World",
+            scientificBasis:
+              "Ancient ice world with dense atmosphere and methane seas, featuring geological ice formations over millions of years",
+            description:
+              "A world dominated by extremely ancient ice formations embedded with rocky particulates, creating complex cave-like structures. The planet's dense atmosphere filters shorter wavelengths, producing muted blue-green ice with orange and yellow mineral streaks. Methane seas reflect the pale orange-brown sky with low surface tension interactions.",
+            facts: [
+              "Ancient ice formations much older than Earth's oldest ice (>2.5 million years)",
+              "Ice heavily indurated with rocky particulates creating dark, rusty streaks and speckles",
+              "Muted blue-green ice coloration due to atmospheric filtering of shorter wavelengths",
+              "Orange and yellow mineral streaks throughout ice formations",
+              "Surface cracking from geological activity rather than thermal cycling",
+              "Sublimation creates dimpled surfaces and patches of white to reddish rime deposits",
+              "Methane seas with dulled reflectivity (~1/3 of water) reflecting pale orange-brown sky",
+              "Low surface tension fluids create different wetting interactions with sediments",
+            ],
+          },
+          Apon: {
+            name: "Apóno̱rísterra",
+            alias: "Early Earth",
+            image: "apon.png",
+            scientificBasis:
+              "Planet orbiting a K-type star with methane-rich atmosphere creating unique light absorption and scattering effects.",
+            description:
+              "A world with distinctive purplish-brown vegetation adapted to orange-red starlight, featuring pale yellowish skies with persistent methane haze, spectacular red-orange sunsets with purple tints, and pinkish bodies of water across its rocky volcanic surface.",
+            facts: [
+              "Peak wavelength: 637 nm (orange-red spectrum)",
+              "Dark, sparse vegetation reflecting purple/red hues",
+              "Pale yellowish daytime sky with methane haze",
+              "Spectacular sunset skies with vivid reds, oranges, and purples",
+              "Pinkish water bodies due to atmospheric scattering",
+            ],
+          },
+          Nekkro: {
+            name: "Nekrósterra",
+            image: "nekkro.jpg",
+            scientificBasis:
+              "Volcanic exoplanet with extreme geological activity",
+            description:
+              "A volcanically active world with intense geological processes, sulfur-rich atmosphere, and dynamic surface reshaping through constant eruptions.",
+            facts: [
+              "Over 400 active volcanic regions",
+              "Sulfur dioxide dominated atmosphere",
+              "Surface temperature: 600-800K",
+              "Rapid geological turnover",
+            ],
+          },
+          Nous: {
+            name: "Nousterra",
+            image: "nous.jpg",
+            scientificBasis:
+              "Super-Earth with dense atmosphere and complex weather systems",
+            description:
+              "A super-Earth with thick atmospheric layers creating complex weather patterns, greenhouse effects, and unique cloud formations across multiple atmospheric levels.",
+            facts: [
+              "Atmospheric pressure: 15x Earth's",
+              "Multi-layered cloud systems",
+              "Greenhouse effect maintains liquid water",
+              "Complex atmospheric chemistry",
+            ],
+          },
+          Pago: {
+            name: "Pagosterra",
+            image: "pago.jpg",
+            scientificBasis:
+              "Desert world with extreme temperature variations and mineral-rich surface",
+            description:
+              "An arid desert planet with extreme diurnal temperature swings, unique mineral formations, and adapted ecosystems in rare water-rich oases.",
+            facts: [
+              "Daily temperature range: 200K variation",
+              "Silicon-based mineral formations",
+              "Rare subsurface water reservoirs",
+              "Dust storm systems spanning continents",
+            ],
+          },
+        },
       },
       Tessé: {
         description: `A modern brand with a throwback to vintage aesthetics. Effortlessly blending vintage soul with modern editorial edge, crafting fashion that's both stylized and spontaneously charming.
@@ -498,7 +577,29 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         // Populate gallery
         const galleryGrid = document.getElementById('gallery-grid');
         galleryGrid.innerHTML = '';
-        if (projectData[title]?.images && projectData[title].images.length > 0) {
+        
+        // Special handling for Exoplanets project with planet data
+        if (title === 'Exoplanets' && projectData[title]?.planets) {
+            Object.values(projectData[title].planets).forEach(planet => {
+                const planetContainer = document.createElement('div');
+                planetContainer.className = 'planet-container';
+                planetContainer.innerHTML = `
+                    <div class="planet-image-container">
+                        <img src="images/${projectData[title].folder}/${planet.image}" alt="${planet.name}" class="gallery-image planet-image">
+                        <h4 class="planet-name">${planet.name}</h4>
+                    </div>
+                `;
+                
+                // Add click handler for lightbox
+                const planetImg = planetContainer.querySelector('.planet-image');
+                planetImg.addEventListener('click', () => openLightbox(planetImg.src, planetImg.alt));
+                
+                galleryGrid.appendChild(planetContainer);
+            });
+            document.querySelector('.modal-gallery').style.display = 'block';
+        } 
+        // Regular gallery handling for other projects
+        else if (projectData[title]?.images && projectData[title].images.length > 0) {
             projectData[title].images.forEach(imageName => {
                 const imgElement = document.createElement('img');
                 imgElement.src = `images/${projectData[title].folder}/${imageName}`;

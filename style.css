@@ -1594,11 +1594,24 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding: 1.5rem;
     max-height: 400px;
     overflow-y: auto;
+}
+
+/* For exactly 5 items: 3 on top, 2 centered on bottom */
+.gallery-grid .gallery-image:nth-child(4) {
+    grid-column: 1 / 2;
+    justify-self: end;
+    margin-right: 50%;
+}
+
+.gallery-grid .gallery-image:nth-child(5) {
+    grid-column: 2 / 4;
+    justify-self: start;
+    margin-left: 50%;
 }
 
 .gallery-image {
@@ -1617,6 +1630,72 @@ body {
     transform: translateY(-2px);
     filter: grayscale(0%);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Planet Container Styles for Exoplanets */
+.planet-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+.planet-container:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.planet-image-container {
+    margin-bottom: 15px;
+}
+
+.planet-name {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    text-align: center;
+}
+
+.planet-details {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.planet-scientific-basis {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.planet-description {
+    margin-bottom: 20px;
+}
+
+.planet-facts h5,
+.planet-characteristics h5 {
+    color: white;
+    font-size: 1.1rem;
+    margin: 15px 0 8px 0;
+    font-weight: 600;
+}
+
+.planet-facts ul,
+.planet-characteristics ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.planet-facts li,
+.planet-characteristics li {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.planet-image {
+    height: 200px;
 }
 
 /* Modal Process Section */
@@ -2075,10 +2154,18 @@ body {
     }
     
     .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.75rem;
         max-height: 250px;
         padding: 1rem;
+    }
+    
+    /* Reset special positioning for tablet */
+    .gallery-grid .gallery-image:nth-child(4),
+    .gallery-grid .gallery-image:nth-child(5) {
+        grid-column: auto;
+        justify-self: auto;
+        margin: 0;
     }
     
     .gallery-image {
@@ -2350,8 +2437,16 @@ body {
     
     .gallery-grid {
         padding: 0.75rem;
-        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
+    }
+    
+    /* Reset special positioning for mobile */
+    .gallery-grid .gallery-image:nth-child(4),
+    .gallery-grid .gallery-image:nth-child(5) {
+        grid-column: auto;
+        justify-self: auto;
+        margin: 0;
     }
     
     .gallery-image {
