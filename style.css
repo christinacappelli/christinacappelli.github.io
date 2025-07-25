@@ -260,13 +260,13 @@ body {
     gap: 4rem;
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-info {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.02);
     border-radius: 8px;
@@ -296,24 +296,25 @@ body {
 }
 
 .contact-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 3rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
-    padding: 1.5rem;
+    gap: 0.8rem;
+    padding: 1rem 1.5rem;
     border: 1px solid rgba(255, 255, 255, 0.15);
     background: rgba(255, 255, 255, 0.02);
     transition: all 0.3s ease;
     border-radius: 6px;
+    text-align: left;
     min-width: 200px;
-    text-align: center;
 }
 
 .contact-item:hover {
@@ -328,6 +329,7 @@ body {
     letter-spacing: 0.02em;
     font-size: 0.9rem;
     text-transform: uppercase;
+    min-width: 80px;
 }
 
 .contact-item a {
