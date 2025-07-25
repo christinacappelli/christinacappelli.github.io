@@ -435,6 +435,24 @@ The design approach uses visual parallels to connect Earth-based phenomena with 
           },
         },
       },
+      "Generative AI": {
+        description: `A sample collection of AI-generated visual content exploring commercial and creative applications.
+
+The collection includes promotional materials for a generative microdrama film, conceptual fashion brand imagery, and custom thumbnail designs for authors' stories. Each piece showcases different prompt engineering techniques and AI model capabilities, highlighting the collaborative potential between human creative direction and machine-generated content.
+
+This work explores AI as both a creative tool and collaborative partner, examining how artificial intelligence can augment traditional design processes while maintaining artistic intention and narrative coherence across diverse media applications.`,
+        role: "AI Artist & Prompt Engineer",
+        folder: "generativeai",
+        videoUrl: "https://www.instagram.com/p/DMf9lSROXGG/",
+        images: [
+          "image1.jpg",
+          "image2.jpg",
+          "image3.jpg",
+          "image4.jpg",
+          "image5.jpg",
+          "image6.jpg",
+        ],
+      },
       Tessé: {
         description: `A modern brand with a throwback to vintage aesthetics. Effortlessly blending vintage soul with modern editorial edge, crafting fashion that's both stylized and spontaneously charming.
 
@@ -565,9 +583,31 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         const modalVideo = document.getElementById('modal-video');
         const videoIframe = modalVideo.querySelector('iframe');
         if (projectData[title]?.videoUrl) {
-            // Convert regular Vimeo URL to embed URL
             const videoUrl = projectData[title].videoUrl;
-            const embedUrl = videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/');
+            let embedUrl;
+            
+            // Handle different video platforms
+            if (videoUrl.includes('vimeo.com/')) {
+                // Convert regular Vimeo URL to embed URL
+                embedUrl = videoUrl.replace('vimeo.com/', 'player.vimeo.com/video/');
+            } else if (videoUrl.includes('instagram.com/p/')) {
+                // Convert Instagram post URL to embed URL
+                embedUrl = videoUrl + 'embed/';
+                // Set Instagram-specific attributes
+                videoIframe.setAttribute('allowtransparency', 'true');
+                videoIframe.setAttribute('frameborder', '0');
+                videoIframe.setAttribute('scrolling', 'no');
+                
+                // Add vertical class for Instagram videos (typically vertical/portrait)
+                const videoContainer = modalVideo.querySelector('.video-container');
+                if (videoContainer) {
+                    videoContainer.classList.add('vertical');
+                }
+            } else {
+                // Use URL as-is for other platforms
+                embedUrl = videoUrl;
+            }
+            
             videoIframe.src = embedUrl;
             modalVideo.style.display = 'block';
         } else {
@@ -578,28 +618,8 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         const galleryGrid = document.getElementById('gallery-grid');
         galleryGrid.innerHTML = '';
         
-        // Special handling for Exoplanets project with planet data
-        if (title === 'Exoplanets' && projectData[title]?.planets) {
-            Object.values(projectData[title].planets).forEach(planet => {
-                const planetContainer = document.createElement('div');
-                planetContainer.className = 'planet-container';
-                planetContainer.innerHTML = `
-                    <div class="planet-image-container">
-                        <img src="images/${projectData[title].folder}/${planet.image}" alt="${planet.name}" class="gallery-image planet-image">
-                        <h4 class="planet-name">${planet.name}</h4>
-                    </div>
-                `;
-                
-                // Add click handler for lightbox
-                const planetImg = planetContainer.querySelector('.planet-image');
-                planetImg.addEventListener('click', () => openLightbox(planetImg.src, planetImg.alt));
-                
-                galleryGrid.appendChild(planetContainer);
-            });
-            document.querySelector('.modal-gallery').style.display = 'block';
-        } 
-        // Regular gallery handling for other projects
-        else if (projectData[title]?.images && projectData[title].images.length > 0) {
+        // Regular gallery handling for all projects including Exoplanets
+        if (projectData[title]?.images && projectData[title].images.length > 0) {
             projectData[title].images.forEach(imageName => {
                 const imgElement = document.createElement('img');
                 imgElement.src = `images/${projectData[title].folder}/${imageName}`;
@@ -682,6 +702,12 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         const videoIframe = document.querySelector('#modal-video iframe');
         if (videoIframe.src) {
             videoIframe.src = videoIframe.src; // Reset iframe to stop video
+        }
+        
+        // Reset video container classes
+        const videoContainer = document.querySelector('#modal-video .video-container');
+        if (videoContainer) {
+            videoContainer.classList.remove('vertical');
         }
     }
 
