@@ -211,6 +211,22 @@ The ultimate goal is to emerge victorious by using the power of exploding dumpli
           "poster.jpeg",
         ],
       },
+      "Photographer": {
+        description: `A curated collection of photography work spanning from 2018 to present, showcasing professional experience in on-set environments, creative direction, and team leadership. This portfolio demonstrates comprehensive understanding of visual storytelling, lighting design, and collaborative creative processes essential for art director roles.
+
+The work encompasses various photography disciplines including editorial, commercial, and artistic projects. Each piece reflects a deep understanding of composition, color theory, and narrative construction while highlighting the ability to direct creative teams and manage complex production environments.
+
+This collection represents hands-on experience in professional photography settings, from conceptualization through final delivery, emphasizing leadership skills in creative environments and the ability to translate artistic vision into compelling visual narratives.`,
+        role: "Photographer, Creative Director, Team Leader",
+        folder: "photography",
+        images: [
+          "sample1.jpg",
+          "sample2.jpg", 
+          "sample3.jpg",
+          "sample4.jpg",
+          "sample5.jpg",
+        ],
+      },
       "Language of Light": {
         description: `An interaction that simulates bacterial quorum sensing to transform microbial communication into an embodied, participatory experience. By prompting unfamiliar movement through nose tracking, the piece encourages participants to momentarily inhabit a non-human perspective, revealing how collective intelligence operates beyond individual control.
 
