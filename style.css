@@ -319,6 +319,14 @@ body {
     min-width: auto;
     padding: 0.8rem 1.2rem;
     flex: 0 0 auto;
+    text-align: center;
+    justify-content: center;
+}
+
+.email-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-item {
