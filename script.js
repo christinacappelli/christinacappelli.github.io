@@ -581,9 +581,7 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             modalAwards.textContent = awards.textContent;
             modalAwardsItem.style.display = 'block';
         } else {
-            modalAwardsIt           
-        }
-            
+            modalAwardsItem.style.display = 'none';
         }
 
         // Populate link
