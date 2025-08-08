@@ -502,6 +502,8 @@ The project explores themes of impermanence, sustainability, and the beauty of d
         // videoUrl: "https://vimeo.com/123456798", // Replace with actual Vimeo URL
         images: ["01.jpeg", "2.jpeg", "3.jpeg", "show.jpeg"],
       },
+
+      
     };
 
     // Open modal function
@@ -579,7 +581,9 @@ The project explores themes of impermanence, sustainability, and the beauty of d
             modalAwards.textContent = awards.textContent;
             modalAwardsItem.style.display = 'block';
         } else {
-            modalAwardsItem.style.display = 'none';
+            modalAwardsIt           
+        }
+            
         }
 
         // Populate link
