@@ -211,22 +211,22 @@ The ultimate goal is to emerge victorious by using the power of exploding dumpli
           "poster.jpeg",
         ],
       },
-      "Photographer": {
-        description: `A curated collection of photography work spanning from 2018 to present, showcasing professional experience in on-set environments, creative direction, and team leadership. This portfolio demonstrates comprehensive understanding of visual storytelling, lighting design, and collaborative creative processes essential for art director roles.
+      //       Photographer: {
+      //         description: `A curated collection of work spanning from 2018 to present, showcasing professional experience in on-set environments, creative direction, and team leadership. This portfolio demonstrates comprehensive understanding of visual storytelling, lighting design, and collaborative creative processes essential for art director roles.
 
-The work encompasses various photography disciplines including editorial, commercial, and artistic projects. Each piece reflects a deep understanding of composition, color theory, and narrative construction while highlighting the ability to direct creative teams and manage complex production environments.
+      // The work encompasses various disciplines including editorial, commercial, and artistic projects. Each piece reflects a deep understanding of composition, color theory, and narrative construction while highlighting the ability to direct creative teams and manage complex production environments.
 
-This collection represents hands-on experience in professional photography settings, from conceptualization through final delivery, emphasizing leadership skills in creative environments and the ability to translate artistic vision into compelling visual narratives.`,
-        role: "Photographer, Creative Director, Team Leader",
-        folder: "photography",
-        images: [
-          "sample1.jpg",
-          "sample2.jpg", 
-          "sample3.jpg",
-          "sample4.jpg",
-          "sample5.jpg",
-        ],
-      },
+      // This collection represents hands-on experience in professional settings, from conceptualization through final delivery, emphasizing leadership skills in creative environments and the ability to translate artistic vision into compelling visual narratives.`,
+      //         // role: "Photographer, Creative Director, Team Leader",
+      //         folder: "hidden",
+      //         images: [
+      //           "sample1.jpg",
+      //           "sample2.jpg",
+      //           "sample3.jpg",
+      //           "sample4.jpg",
+      //           "sample5.jpg",
+      //         ],
+      //       },
       "Language of Light": {
         description: `An interaction that simulates bacterial quorum sensing to transform microbial communication into an embodied, participatory experience. By prompting unfamiliar movement through nose tracking, the piece encourages participants to momentarily inhabit a non-human perspective, revealing how collective intelligence operates beyond individual control.
 
@@ -235,14 +235,14 @@ Visualizing the invisible language of bacteria through glowing trails of light. 
 Inspired by the symbiotic relationship between Vibrio fischeri and the bobtail squid, the piece connects biological intelligence with a cosmic visual metaphor—evoking microbial stargazing and inviting reflection on the interconnectedness of life at both microscopic and celestial scales.
 
 Built with JavaScript, p5.js, and ML5 PoseNet, the installation tracks users via webcam, mapping each participant's nose position to simulate microbial motion. Each tracked point generates glowing particle trails, and once a quorum is reached, the visual intensity spikes, mirroring biological communication through collective action.`,
-        role: "Direction and Technical Development",
+        // role: "Direction and Technical Development",
         folder: "languageoflight",
-        //videoUrl: "https://vimeo.com/1098883316?p=0s",
+        videoUrl: "https://vimeo.com/888251357",
         link: {
           url: "https://vimeo.com/826412484?share=copy",
           text: "Watch Thesis Presentation",
         },
-        images: ["inprogress.png"],
+        // images: ["inprogress.png"],
         process: {
           description: `Language of Light evolved from my master's thesis research exploring the intersection of biological systems and interactive art. Originally titled "All in One," this work examines how microbial communication can be translated into human-scale interactive experiences. The development process involved extensive research into bacterial quorum sensing, prototyping with ML5 PoseNet for motion tracking, and iterative testing to create an intuitive yet scientifically grounded interaction.
 
@@ -272,7 +272,7 @@ The project bridges scientific research with experiential design, using nose tra
 Built with openFrameworks, the piece runs across a dual-screen setup: One screen plays recorded microscopic footage of Volvox algae in motion. The second screen uses real-time algae location tracking to generate animated digital lines (resembling drifting snow), overlaid with webcam-based outlines of nearby viewers.
 
 This pairing contrasts direct biological observation with an abstracted, reactive digital system, inviting viewers to explore their presence in relation to something far smaller yet no less alive.`,
-        role: "Direction and Technical Development",
+        // role: "Direction and Technical Development",
         folder: "liminallens",
         videoUrl: "https://vimeo.com/791984894",
         images: ["show1.jpeg", "show2.jpeg", "show3.jpeg", "show4.jpeg"],
@@ -323,7 +323,7 @@ The TouchDesigner interaction includes: paintbrush functionality to reveal dream
 Built using openFrameworks, the piece manipulates real-time webcam input to distort the viewer's reflection. As participants engage, their image degrades into layered afterimages, symbolizing the recursive cycle of self-curation and reinvention.
 
 The installation explores how digital environments distort our sense of self, questioning what it means to curate identity in a world shaped by constant technological mediation.`,
-        role: "Direction and Technical Development",
+        // role: "Direction and Technical Development",
         folder: "thevoid",
         videoUrl: "https://vimeo.com/1061865042",
         images: [
@@ -342,14 +342,7 @@ Initial concept by @arranzniko with help from @amy_art_architecture. In 2025, @b
         role: "Fabrication Team",
         folder: "rockwall",
         // videoUrl: "https://vimeo.com/123456794", // Replace with actual Vimeo URL
-        images: [
-          "closeup.jpeg",
-          //   "forming0.jpeg",
-          //   "forming1.jpeg",
-          "hero.jpeg",
-          "show.jpeg",
-          "show1.jpeg",
-        ],
+        images: ["closeup.jpeg", "hero.jpeg", "show.jpeg", "show1.jpeg"],
       },
       Exoplanets: {
         description: `This project explores how we imagine and visualize extraterrestrial environments, living at the edge of speculation and scientific plausibility. These terrains offer a visually dynamic approach to science communication, designed to be interactive when deployed on a digital platform. 
@@ -363,7 +356,6 @@ The design approach uses visual parallels to connect Earth-based phenomena with 
           url: "https://proxima-kosmos.com/",
           text: "Proxima Kósmos Phase 1",
         },
-        // videoUrl: "https://vimeo.com/123456795", // Replace with actual Vimeo URL
         images: [
           "akroterra.jpg",
           "apon.png",
@@ -486,10 +478,14 @@ Photography utilizes 35mm film for texture, creating an authentic vintage feel w
 Inspired by extremophiles, it examines microbial adaptation in extreme environments to inform potential biotech innovations. Laboratory techniques include PCR with 16S/ITS primers, spectrometry, microbial culturing, and agar plate preparation.
 
 The project bridges speculative design with real laboratory research, exploring the intersection of biotechnology, personalized medicine, and consumer products in an accessible, engaging format.`,
-        role: "Researcher & Designer",
+        // role: "Researcher & Designer",
         folder: "biomeboba",
-        // videoUrl: "https://vimeo.com/946667064",
-        images: ["gallery.jpeg", "hero.jpeg"],
+        link: {
+          url: "https://www.notion.so/christinacappelli/98558126123741b2b664060c8a692fa4?v=4df6d4a7c569425ea244074f457b813e&source=copy_link",
+          text: "Read more about the process",
+        },
+        videoUrl: "https://vimeo.com/946667064",
+        images: ["hero.jpeg"],
       },
       "Dying Bloom": {
         description: `A self-destructible bio-designed succulent, created using a range of biomaterials and all-natural dying components such as spirulina and various flowers for color and scent. This project involved extensive research, material testing, and stress testing. 
@@ -497,13 +493,11 @@ The project bridges speculative design with real laboratory research, exploring 
 The final material was an agar-based recipe colored with beet and matcha powder and scented with herbs and flower water built into the main recipe. The final products used real soil, fake plants, and recycled pots.
 
 The project explores themes of impermanence, sustainability, and the beauty of decay, challenging traditional notions of product longevity and encouraging reflection on natural cycles and biodegradable design.`,
-        role: "Lead Designer & Researcher",
+        // role: "Lead Designer & Researcher",
         folder: "dyingbloom",
-        // videoUrl: "https://vimeo.com/123456798", // Replace with actual Vimeo URL
+        videoUrl: "https://vimeo.com/904134993?fl=pl&fe=sh",
         images: ["01.jpeg", "2.jpeg", "3.jpeg", "show.jpeg"],
       },
-
-      
     };
 
     // Open modal function
