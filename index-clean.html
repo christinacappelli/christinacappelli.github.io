@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Christina Cappelli · Portfolio</title>
+		<meta name="description" content="Portfolio of projects by Christina Cappelli" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<header class="site-header" role="banner">
+			<div class="container">
+				<h1 class="site-title">Christina Cappelli</h1>
+				<p class="site-tagline"> Creative Technologist + Multidisiplinary Designer </p>
+			</div>
+		</header>
+
+		<section class="bio-section">
+			<div class="container">
+				<!-- <p class="bio-text">Brooklyn-based technologist and designer whose speculative explorations of natural systems drive immersive computational videos and generative designs. I'm a National Science Foundation and NYU Entrepreneurial Institute grantee who's also photographed and produced international campaigns for many years. A graduate of NYU's Interactive Telecommunications Program, I create work that bridges science, technology, and storytelling to imagine futures both uncanny and alive.</p> -->
+            </div>
+		</section>
+
+		<main id="projects" class="projects-section" role="main" aria-labelledby="projects-title">
+			<h2 id="projects-title" class="visually-hidden">Projects</h2>
+			<div class="container">
+				<div class="projects-grid">
+
+					<!-- Sample project cards -->
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/sumbioun.jpg');"></div>
+						<h3 class="project-title">Sumbioun</h3>
+						<p class="project-desc">A film exploring the biological struggle of imaginal cells in metamorphosis as a metaphor for what happens when the past refuses to let the future emerge.</p>
+						<ul class="project-tags">
+							<li>Generative AI</li><li>Blender</li><li>Unreal</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/bloom.jpg');"></div>
+						<h3 class="project-title">Generative Blooms</h3>
+						<p class="project-desc">A series of generative images and animations based on evolutionary traits of microbes.</p>
+						<ul class="project-tags">
+							<li>Generative AI</li><li>Blender</li><li>Touchdesigner</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/material.jpg');"></div>
+						<h3 class="project-title">Tranference</h3>
+						<p class="project-desc">Explorations in traditional dyeing and fermentation processes that inform the basis of speculative artifacts and future possibilities.</p>
+						<ul class="project-tags">
+							<li>Indigo Dying</li><li>Fermentation</li><li>Organic Materials</li>
+						</ul>
+					</article>
+
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/dream.jpg');"></div>
+						<h3 class="project-title">Dream Collector</h3>
+						<p class="project-desc"> A web app and interactive interface that uses AI to turn scattered dream memories into a visual archive.</p>
+						<ul class="project-tags">
+							<li>TouchDesigner</li><li>Mediapipe</li><li>OpenAI</li>
+						</ul>
+						<a class="project-link-small" href="https://vimeo.com/1098886681?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
+					</article>
+
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/void.jpg');"></div>
+						<h3 class="project-title">The Void</h3>
+						<p class="project-desc">An interactive exploration of digital identity exposing a feedback loop where identity is shaped by the systems mediating it. </p>
+						<ul class="project-tags">
+							<li>openFrameworks</li><li>Computer Vision</li><li>Consumer Culture</li>
+						</ul>
+						<a class="project-link-small" href="https://vimeo.com/1061865042?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
+					</article>
+
+					<article class="project-card">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/liminal.jpg');"></div>
+						<h3 class="project-title">Liminal Lens</h3>
+						<p class="project-desc">An interactive installation inviting participants to reflect on scale, perception, and their entanglement with microscopic life.</p>
+						<ul class="project-tags">
+							<li>openFrameworks</li><li>Computer Vision</li><li>Volvox Algae</li>
+						</ul>
+						<a class="project-link-small" href="https://vimeo.com/791984894?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
+					</article>
+
+				</div>
+			</div>
+		</main>
+
+		<footer class="site-footer" role="contentinfo">
+			<div class="container">
+				<nav aria-label="Contact links">
+					<ul class="contact-links">
+						<li><a href="mailto:you@example.com" rel="noopener">Email</a></li>
+						<li><a href="https://www.linkedin.com/in/christina-cappelli/" target="_blank" rel="noopener">LinkedIn</a></li>
+						<li><a href="https://github.com/christinacappelli" target="_blank" rel="noopener">GitHub</a></li>
+						<li><a href="https://www.behance.net/christinacappelli" target="_blank" rel="noopener">Behance</a></li>
+					</ul>
+				</nav>
+				<small class="copyright">© <span id="year"></span> Christina Cappelli</small>
+			</div>
+			<script>
+				// Update footer year automatically
+				document.getElementById('year').textContent = new Date().getFullYear();
+			</script>
+		</footer>
+	</body>
+</html>
