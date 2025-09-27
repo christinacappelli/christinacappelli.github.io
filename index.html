@@ -11,15 +11,16 @@
 		<header class="site-header" role="banner">
 			<div class="container">
 				<h1 class="site-title">Christina Cappelli</h1>
-				<p class="site-tagline"> Creative Technologist + Multidisiplinary Designer </p>
+								<p class="site-tagline">Technologist |  Designer | <a href="production.html" target="_blank" rel="noopener" style="color: #333; text-decoration: none;">Producer</a></p>
+			
 			</div>
 		</header>
 
-		<section class="bio-section">
+		<!-- <section class="bio-section">
 			<div class="container">
-				<!-- <p class="bio-text">Brooklyn-based technologist and designer whose speculative explorations of natural systems drive immersive computational videos and generative designs. I'm a National Science Foundation and NYU Entrepreneurial Institute grantee who's also photographed and produced international campaigns for many years. A graduate of NYU's Interactive Telecommunications Program, I create work that bridges science, technology, and storytelling to imagine futures both uncanny and alive.</p> -->
-            </div>
-		</section>
+				<p class="bio-text">Brooklyn-based technologist and designer whose speculative explorations of natural systems drive immersive computational videos and generative designs. I'm a National Science Foundation and NYU Entrepreneurial Institute grantee who's also photographed and produced international campaigns for many years. A graduate of NYU's Interactive Telecommunications Program, I create work that bridges science, technology, and storytelling to imagine futures both uncanny and alive.</p> 
+			</div>
+		</section>  -->
 
 		<main id="projects" class="projects-section" role="main" aria-labelledby="projects-title">
 			<h2 id="projects-title" class="visually-hidden">Projects</h2>
@@ -105,5 +106,98 @@
 				document.getElementById('year').textContent = new Date().getFullYear();
 			</script>
 		</footer>
+
+		<!-- Modal for project details -->
+		<div id="project-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+			<div class="modal-backdrop"></div>
+			<div class="modal-content">
+				<button class="modal-close" aria-label="Close modal">&times;</button>
+				<div id="modal-body">
+					<!-- Content will be populated by JavaScript -->
+				</div>
+			</div>
+		</div>
+
+		<script>
+			// Modal functionality
+			const modal = document.getElementById('project-modal');
+			const modalBody = document.getElementById('modal-body');
+			const modalClose = document.querySelector('.modal-close');
+			const modalBackdrop = document.querySelector('.modal-backdrop');
+
+			// Project data
+			const projectData = {
+				'dream-collector': {
+					title: 'Dream Collector',
+					description: 'Dream Collector is an interactive web application that transforms scattered dream memories into a cohesive visual archive. Using AI and computer vision technologies, the project explores the intersection of memory, consciousness, and digital representation.',
+					details: [
+						'Built with TouchDesigner for real-time visual generation',
+						'Integrated MediaPipe for gesture and movement tracking',
+						'Utilizes OpenAI for dream narrative processing and interpretation',
+						'Features an intuitive interface for dream input and visualization',
+						'Creates personalized dream landscapes based on user memories'
+					],
+					technologies: ['TouchDesigner', 'MediaPipe', 'OpenAI', 'JavaScript', 'WebGL'],
+					year: '2024',
+					category: 'Interactive Installation',
+					image: './thumbs/dream.jpg',
+					videoUrl: 'https://vimeo.com/1098886681?fl=pl&fe=sh'
+				}
+			};
+
+			// Open modal
+			document.querySelectorAll('.clickable-thumb').forEach(thumb => {
+				thumb.addEventListener('click', function() {
+					const projectId = this.getAttribute('data-project');
+					const project = projectData[projectId];
+					
+					if (project) {
+						modalBody.innerHTML = `
+							<div class="modal-header">
+								<h2 id="modal-title">${project.title}</h2>
+								<p class="modal-meta">${project.category} • ${project.year}</p>
+							</div>
+							<div class="modal-image">
+								<img src="${project.image}" alt="${project.title}" />
+							</div>
+							<div class="modal-description">
+								<p>${project.description}</p>
+								<ul class="modal-details">
+									${project.details.map(detail => `<li>${detail}</li>`).join('')}
+								</ul>
+								<div class="modal-tech">
+									<h4>Technologies:</h4>
+									<div class="tech-tags">
+										${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+									</div>
+								</div>
+								${project.videoUrl ? `<a href="${project.videoUrl}" target="_blank" rel="noopener" class="modal-video-link">Watch Video</a>` : ''}
+							</div>
+						`;
+						
+						modal.classList.add('active');
+						document.body.style.overflow = 'hidden';
+						modal.setAttribute('aria-hidden', 'false');
+					}
+				});
+			});
+
+			// Close modal
+			function closeModal() {
+				modal.classList.remove('active');
+				document.body.style.overflow = '';
+				modal.setAttribute('aria-hidden', 'true');
+			}
+
+			modalClose.addEventListener('click', closeModal);
+			modalBackdrop.addEventListener('click', closeModal);
+			
+			// Close on Escape key
+			document.addEventListener('keydown', function(e) {
+				if (e.key === 'Escape' && modal.classList.contains('active')) {
+					closeModal();
+				}
+			});
+		</script>
 	</body>
 </html>

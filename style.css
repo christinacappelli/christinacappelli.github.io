@@ -3,7 +3,7 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 :root {
-	--bg: #fafafa;
+	--bg: #fafafa; 
 	--surface: #ffffff;
 	--text: #151515; 
 	--muted: #666666;
@@ -50,7 +50,7 @@ body {
 	font-size: 0.95rem;
 }
 
-/* Bio section */
+/* Bio section
 .bio-section {
 	background: var(--bg);
 	border-bottom: 1px solid var(--line);
@@ -63,8 +63,7 @@ body {
 	font-size: 1rem;
 	color: var(--muted);
 	line-height: 1.4;
-	/* max-width: 900px; */
-}
+} */
 
 /* Projects section layout */
 .projects-section {
@@ -149,11 +148,11 @@ body {
 	gap: 8px;
 }
 .project-tags li {
-	font-size: 0.8rem;
-	color: #c9d2d6;
-	background: rgba(255,255,255,0.06);
-	border: 1px solid rgba(255,255,255,0.08);
-	padding: 4px 8px;
+	font-size: .8rem;
+	color: #5e5e5e;
+	/* background: rgba(0, 0, 0, 0.06);
+	border: .5px solid rgba(50, 50, 50, 0.08); */
+	padding: 4px 4px;
 	border-radius: 999px;
 }
 
