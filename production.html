@@ -8,62 +8,128 @@
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
-		<header class="site-header" role="banner">
+	<!-- HEADER: .site-header (sticky). Check .site-header .container padding: 22px 16px -->
+	<header class="site-header" role="banner">
 			<div class="container">
 				<h1 class="site-title"><a href="index.html" style="text-decoration: none; color: inherit;">Christina Cappelli</a></h1>
 				<p class="site-tagline">Production Work</p>
 			</div>
 		</header>
 
-		<main id="production" class="projects-section" role="main" style="margin-bottom: 8rem; padding-top: 4rem;">
+    <!-- MAIN: #production .projects-section
+	    - Inline styles: margin-bottom: 0.5rem; padding-top: 2rem;
+	    - Related CSS: .projects-section .container { padding: 5px 16px 16px; }
+    -->
+    <main id="production" class="projects-section" role="main" style="margin-bottom: 0.5rem; padding-top: 2rem;">
+	
 			<div class="container">
-				<h2 style="text-align: center; margin-bottom: 2rem; font-weight: 300;">Production</h2>
-				<p style="text-align: center; color: var(--muted); margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-					Production work spanning campaigns, development, casting, and creative direction across various media platforms.
+				<!-- SECTION HEADING: margin-bottom: 1.25rem -->
+				<h2 style="text-align: center; margin-bottom: 1.25rem; font-weight: 300;">Select Production Work</h2>
+				<!-- INTRO PARAGRAPH: margin-bottom: 1.25rem; max-width: 600px -->
+				<p style="text-align: center; color: var(--muted); margin-bottom: 1.25rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+					Production work spanning interactive installations, digital experiences, and beauty campaigns.
 				</p>
 				
-				<div class="projects-grid">
+			 <!-- PROJECTS GRID: .projects-grid
+				 - CSS: margin-top: 20px; gap: 22px; (we also added margin-bottom earlier)
+				 - Check .projects-grid margin-bottom if present
+			 -->
+			 <div class="projects-grid">
 					<article class="project-card">
-						<div class="thumb" aria-hidden="true" style="background: var(--bg); border: 1px dashed var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted);">
-							Coming Soon
-						</div>
-						<h3 class="project-title">International Campaigns</h3>
-						<p class="project-desc">Photography and production work for international advertising campaigns across multiple brands and platforms.</p>
+                        <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/proxima.jpg');"></div>
+                        <h3 class="project-title">Proxima Kòsmos</h3>
+						<p class="project-desc">Proxima Kosmos is a digital experience where planetary speculation meets art, science, and immersive storytelling. I led the creative production of the interactive website and supporting visual systems, translating research and narrative into a cohesive digital journey.</p>
 						<ul class="project-tags">
-							<li>Photography</li><li>Campaign Production</li><li>Creative Direction</li>
+							<li>Project Management</li><li>Copy Editing</li><li>Creative Feedback</li><li>Social Media Edits</li><li>Design Research</li>
 						</ul>
-					</article>
+						<div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center;">
+                            <a class="project-link-small" href="https://proxima-kosmos.com/" target="_blank" rel="noopener" style="position: static;">experience</a>
+					        <a class="project-link-small" href="https://www.youtube.com/watch?v=2_auFHHUtDo" target="_blank" rel="noopener" style="position: static;">watch</a>
+                        </div>
+                    </article>
 
-					<article class="project-card">
-						<div class="thumb" aria-hidden="true" style="background: var(--bg); border: 1px dashed var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted);">
-							Coming Soon
-						</div>
-						<h3 class="project-title">TV & Streaming</h3>
-						<p class="project-desc">Development and casting production for Lifetime, Travel Channel, and MTV programming.</p>
+                    <article class="project-card">
+                        <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/platform.jpg');"></div>
+                        <h3 class="project-title">MTA Arts: Platform</h3>
+						<p class="project-desc">"Platform" is a video artwork commissioned by MTA Arts and Design by Gabe Barcia-Colombo examining what it means to be back together in a crowd after years spent apart. Installed at the Grand Central Madison Station. The work is presented by MTA Arts & Design with technical support from ANC Sports.  </p>
 						<ul class="project-tags">
-							<li>Development</li><li>Casting</li><li>TV Production</li>
+							<li>Development</li><li>On-Set Production</li><li>Production + Talent Management</li><li>Interactive Installation</li>
 						</ul>
-					</article>
+						<div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center;">
+                            <a class="project-link-small" href="https://www.mta.info/agency/arts-design/digital-art/platform" target="_blank" rel="noopener" style="position: static;">watch</a>
+                        </div>
+                    </article>
 
-					<article class="project-card">
-						<div class="thumb" aria-hidden="true" style="background: var(--bg); border: 1px dashed var(--line); display: flex; align-items: center; justify-content: center; color: var(--muted);">
-							Coming Soon
-						</div>
-						<h3 class="project-title">Creative Projects</h3>
-						<p class="project-desc">Produced creative projects combining technology, art, and storytelling for various clients and exhibitions.</p>
+                    <article class="project-card">
+                        <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/pareva.jpg');"></div>
+                        <h3 class="project-title">Parëva</h3>
+						<p class="project-desc">Parëva Beauty is a clean-beauty brand rooted in radical transparency, sharing full formulation details and ingredient sourcing through The (F)actuals™. I served as Project Manager, leading web development and creative production—overseeing photoshoots, budgets, design collaboration, and coordination with photographers, models, and producers.</p>
 						<ul class="project-tags">
-							<li>Creative Production</li><li>Project Management</li><li>Art Direction</li>
+							<li>Project Management</li><li>Creative Production</li><li>Brand Development</li>
 						</ul>
-					</article>
+						<div style="display: flex; gap: 10px; justify-content: flex-end; align-items: center;">
+                            <a class="project-link-small" href="https://parevabeauty.com/" target="_blank" rel="noopener" style="position: static;">watch</a>
+                        </div>
+                    </article>
+
 				</div>
+
+			 <!-- Clients marquee (continuous scroll)-->
+			 <section class="client-marquee" aria-label="Clients carousel">
+					<div class="marquee-track" aria-hidden="false">
+						<div class="marquee-group">
+							<img src="./clients/ae.png" alt="AE" />
+							<img src="./clients/cnbc.png" alt="CNBC" />
+							<img src="./clients/discovery.png" alt="Discovery" />
+							<img src="./clients/fifth.png" alt="Fifth" />
+							<img src="./clients/hgtv.png" alt="HGTV" />
+							<img src="./clients/kiehls.png" alt="Kiehl's" />
+							<img src="./clients/lifetime.png" alt="Lifetime" />
+							<img src="./clients/mtv.svg" alt="MTV" />
+							<img src="./clients/no1.png" alt="No1" />
+							<img src="./clients/nyfw-1.png" alt="NYFW" />
+							<img src="./clients/science.png" alt="Science" />
+							<img src="./clients/spike.png" alt="Spike" />
+							<img src="./clients/surf.png" alt="Surf" />
+							<img src="./clients/tlc.png" alt="TLC" />
+							<img src="./clients/travel.png" alt="Travel" />
+							<img src="./clients/wetv.png" alt="WeTV" />
+                            <img src="./clients/fs.png" alt="Flying Solo" />
+						</div>
+						<!-- duplicate group for continuous scroll -->
+						<div class="marquee-group" aria-hidden="true">
+							<img src="./clients/ae.png" alt="" />
+							<img src="./clients/cnbc.png" alt="" />
+							<img src="./clients/discovery.png" alt="" />
+							<img src="./clients/fifth.png" alt="" />
+							<img src="./clients/hgtv.png" alt="" />
+							<img src="./clients/kiehls.png" alt="" />
+							<img src="./clients/lifetime.png" alt="" />
+							<img src="./clients/mtv.svg" alt="" />
+							<img src="./clients/no1.png" alt="" />
+							<img src="./clients/nyfw-1.png" alt="" />
+							<img src="./clients/science.png" alt="" />
+							<img src="./clients/spike.png" alt="" />
+							<img src="./clients/surf.png" alt="" />
+							<img src="./clients/tlc.png" alt="" />
+							<img src="./clients/travel.png" alt="" />
+							<img src="./clients/wetv.png" alt="" />
+                            <img src="./clients/fs.png" alt="" />
+
+						</div>
+					</div>
+				</section>
 			</div>
 		</main>
 
-		<footer class="site-footer" role="contentinfo">
+	   <!-- FOOTER: .site-footer
+		   - CSS: .site-footer .container padding: 15px 16px (controls footer height)
+	   -->
+	   <footer class="site-footer" role="contentinfo">
 			<div class="container">
 				<nav aria-label="Contact links">
 					<ul class="contact-links">
-						<li><a href="mailto:you@example.com" rel="noopener">Email</a></li>
+						<li><a href="mailto:christinacapp130@gmail.com" rel="noopener">Email</a></li>
 						<li><a href="https://www.linkedin.com/in/christina-cappelli/" target="_blank" rel="noopener">LinkedIn</a></li>
 						<li><a href="https://github.com/christinacappelli" target="_blank" rel="noopener">GitHub</a></li>
 						<li><a href="https://www.behance.net/christinacappelli" target="_blank" rel="noopener">Behance</a></li>

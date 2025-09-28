@@ -12,6 +12,11 @@ html, body { height: 100%; }
 	--radius: 8px;
 }
 
+/* PAGE BASE
+   Controls overall page baseline spacing.
+   - `body { margin: 0; }` removes default browser margin.
+   - `line-height: 1.6` affects vertical rhythm of text within sections.
+*/
 body {
 	margin: 0;
 	font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -20,6 +25,11 @@ body {
 	line-height: 1.6;
 }
 
+/* CONTENT CONTAINER
+   - `.container` centers page content and sets max width.
+   - It doesn't add vertical spacing itself, but inner padding on sections
+	 (e.g. `.projects-section .container`) will create vertical gaps.
+*/
 .container {
 	width: min(1100px, 92vw);
 	margin-inline: auto;
@@ -33,6 +43,10 @@ body {
 	background: var(--bg);
 	border-bottom: 1px solid var(--line);
 }
+/* HEADER CONTAINER
+   - `.site-header .container` padding: 22px 16px adds vertical space inside header.
+   - This controls header height; reduce the top or bottom value to shrink header.
+*/
 .site-header .container {
 	display: flex;
 	align-items: baseline;
@@ -50,53 +64,50 @@ body {
 	font-size: 0.95rem;
 }
 
-/* Bio section
-.bio-section {
-	background: var(--bg);
-	border-bottom: 1px solid var(--line);
-}
-.bio-section .container {
-	padding: 5px 16px 16px;
-}
-.bio-text {
-	margin: 0;
-	font-size: 1rem;
-	color: var(--muted);
-	line-height: 1.4;
-} */
-
 /* Projects section layout */
 .projects-section {
 	height: auto;
-	/* allow page to scroll naturally */
-	scroll-behavior: smooth;
+	padding: 60px 0;  /* Increased vertical padding for more breathing room */
 }
 .projects-section .container {
-	padding: 5px 16px 40px;
+	padding: 0 32px;  /* Increased horizontal padding */
 }
 
 /* Grid with justify properties */
+/* PROJECTS GRID
+   - `.projects-grid` controls spacing between project cards.
+   - `margin-top: 20px` adds space above the grid; if you need more space
+	 between the intro and the grid, increase this. We also previously added
+	 a bottom margin to push the marquee lower when needed.
+*/
 .projects-grid {
-    margin-top: 20px;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-	gap: 22px;
+	gap: 40px;  /* Increased gap between project cards */
 	justify-content: start;
 	align-content: start;
+	margin-bottom: 40px;  /* More space before the next section */
 }
 
 /* Project card */
+/* PROJECT CARD
+	 - `.project-card` padding: 16px and `gap: 10px` create internal vertical space
+		 inside each card; card height is also influenced by `grid-template-rows`.
+	 - Card margins are controlled by the grid gap; adjust `.projects-grid gap` or
+		 `project-card padding` to tweak spacing between/inside cards.
+*/
 .project-card {
-	background: var(--surface);
-	border: 1px solid var(--line);
-	border-radius: var(--radius);
-	transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
-	display: grid;
-	grid-template-rows: 160px auto auto auto auto;
-	padding: 16px;
-	gap: 10px;
-	position: relative;
+		background: var(--surface);
+		border: 1px solid var(--line);
+		border-radius: var(--radius);
+		transition: background-color .15s ease, border-color .15s ease, transform .15s ease;
+		display: grid;
+		grid-template-rows: 160px auto auto auto auto;
+		padding: 24px;  /* More padding inside cards */
+		gap: 16px;  /* More space between card elements */
+		position: relative;
 }
+
 .project-card:hover { border-color: rgba(0,0,0,0.18); transform: translateY(-1px); }
 .project-link {
 	display: grid;
@@ -145,14 +156,15 @@ body {
 	list-style: none;
 	display: flex;
 	flex-wrap: wrap;
-	gap: 8px;
+	justify-content: flex-start;
+	gap: 4px;
 }
 .project-tags li {
 	font-size: .8rem;
-	color: #5e5e5e;
+	color: #999;
 	/* background: rgba(0, 0, 0, 0.06);
 	border: .5px solid rgba(50, 50, 50, 0.08); */
-	padding: 4px 4px;
+	padding: 4px 8px;
 	border-radius: 999px;
 }
 
@@ -161,11 +173,15 @@ body {
 	border-top: 1px solid var(--line);
 	background: var(--bg);
 }
+/* FOOTER CONTAINER
+   - `.site-footer .container` padding: 15px 16px controls footer height.
+   - Reducing the vertical padding here will pull content closer to the bottom.
+*/
 .site-footer .container {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 22px 16px;
+	padding: 15px 16px;
 	gap: 16px;
 }
 .contact-links {
@@ -185,6 +201,32 @@ body {
 .copyright {
 	color: var(--muted);
 }
+
+/* Clients marquee */
+/* Client marquee - with generous spacing */
+.client-marquee {
+	width: 100%;
+	overflow: hidden;
+	padding: 40px 0;  /* More vertical space around marquee */
+	margin: 12px 0 2px;   /* Increased top margin by 20px */
+}
+.client-marquee .marquee-track {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	animation: marquee 24s linear infinite;
+}
+.client-marquee .marquee-group { display: flex; gap: 30px; align-items: center; }
+.client-marquee img { height: 60px; width: auto; display: block; object-fit: contain; border: 0; }
+
+@keyframes marquee {
+	0%   { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+/* Pause animation on hover/focus for accessibility */
+.client-marquee:hover .marquee-track,
+.client-marquee:focus-within .marquee-track { animation-play-state: paused; }
 
 /* Accessibility helpers */
 .visually-hidden {
