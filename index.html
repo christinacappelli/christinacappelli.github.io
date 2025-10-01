@@ -6,6 +6,109 @@
 		<title>Christina Cappelli · Portfolio</title>
 		<meta name="description" content="Portfolio of projects by Christina Cappelli" />
 		<link rel="stylesheet" href="./style.css" />
+		<style>
+			.modal {
+				display: none;
+				position: fixed;
+				top: 0; left: 0; width: 100vw; height: 100vh;
+				z-index: 1000;
+				justify-content: center;
+				align-items: center;
+			}
+			.modal.active {
+				display: flex;
+			}
+			.modal-backdrop {
+				position: absolute;
+				top: 0; left: 0; width: 100vw; height: 100vh;
+				background: rgba(0,0,0,0.5);
+				z-index: 1;
+			}
+				.modal-content {
+					position: relative;
+					background: #fff;
+					padding: 2rem;
+					border-radius: 8px;
+					max-width: 900px;
+					width: 98vw;
+					z-index: 2;
+					box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+					max-height: 95vh;
+					overflow-y: auto;
+				}
+			.modal-close {
+				position: absolute;
+				top: 1rem;
+				right: 1rem;
+				background: none;
+				border: none;
+				font-size: 2rem;
+				cursor: pointer;
+				z-index: 3;
+			}
+								.modal-gallery {
+									column-count: 3;
+									column-gap: 18px;
+									width: 100%;
+									max-width: 900px;
+									margin: 0 auto;
+								}
+								.modal-gallery figure {
+									margin: 0 0 18px 0;
+									display: block;
+									break-inside: avoid;
+									background: none;
+									border-radius: 0;
+									padding: 0;
+									width: 100%;
+								}
+								.modal-gallery img {
+									width: 100%;
+									height: auto;
+									border-radius: 10px;
+									object-fit: cover;
+									background: #f6f6f6;
+									display: block;
+									box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+									margin-bottom: 8px;
+									break-inside: avoid;
+									max-height: none;
+								}
+			.modal-gallery figcaption {
+				text-align: left;
+				color: #444;
+				font-size: 0.97em;
+				margin: 0 4px 0 2px;
+				word-break: break-word;
+				line-height: 1.4;
+			}
+										@media (max-width: 900px) {
+											.modal-gallery {
+												column-count: 2;
+												column-gap: 12px;
+											}
+											.modal-gallery img {
+												border-radius: 8px;
+											}
+										}
+										@media (max-width: 600px) {
+											.modal-content {
+												padding: 1rem;
+												max-width: 99vw;
+											}
+											.modal-gallery {
+												column-count: 1;
+												column-gap: 0;
+											}
+											.modal-gallery img {
+												border-radius: 6px;
+											}
+											.modal-gallery figcaption {
+												text-align: center;
+												margin: 0 0 8px 0;
+											}
+										}
+		</style>
 	</head>
 	<body>
 		<header class="site-header" role="banner">
@@ -46,10 +149,10 @@
 						</ul>
 					</article>
 
-					<article class="project-card">
+					<article class="project-card clickable-thumb" data-project="tranference">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/material.jpg');"></div>
 						<h3 class="project-title">Tranference</h3>
-						<p class="project-desc">Explorations in traditional dyeing and fermentation processes that inform the basis of speculative artifacts and future possibilities.</p>
+						<p class="project-desc">Research in traditional dyeing and fermentation processes that inform the basis of speculative artifacts. This project currently only showcases material research from my time in San Jose Delgado, Mexico. </p>
 						<ul class="project-tags">
 							<li>Indigo Dying</li><li>Fermentation</li><li>Organic Materials</li>
 						</ul>
@@ -142,6 +245,23 @@
 					category: 'Interactive Installation',
 					image: './thumbs/dream.jpg',
 					videoUrl: 'https://vimeo.com/1098886681?fl=pl&fe=sh'
+				},
+				'tranference': {
+					title: 'Tranference: Mexico',
+					description: 'Documentation of material research in traditional dyeing, painting and fermentation.',
+					images: [
+						{ src: './transference/1.jpg', caption: 'natural paint samples' },
+						{ src: './transference/2.jpg', caption: 'organic indigo being ground into paste for dying' },
+						{ src: './transference/3.jpg', caption: 'sodium chloride (NaCl)' },
+						{ src: './transference/4.jpg', caption: 'pattern making with dye' },
+						{ src: './transference/5.jpg', caption: 'dyed cloth with tannins, indigo, and caracol púrpura (purple snail secretion' },
+						{ src: './transference/7.jpg', caption: 'tannin fabric tied with rusted wire for black patterns' },
+						{ src: './transference/8.jpg', caption: 'caracol púrpura dying vat' },
+						// { src: './transference/6.jpg', caption: 'silk dyed with indigo' },
+						// { src: './transference/9.jpg', caption: 'painting with petroleum on cotton fabric' },					
+						{ src: './transference/10.jpg', caption: 'organic indigo dying vat' },					
+
+					]
 				}
 			};
 
@@ -150,8 +270,26 @@
 				thumb.addEventListener('click', function() {
 					const projectId = this.getAttribute('data-project');
 					const project = projectData[projectId];
-					
-					if (project) {
+					if (projectId === 'tranference' && project && project.images) {
+						modalBody.innerHTML = `
+							<div class="modal-header">
+								<h2 id="modal-title" style="margin-bottom:0.5em;">${project.title}</h2>
+								<p style="color:#666;font-size:1em;margin-bottom:1.5em;">${project.description}</p>
+							</div>
+							<div class="modal-gallery">
+								${project.images.map(img => `
+									<figure>
+										<img src="${img.src}" alt="${img.caption}" />
+										<figcaption>${img.caption}</figcaption>
+									</figure>
+								`).join('')}
+							</div>
+						`;
+						modal.classList.add('active');
+						document.body.style.overflow = 'hidden';
+						modal.setAttribute('aria-hidden', 'false');
+					} else if (project) {
+						// ...existing code...
 						modalBody.innerHTML = `
 							<div class="modal-header">
 								<h2 id="modal-title">${project.title}</h2>
@@ -174,7 +312,6 @@
 								${project.videoUrl ? `<a href="${project.videoUrl}" target="_blank" rel="noopener" class="modal-video-link">Watch Video</a>` : ''}
 							</div>
 						`;
-						
 						modal.classList.add('active');
 						document.body.style.overflow = 'hidden';
 						modal.setAttribute('aria-hidden', 'false');
