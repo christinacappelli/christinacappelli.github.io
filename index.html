@@ -6,192 +6,95 @@
 		<title>Christina Cappelli · Portfolio</title>
 		<meta name="description" content="Portfolio of projects by Christina Cappelli" />
 		<link rel="stylesheet" href="./style.css" />
-		<style>
-			.modal {
-				display: none;
-				position: fixed;
-				top: 0; left: 0; width: 100vw; height: 100vh;
-				z-index: 1000;
-				justify-content: center;
-				align-items: center;
-			}
-			.modal.active {
-				display: flex;
-			}
-			.modal-backdrop {
-				position: absolute;
-				top: 0; left: 0; width: 100vw; height: 100vh;
-				background: rgba(0,0,0,0.5);
-				z-index: 1;
-			}
-				.modal-content {
-					position: relative;
-					background: #fff;
-					padding: 2rem;
-					border-radius: 8px;
-					max-width: 900px;
-					width: 98vw;
-					z-index: 2;
-					box-shadow: 0 8px 32px rgba(0,0,0,0.2);
-					max-height: 95vh;
-					overflow-y: auto;
-				}
-			.modal-close {
-				position: absolute;
-				top: 1rem;
-				right: 1rem;
-				background: none;
-				border: none;
-				font-size: 2rem;
-				cursor: pointer;
-				z-index: 3;
-			}
-								.modal-gallery {
-									column-count: 3;
-									column-gap: 18px;
-									width: 100%;
-									max-width: 900px;
-									margin: 0 auto;
-								}
-								.modal-gallery figure {
-									margin: 0 0 18px 0;
-									display: block;
-									break-inside: avoid;
-									background: none;
-									border-radius: 0;
-									padding: 0;
-									width: 100%;
-								}
-								.modal-gallery img {
-									width: 100%;
-									height: auto;
-									border-radius: 10px;
-									object-fit: cover;
-									background: #f6f6f6;
-									display: block;
-									box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-									margin-bottom: 8px;
-									break-inside: avoid;
-									max-height: none;
-								}
-			.modal-gallery figcaption {
-				text-align: left;
-				color: #444;
-				font-size: 0.97em;
-				margin: 0 4px 0 2px;
-				word-break: break-word;
-				line-height: 1.4;
-			}
-										@media (max-width: 900px) {
-											.modal-gallery {
-												column-count: 2;
-												column-gap: 12px;
-											}
-											.modal-gallery img {
-												border-radius: 8px;
-											}
-										}
-										@media (max-width: 600px) {
-											.modal-content {
-												padding: 1rem;
-												max-width: 99vw;
-											}
-											.modal-gallery {
-												column-count: 1;
-												column-gap: 0;
-											}
-											.modal-gallery img {
-												border-radius: 6px;
-											}
-											.modal-gallery figcaption {
-												text-align: center;
-												margin: 0 0 8px 0;
-											}
-										}
-		</style>
+		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script src="./script.js" defer></script>
 	</head>
+
 	<body>
+		<!-- Updates Banner -->
+		<div class="updates-banner">
+			<div class="updates-text">
+				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
+				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
+			</div>
+		</div>
+
 		<header class="site-header" role="banner">
 			<div class="container">
 				<h1 class="site-title">Christina Cappelli</h1>
-								<p class="site-tagline">Technologist |  Designer | <a href="production.html" style="color: #333; text-decoration: none;">Producer</a></p>
-			
+				<p class="site-tagline">Technologist + Designer | <a href="production.html" style="color: #333; text-decoration: none;">Creative Producer</a></p>
 			</div>
 		</header>
 
-		<!-- <section class="bio-section">
-			<div class="container">
-				<p class="bio-text">Brooklyn-based technologist and designer whose speculative explorations of natural systems drive immersive computational videos and generative designs. I'm a National Science Foundation and NYU Entrepreneurial Institute grantee who's also photographed and produced international campaigns for many years. A graduate of NYU's Interactive Telecommunications Program, I create work that bridges science, technology, and storytelling to imagine futures both uncanny and alive.</p> 
-			</div>
-		</section>  -->
-
+		<!--  PROJECT SECTION -->
 		<main id="projects" class="projects-section" role="main" aria-labelledby="projects-title">
 			<h2 id="projects-title" class="visually-hidden">Projects</h2>
 			<div class="container">
 				<div class="projects-grid">
 
-					<!-- Sample project cards -->
-					<article class="project-card">
+					<!--  project cards -->
+					<article class="project-card" data-project="sumbioun">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/sumbioun.jpg');"></div>
 						<h3 class="project-title">Sumbioun</h3>
-						<p class="project-desc">A film exploring the biological struggle of imaginal cells in metamorphosis as a metaphor for what happens when the past refuses to let the future emerge.</p>
+						<p class="project-desc">In a utopia of insect-mammalian hybrids evolving through dream-guarded metamorphosis, one young creature’s awakening reveals that ancient humans may still be alive — and hunting them.</p>
 						<ul class="project-tags">
-							<li>Generative AI</li><li>Blender</li><li>Unreal</li>
+							<li>Generative AI</li><li>Blender</li><li>Unreal</li><li>Coming Soon</li>
 						</ul>
 					</article>
 
-					<article class="project-card">
-						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/bloom.jpg');"></div>
-						<h3 class="project-title">Generative Blooms</h3>
-						<p class="project-desc">A series of generative images and animations based on evolutionary traits of microbes.</p>
+					<article class="project-card" data-project="genai">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/ysl.jpg');"></div>
+						<h3 class="project-title">Generative Work</h3>
+						<p class="project-desc">A series of generative image and video samples from branded and client work as well as artist concepts and general experimentation. </p>
 						<ul class="project-tags">
-							<li>Generative AI</li><li>Blender</li><li>Touchdesigner</li>
+							<li>Generative AI</li><li>Comfy UI</li><li>Prompt Engineering</li>
 						</ul>
 					</article>
 
-					<article class="project-card clickable-thumb" data-project="tranference">
+					<article class="project-card clickable-thumb" data-project="transference">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/material.jpg');"></div>
-						<h3 class="project-title">Tranference</h3>
-						<p class="project-desc">Research in traditional dyeing and fermentation processes that inform the basis of speculative artifacts. This project currently only showcases material research from my time in San Jose Delgado, Mexico. </p>
+						<h3 class="project-title">Transference</h3>
+						<p class="project-desc"> Research in traditional dyeing processes that inform the basis of speculative artifacts. This project currently showcases research documentation from my time spent in San Jose Delgado, Mexico.</p>
 						<ul class="project-tags">
 							<li>Indigo Dying</li><li>Fermentation</li><li>Organic Materials</li>
 						</ul>
 					</article>
 
-					<article class="project-card">
+					<article class="project-card" data-project="dream">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/dream.jpg');"></div>
 						<h3 class="project-title">Dream Collector</h3>
-						<p class="project-desc"> A web app and interactive interface that uses AI to turn scattered dream memories into a visual archive.</p>
+						<p class="project-desc"> Dream Collector is a web app and interactive installation that uses AI to turn scattered dream memories into vivid visuals. </p>
 						<ul class="project-tags">
 							<li>TouchDesigner</li><li>Mediapipe</li><li>OpenAI</li>
 						</ul>
-						<a class="project-link-small" href="https://vimeo.com/1098886681?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
+						<!-- <a class="project-link-small" href="https://vimeo.com/1098886681?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
 					</article>
 
-					<article class="project-card">
-						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/void.jpg');"></div>
-						<h3 class="project-title">The Void</h3>
-						<p class="project-desc">An interactive exploration of digital identity exposing a feedback loop where identity is shaped by the systems mediating it. </p>
-						<ul class="project-tags">
-							<li>openFrameworks</li><li>Computer Vision</li><li>Consumer Culture</li>
-						</ul>
-						<a class="project-link-small" href="https://vimeo.com/1061865042?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
-					</article>
+					   <article class="project-card clickable-thumb" data-project="void">
+						   <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/void.jpg');"></div>
+						   <h3 class="project-title">The Void</h3>
+						   <p class="project-desc">An interactive exploration of digital identity exposing a feedback loop where identity is shaped by the systems mediating it. </p>
+						   <ul class="project-tags">
+							   <li>openFrameworks</li><li>Computer Vision</li><li>Consumer Culture</li>
+						   </ul>
+						   <!-- <a class="project-link-small" href="https://vimeo.com/1061865042?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
+					   </article>
 
-					<article class="project-card">
+					<article class="project-card clickable-thumb" data-project="liminal">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/liminal.jpg');"></div>
 						<h3 class="project-title">Liminal Lens</h3>
 						<p class="project-desc">An interactive installation inviting participants to reflect on scale, perception, and their entanglement with microscopic life.</p>
 						<ul class="project-tags">
 							<li>openFrameworks</li><li>Computer Vision</li><li>Volvox Algae</li>
 						</ul>
-						<a class="project-link-small" href="https://vimeo.com/791984894?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a>
+						<!-- <a class="project-link-small" href="https://vimeo.com/791984894?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
 					</article>
 
 				</div>
 			</div>
 		</main>
 
+		<!-- FOOTER -->
 		<footer class="site-footer" role="contentinfo">
 			<div class="container">
 				<nav aria-label="Contact links">
@@ -210,131 +113,43 @@
 			</script>
 		</footer>
 
-		<!-- Modal for project details -->
-		<div id="project-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
-			<div class="modal-backdrop"></div>
-			<div class="modal-content">
-				<button class="modal-close" aria-label="Close modal">&times;</button>
-				<div id="modal-body">
-					<!-- Content will be populated by JavaScript -->
-				</div>
-			</div>
-		</div>
+        <!-- Project Popup -->
+        <div id="projectPopup" class="project-popup" style="display: none;">
+            <div class="popup-overlay"></div>
+            <div class="popup-content">
+                <button class="popup-close" aria-label="Close popup">&times;</button>
+                <header class="popup-header">
+                    <h2 class="popup-title"></h2>
+                    <h3 class="popup-subtitle"></h3>
+                </header>
+                <div class="popup-body">
+                    <p class="popup-description"></p>
+                    <div class="popup-video-container"></div>
+                    <div class="popup-body-text"></div>
+                    
+                    <div class="popup-gallery-section">
+                        <div class="gallery-container">
+                            <h4 class="gallery-title">Gallery 1</h4>
+                            <div class="image-gallery gallery-1"></div>
+                        </div>
+                        
+                        <div class="gallery-container">
+                            <h4 class="gallery-title">Gallery 2</h4>
+                            <div class="image-gallery gallery-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<script>
-			// Modal functionality
-			const modal = document.getElementById('project-modal');
-			const modalBody = document.getElementById('modal-body');
-			const modalClose = document.querySelector('.modal-close');
-			const modalBackdrop = document.querySelector('.modal-backdrop');
-
-			// Project data
-			const projectData = {
-				'dream-collector': {
-					title: 'Dream Collector',
-					description: 'Dream Collector is an interactive web application that transforms scattered dream memories into a cohesive visual archive. Using AI and computer vision technologies, the project explores the intersection of memory, consciousness, and digital representation.',
-					details: [
-						'Built with TouchDesigner for real-time visual generation',
-						'Integrated MediaPipe for gesture and movement tracking',
-						'Utilizes OpenAI for dream narrative processing and interpretation',
-						'Features an intuitive interface for dream input and visualization',
-						'Creates personalized dream landscapes based on user memories'
-					],
-					technologies: ['TouchDesigner', 'MediaPipe', 'OpenAI', 'JavaScript', 'WebGL'],
-					year: '2024',
-					category: 'Interactive Installation',
-					image: './thumbs/dream.jpg',
-					videoUrl: 'https://vimeo.com/1098886681?fl=pl&fe=sh'
-				},
-				'tranference': {
-					title: 'Tranference: Mexico',
-					description: 'Documentation of material research in traditional dyeing, painting and fermentation.',
-					images: [
-						{ src: './transference/1.jpg', caption: 'natural paint samples' },
-						{ src: './transference/2.jpg', caption: 'organic indigo being ground into paste for dying' },
-						{ src: './transference/3.jpg', caption: 'sodium chloride (NaCl)' },
-						{ src: './transference/4.jpg', caption: 'pattern making with dye' },
-						{ src: './transference/5.jpg', caption: 'dyed cloth with tannins, indigo, and caracol púrpura (purple snail secretion' },
-						{ src: './transference/7.jpg', caption: 'tannin fabric tied with rusted wire for black patterns' },
-						{ src: './transference/8.jpg', caption: 'caracol púrpura dying vat' },
-						// { src: './transference/6.jpg', caption: 'silk dyed with indigo' },
-						// { src: './transference/9.jpg', caption: 'painting with petroleum on cotton fabric' },					
-						{ src: './transference/10.jpg', caption: 'organic indigo dying vat' },					
-
-					]
-				}
-			};
-
-			// Open modal
-			document.querySelectorAll('.clickable-thumb').forEach(thumb => {
-				thumb.addEventListener('click', function() {
-					const projectId = this.getAttribute('data-project');
-					const project = projectData[projectId];
-					if (projectId === 'tranference' && project && project.images) {
-						modalBody.innerHTML = `
-							<div class="modal-header">
-								<h2 id="modal-title" style="margin-bottom:0.5em;">${project.title}</h2>
-								<p style="color:#666;font-size:1em;margin-bottom:1.5em;">${project.description}</p>
-							</div>
-							<div class="modal-gallery">
-								${project.images.map(img => `
-									<figure>
-										<img src="${img.src}" alt="${img.caption}" />
-										<figcaption>${img.caption}</figcaption>
-									</figure>
-								`).join('')}
-							</div>
-						`;
-						modal.classList.add('active');
-						document.body.style.overflow = 'hidden';
-						modal.setAttribute('aria-hidden', 'false');
-					} else if (project) {
-						// ...existing code...
-						modalBody.innerHTML = `
-							<div class="modal-header">
-								<h2 id="modal-title">${project.title}</h2>
-								<p class="modal-meta">${project.category} • ${project.year}</p>
-							</div>
-							<div class="modal-image">
-								<img src="${project.image}" alt="${project.title}" />
-							</div>
-							<div class="modal-description">
-								<p>${project.description}</p>
-								<ul class="modal-details">
-									${project.details.map(detail => `<li>${detail}</li>`).join('')}
-								</ul>
-								<div class="modal-tech">
-									<h4>Technologies:</h4>
-									<div class="tech-tags">
-										${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-									</div>
-								</div>
-								${project.videoUrl ? `<a href="${project.videoUrl}" target="_blank" rel="noopener" class="modal-video-link">Watch Video</a>` : ''}
-							</div>
-						`;
-						modal.classList.add('active');
-						document.body.style.overflow = 'hidden';
-						modal.setAttribute('aria-hidden', 'false');
-					}
-				});
-			});
-
-			// Close modal
-			function closeModal() {
-				modal.classList.remove('active');
-				document.body.style.overflow = '';
-				modal.setAttribute('aria-hidden', 'true');
-			}
-
-			modalClose.addEventListener('click', closeModal);
-			modalBackdrop.addEventListener('click', closeModal);
-			
-			// Close on Escape key
-			document.addEventListener('keydown', function(e) {
-				if (e.key === 'Escape' && modal.classList.contains('active')) {
-					closeModal();
-				}
-			});
-		</script>
+        <!-- Image Expansion Overlay -->
+        <div id="imageOverlay" class="image-overlay">
+            <button class="image-overlay-close" aria-label="Close expanded image">&times;</button>
+            <button class="image-nav-arrow image-nav-prev" aria-label="Previous image">‹</button>
+            <button class="image-nav-arrow image-nav-next" aria-label="Next image">›</button>
+            <img class="expanded-image" alt="Expanded gallery image">
+            <div class="image-counter"></div>
+        </div>
 	</body>
-</html>
+	</html>
+		

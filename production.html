@@ -3,42 +3,44 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Production - Christina Cappelli</title>
+		<title> Creative Producer - Christina Cappelli</title>
 		<meta name="description" content="Production work by Christina Cappelli" />
 		<link rel="stylesheet" href="./style.css" />
 	</head>
+
 	<body>
-	<!-- HEADER: .site-header (sticky). Check .site-header .container padding: 22px 16px -->
+	<!-- Updates Banner -->
+	<div class="updates-banner">
+		<div class="updates-text">
+			<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
+			<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
+		</div>
+	</div>
+
 	<header class="site-header" role="banner">
 			<div class="container">
 				<h1 class="site-title"><a href="index.html" style="text-decoration: none; color: inherit;">Christina Cappelli</a></h1>
-				<p class="site-tagline">Production Work | <a href="index.html" style="text-decoration: none; color: #333;">Technology + Design</a></p>
+				<p class="site-tagline">Creative Producer | <a href="index.html" style="text-decoration: none; color: #333;">Technologist + Designer</a></p>
 			</div>
 		</header>
 
-    <!-- MAIN: #production .projects-section
-	    - Inline styles: margin-bottom: 0.5rem; padding-top: 2rem;
-	    - Related CSS: .projects-section .container { padding: 5px 16px 16px; }
-    -->
+    <!-- MAIN PRODUCTION PROJECTS SECTION -->
     <main id="production" class="projects-section" role="main" style="margin-bottom: 0.5rem; padding-top: 2rem;">
 	
 			<div class="container">
-				<!-- SECTION HEADING: margin-bottom: 1.25rem -->
+				<!-- SECTION HEADING. -->
 				<h2 style="text-align: center; margin-bottom: 1.25rem; font-weight: 300;">Select Production Work</h2>
-				<!-- INTRO PARAGRAPH: margin-bottom: 1.25rem; max-width: 600px -->
+				<!-- INTRO PARAGRAPH -->
 				<p style="text-align: center; color: var(--muted); margin-bottom: 1.25rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-					Production work spanning interactive installations, digital experiences, and beauty campaigns.
+					Creative producing work spanning interactive installations, digital experiences, and beauty campaigns.
 				</p>
 				
-			 <!-- PROJECTS GRID: .projects-grid
-				 - CSS: margin-top: 20px; gap: 22px; (we also added margin-bottom earlier)
-				 - Check .projects-grid margin-bottom if present
-			 -->
+			 <!-- PROJECTS GRID -->
 			 <div class="projects-grid">
 					<article class="project-card">
                         <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/proxima.jpg');"></div>
                         <h3 class="project-title">Proxima Kòsmos</h3>
-						<p class="project-desc">Proxima Kosmos is a digital experience where planetary speculation meets art, science, and immersive storytelling. I led the creative production of the interactive website and supporting visual systems, translating research and narrative into a cohesive digital journey.</p>
+						<p class="project-desc">Proxima Kòsmos is a digital experience where planetary speculation meets art, science, and immersive storytelling. I led the creative production of the interactive website and supporting visual systems, translating research and narrative into a cohesive digital journey.</p>
 						<ul class="project-tags">
 							<li>Project Management</li><li>Copy Editing</li><li>Creative Feedback</li><li>Social Media Edits</li><li>Design Research</li>
 						</ul>
@@ -74,7 +76,7 @@
 
 				</div>
 
-			 <!-- Clients marquee (continuous scroll)-->
+			 <!-- CLIENT MARQUEE (continuous scroll)-->
 			 <section class="client-marquee" aria-label="Clients carousel">
 					<div class="marquee-track" aria-hidden="false">
 						<div class="marquee-group">
@@ -99,7 +101,8 @@
 							 <img src="./clients/pst.png" alt="Getty PST" />
 
 						</div>
-						<!-- duplicate group for continuous scroll -->
+
+						<!-- MARQUEE DUPLICATE for continuous scroll -->
 						<div class="marquee-group" aria-hidden="true">
 							<img src="./clients/ae.png" alt="" />
 							<img src="./clients/cnbc.png" alt="" />
@@ -126,9 +129,7 @@
 			</div>
 		</main>
 
-	   <!-- FOOTER: .site-footer
-		   - CSS: .site-footer .container padding: 15px 16px (controls footer height)
-	   -->
+	   <!-- FOOTER -->
 	   <footer class="site-footer" role="contentinfo">
 			<div class="container">
 				<nav aria-label="Contact links">
@@ -141,10 +142,6 @@
 				</nav>
 				<small class="copyright">© <span id="year"></span> Christina Cappelli</small>
 			</div>
-			<script>
-				// Update footer year automatically
-				document.getElementById('year').textContent = new Date().getFullYear();
-			</script>
 		</footer>
 	</body>
 </html>
