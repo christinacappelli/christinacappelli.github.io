@@ -1,17 +1,21 @@
 // PROJECT DATA FOR ALL POP UPS
 const projectData = {
   sumbioun: {
-    title: "Sumbioun - coming soon",
+    title: "Sumbioun",
     description:
-      "In a post-extinction utopia where insect-mammalian hybrids evolve through dream-guarded metamorphosis, one young creature’s transformation is haunted by memories of another life — revealing that ancient humans may still exist. As her visions blur the line between dream and reality, she becomes the key to uncovering a hidden war between evolution and extinction itself.",
+      "In a post-extinction utopia new humans evolve through dream-guarded metamorphosis, and one young womans transformation is haunted by memories of another life — revealing that ancient humans may still exist. As her visions blur the line between dream and reality, she becomes the key to uncovering a hidden war between evolution and extinction itself.",
     galleries: {
-      Sample: [{ src: "./sumbioun/sumbioun.mp4", type: "video" }],
+      Samples: [
+        { src: "./sumbioun/sumbioun.mp4", type: "video" },
+        { src: "./sumbioun/1.jpg" },
+        { src: "./sumbioun/2.jpg" },
+      ],
     },
   },
   transference: {
     title: "Transference",
     galleries: {
-      "Photo Documentation": [
+      "": [
         { src: "./transference/1.jpg", caption: "natural paint samples" },
         {
           src: "./transference/2.jpg",
@@ -111,7 +115,7 @@ const projectData = {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
     description:
-      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. – On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. – In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes and then swipe through others past dreams in real time.",
+      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes and then swipe through others past dreams in real time.",
     videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
@@ -135,7 +139,8 @@ const projectData = {
         },
         {
           src: "./dream/overlay.jpg",
-          caption: "Implimenting past image overlays to hand gesture interactions ",
+          caption:
+            "Implimenting past image overlays to hand gesture interactions ",
           layout: "pinterest",
         },
 
@@ -270,10 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
       // Check if this is The Void project for special layout
       const isVoidProject = project.title === "The Void";
       const isSumbioun = project.title === "Sumbioun";
-      // Only apply 'void-gallery' to The Void and Sumbioun, not Generative
-      if (isVoidProject || isSumbioun) {
+      // Only apply 'void-gallery' to The Void, not Sumbioun or Generative
+      if (isVoidProject) {
         gallery.classList.add("void-gallery");
       }
+      // Sumbioun now uses same format as Transference (Masonry grid)
       // Track loaded images for Masonry initialization
       let loadedImages = 0;
       const totalImages = images.length;
