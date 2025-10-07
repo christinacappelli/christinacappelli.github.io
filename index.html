@@ -26,6 +26,8 @@
 			</div>
 		</header>
 
+
+
 		<!--  PROJECT SECTION -->
 		<main id="projects" class="projects-section" role="main" aria-labelledby="projects-title">
 			<h2 id="projects-title" class="visually-hidden">Projects</h2>
@@ -103,6 +105,7 @@
 						<li><a href="https://www.linkedin.com/in/christina-cappelli/" target="_blank" rel="noopener">LinkedIn</a></li>
 						<li><a href="https://github.com/christinacappelli" target="_blank" rel="noopener">GitHub</a></li>
 						<li><a href="https://www.behance.net/christinacappelli" target="_blank" rel="noopener">Behance</a></li>
+						<li><button id="aboutBtn" style="color: #333; text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li>
 					</ul>
 				</nav>
 				<small class="copyright">© <span id="year"></span> Christina Cappelli</small>
@@ -149,6 +152,16 @@
             <button class="image-nav-arrow image-nav-next" aria-label="Next image">›</button>
             <img class="expanded-image" alt="Expanded gallery image">
             <div class="image-counter"></div>
+        </div>
+
+        <!-- About Popup -->
+        <div id="aboutPopup" class="about-popup" style="display: none;">
+            <div class="popup-overlay"></div>
+            <div class="popup-content">
+                <button class="popup-close" aria-label="Close about popup">&times;</button>
+                <h2>About</h2>
+                <p>I'm a creative technologist and interactive media artist exploring the intersections of art, science, and technology. My work uses emerging tools and speculative design to uncover hidden patterns in nature and question how we perceive reality. Through interactive installations and digital media, I create immersive experiences that invite audiences to reimagine their connection to the microscopic and digital worlds around them.</p>
+            </div>
         </div>
 	</body>
 	</html>

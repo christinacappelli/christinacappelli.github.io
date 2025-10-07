@@ -6,6 +6,61 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
+/* About popup styles */
+.about-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.about-popup .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.about-popup .popup-content {
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    margin: 5vh auto;
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 32px;
+    overflow-y: auto;
+}
+
+.about-popup .popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+}
+
+.about-popup h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+}
+
+.about-popup p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
 /* Base reset and variables */
 
 * { box-sizing: border-box; }
@@ -645,6 +700,50 @@ body {
 }
 
 .void-gallery .gallery-image:hover {
+    transform: scale(1.02);
+}
+
+.void-gallery .gallery-video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.void-gallery .gallery-video:hover {
+    transform: scale(1.02);
+}
+
+/* Sumbioun justified grid layout */
+.sumbioun-gallery {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.sumbioun-gallery .gallery-image-wrapper {
+    flex: 1;
+    margin-bottom: 0;
+    display: flex;
+}
+
+.sumbioun-gallery .gallery-video {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    max-height: none;
+}
+
+.sumbioun-gallery .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sumbioun-gallery .gallery-image:hover,
+.sumbioun-gallery .gallery-video:hover {
     transform: scale(1.02);
 }
 

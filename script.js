@@ -5,11 +5,20 @@ const projectData = {
     description:
       "In a post-extinction utopia new humans evolve through dream-guarded metamorphosis, and one young womans transformation is haunted by memories of another life — revealing that ancient humans may still exist. As her visions blur the line between dream and reality, she becomes the key to uncovering a hidden war between evolution and extinction itself.",
     galleries: {
-      Samples: [
-        { src: "./sumbioun/sumbioun.mp4", type: "video" },
-        { src: "./sumbioun/1.jpg" },
-        { src: "./sumbioun/2.jpg" },
+      Process: [
+        { src: "./sumbioun/1.jpg", caption: "cocoon 01 " },
+        { src: "./sumbioun/2.jpg", caption: "cocoon 02 " },
+        {
+          src: "./sumbioun/sumbioun.mp4",
+          type: "video",
+          caption: "cocoon beginning to close timelapse",
+        },
       ],
+      // "Iterations": [
+      //   { src: "./sumbioun/3.jpg", caption: "character design sketches" },
+      //   { src: "./sumbioun/4.jpg", caption: "environment concept art" },
+      //   { src: "./sumbioun/5.jpg", caption: "storyboard frames" },
+      // ],
     },
   },
   transference: {
@@ -143,13 +152,6 @@ const projectData = {
             "Implimenting past image overlays to hand gesture interactions ",
           layout: "pinterest",
         },
-
-        // {
-        //   src: "./dream/smoke.mp4",
-        //   type: "video",
-        //   caption: "Smoke paintbrush testing",
-        //   layout: "pinterest",
-        // },
         {
           src: "./dream/smoke.jpg",
           caption: "Smoke paintbrush testing",
@@ -275,18 +277,19 @@ document.addEventListener("DOMContentLoaded", () => {
       // Check if this is The Void project for special layout
       const isVoidProject = project.title === "The Void";
       const isSumbioun = project.title === "Sumbioun";
-      // Only apply 'void-gallery' to The Void, not Sumbioun or Generative
+      // Apply special layouts
       if (isVoidProject) {
         gallery.classList.add("void-gallery");
+      } else if (isSumbioun) {
+        gallery.classList.add("sumbioun-gallery");
       }
-      // Sumbioun now uses same format as Transference (Masonry grid)
       // Track loaded images for Masonry initialization
       let loadedImages = 0;
       const totalImages = images.length;
 
       const initializeMasonry = () => {
-        // Skip Masonry for Void project - it uses CSS Grid
-        if (isVoidProject) {
+        // Skip Masonry for Void and Sumbioun projects - they use CSS Grid
+        if (isVoidProject || isSumbioun) {
           return;
         }
 
@@ -588,6 +591,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Prevent clicking inside popup content from closing the popup
   popupContent.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  // About popup functionality
+  const aboutBtn = document.getElementById("aboutBtn");
+  const aboutPopup = document.getElementById("aboutPopup");
+  const aboutCloseBtn = aboutPopup.querySelector(".popup-close");
+
+  aboutBtn.addEventListener("click", () => {
+    aboutPopup.style.display = "block";
+    document.body.style.overflow = "hidden";
+  });
+
+  aboutCloseBtn.addEventListener("click", () => {
+    aboutPopup.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  aboutPopup.querySelector(".popup-overlay").addEventListener("click", () => {
+    aboutPopup.style.display = "none";
+    document.body.style.overflow = "";
+  });
+
+  aboutPopup.querySelector(".popup-content").addEventListener("click", (e) => {
     e.stopPropagation();
   });
   });
