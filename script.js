@@ -1,28 +1,6 @@
 
 // PROJECT DATA FOR ALL POP UPS
 const projectData = {
-  // sumbioun: {
-  //   title: "Sumbioun",
-  //   description:
-  //     "In a post-extinction utopia new humans evolve through dream-guarded metamorphosis, and one young womans transformation is haunted by memories of another life — revealing that ancient humans may still exist. As her visions blur the line between dream and reality, she becomes the key to uncovering a hidden war between evolution and extinction itself.",
-  //   galleries: {
-  //     Process: [
-  //       { src: "./sumbioun/1.jpg", caption: "cocoon 01 " },
-  //       { src: "./sumbioun/2.jpg", caption: "cocoon 02 " },
-  //       {
-  //         src: "./sumbioun/sumbioun.mp4",
-  //         type: "video",
-  //         caption: "cocoon beginning to close timelapse",
-  //       },
-  //     ],
-  //     // "Iterations": [
-  //     //   { src: "./sumbioun/3.jpg", caption: "character design sketches" },
-  //     //   { src: "./sumbioun/4.jpg", caption: "environment concept art" },
-  //     //   { src: "./sumbioun/5.jpg", caption: "storyboard frames" },
-  //     // ],
-  //   },
-  // },
-
   void: {
     title: "The Void",
     subtitle: "Interactive Digital Experience",
@@ -54,47 +32,6 @@ const projectData = {
       ],
     },
   },
-  // genai: {
-  //   title: "Generative Samples",
-  //   subtitle: "AI-Generated Work",
-  //   galleries: {
-  //     "Generative Work": [
-  //       { src: "./genai/ysl2.jpg", caption: "YSL Sample", layout: "pinterest" },
-  //       {
-  //         src: "./genai/tesse.jpg",
-  //         caption: "Branded Image, Tessé",
-  //         layout: "pinterest",
-  //       },
-  //       {
-  //         src: "./genai/pk.jpg",
-  //         caption: " Proxima Kòsmos Exoplanet Render",
-  //         layout: "pinterest",
-  //       },
-  //       {
-  //         src: "./genai/moss.jpg",
-  //         caption: "Custom Cover Image, Authors novel ",
-  //         layout: "pinterest",
-  //       },
-  //       {
-  //         src: "./genai/avilia.mp4",
-  //         type: "video",
-  //         caption: "Avilia - AI Avatar Sample",
-  //         layout: "pinterest",
-  //       },
-  //       {
-  //         src: "./genai/sumbioun.jpg",
-  //         caption: " Proxima Kòsmos Exoplanet Render",
-  //         layout: "pinterest",
-  //       },
-  //       {
-  //         src: "./genai/haunted.mp4",
-  //         type: "video",
-  //         caption: "Haunted Mini Film, Showcased: GenAI Fest",
-  //         layout: "pinterest",
-  //       },
-  //     ],
-  //   },
-  // },
   dream: {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
@@ -143,28 +80,6 @@ const projectData = {
       ],
     },
   },
-  // allinOne: {
-  //   title: "All in One",
-  //   subtitle: "Proof of Concept",
-  //   description:
-  //     "An interaction that simulates bacterial quorum sensing to transform microbial communication into an embodied, participatory experience. By prompting unfamiliar movement through nose tracking, the piece encourages participants to momentarily inhabit a non-human perspective, revealing how collective intelligence operates beyond individual control. Visualizing the invisible language of bacteria through glowing trails of light. Participants become part of a living ecosystem, their movements triggering digital 'autoinducers' that simulate bacterial quorum sensing. As more people move in harmony, the space reaches a threshold, erupting in collective bioluminescence. Inspired by the symbiotic relationship between Vibrio fischeri and the bobtail squid, the piece connects biological intelligence with a cosmic visual metaphor—evoking microbial stargazing and inviting reflection on the interconnectedness of life at both microscopic and celestial scales.",
-  //   // videoUrl: "https://vimeo.com/example",
-  //   galleries: {
-  //     "Demos: Code + Mapping ": [
-  //       "./allinone/test1.jpg",
-  //       "./allinone/test2.gif",
-  //       "./allinone/test3.gif",
-  //       "./allinone/test4.gif",
-  //     ],
-  //     "Demos: Human + Code Interaction": [
-  //       "./allinone/demo1.gif",
-  //       "./allinone/demo2.gif",
-  //       "./allinone/demo3.gif",
-  //       "./allinone/demo4.jpg",
-  //       "./allinone/demo5.jpg",
-  //     ],
-  //   },
-  // },
 
   liminal: {
     title: "Liminal Lens",
@@ -203,38 +118,6 @@ const projectData = {
     },
   },
 
-  // transference: {
-  //   title: "Transference",
-  //   galleries: {
-  //     "": [
-  //       { src: "./transference/1.jpg", caption: "natural paint samples" },
-  //       {
-  //         src: "./transference/2.jpg",
-  //         caption: "organic indigo being ground into paste for dying",
-  //       },
-  //       { src: "./transference/3.jpg", caption: "sodium chloride (NaCl)" },
-  //       {
-  //         src: "./transference/4.jpg",
-  //         caption: "pattern making with found objects",
-  //       },
-  //       {
-  //         src: "./transference/5.jpg",
-  //         caption:
-  //           "dyed cloth with tannins, indigo, and caracol púrpura (purple snail secretion",
-  //       },
-  //       {
-  //         src: "./transference/6.jpg",
-  //         caption: "organic indigo dyed cotton cloth",
-  //       },
-  //       {
-  //         src: "./transference/7.jpg",
-  //         caption: "tannin fabric tied with rusted wire for black patterns",
-  //       },
-  //       { src: "./transference/8.jpg", caption: "caracol púrpura dying vat" },
-  //       { src: "./transference/10.jpg", caption: "organic indigo dying vat" },
-  //     ],
-  //   },
-  // },
 };
 
 // Popup functionality
@@ -303,57 +186,13 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryTitle.textContent = title;
 
   const gallery = document.createElement("div");
-  gallery.className = `justified-gallery gallery-${index + 1}`;
-      // else if (isSumbioun) {
-      //   gallery.classList.add("sumbioun-gallery");
-      // }
-      // Track loaded images for Masonry initialization
+  // Use the unified gallery class for stacked full-width layout
+  gallery.className = `image-gallery gallery-${index + 1}`;
+      // Track loaded images (we simply reveal items when their media loads)
       let loadedImages = 0;
       const totalImages = images.length;
 
-      const initializeMasonry = () => {
-        // Skip Masonry for Void project - it uses CSS Grid
-        // if (isVoidProject || isSumbioun) {
-        // previously skipped Masonry for void project; isVoidProject was removed
-        // keep Masonry initialization active for all projects
-
-        // Determine column width based on screen size for full width
-        const galleryWidth = gallery.offsetWidth;
-        const isMobile = window.innerWidth <= 480;
-          // if (projectId === "sumbioun") {
-          //   videoContainer.classList.add("center-video");
-          // } else {
-          //   videoContainer.classList.remove("center-video");
-          // }
-        const isTablet = window.innerWidth <= 768;
-        let columnWidth, gutter;
-
-          videoContainer.classList.remove("center-video");
-        if (isMobile) {
-          columnWidth = galleryWidth; // Single column, full width
-          gutter = 0;
-        } else if (isTablet) {
-          columnWidth = (galleryWidth - 10) / 2; // Two columns, full width
-          gutter = 10;
-        } else {
-          // Calculate optimal columns for desktop full width
-          const minColumnWidth = 300;
-          const maxColumns = Math.floor(galleryWidth / minColumnWidth);
-          const columns = Math.max(2, maxColumns); // At least 2 columns
-          columnWidth = (galleryWidth - 20 * (columns - 1)) / columns;
-          gutter = 20;
-        }
-
-        // Initialize Masonry after all images are loaded
-        new Masonry(gallery, {
-          itemSelector: ".gallery-image-wrapper",
-          columnWidth: columnWidth,
-          gutter: gutter,
-          fitWidth: false, // Allow full width usage
-        });
-      };
-
-      images.forEach((imageData) => {
+  images.forEach((imageData) => {
         const wrapper = document.createElement("div");
         wrapper.className = "gallery-image-wrapper";
 
@@ -380,25 +219,13 @@ document.addEventListener("DOMContentLoaded", () => {
           video.onloadedmetadata = function () {
             wrapper.style.opacity = "1";
             loadedImages++;
-            if (loadedImages === totalImages) {
-              initializeMasonry();
-            }
           };
 
           video.onerror = function () {
             console.warn(`Failed to load video: ${imageData.src}`);
             wrapper.style.display = "none";
             loadedImages++;
-            if (loadedImages === totalImages) {
-              initializeMasonry();
-            }
           };
-
-          // Remove click-to-expand for videos to allow normal playback controls
-          // video.addEventListener('click', () => {
-          //   expandMedia({ type: 'video', src: imageData.src, alt: imageData.caption || `${project.title} gallery video` });
-          // });
-
           wrapper.appendChild(video);
         } else {
           const img = document.createElement("img");
@@ -413,17 +240,11 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             wrapper.style.display = "none";
             loadedImages++;
-            if (loadedImages === totalImages) {
-              initializeMasonry();
-            }
           };
 
           img.onload = function () {
             wrapper.style.opacity = "1";
             loadedImages++;
-            if (loadedImages === totalImages) {
-              initializeMasonry();
-            }
           };
 
           wrapper.appendChild(img);
@@ -446,6 +267,33 @@ document.addEventListener("DOMContentLoaded", () => {
       galleryContainer.appendChild(galleryTitle);
       galleryContainer.appendChild(gallery);
       gallerySection.appendChild(galleryContainer);
+      // Initialize Masonry for this gallery after a short timeout to ensure CSS widths applied
+      const initializeMasonry = () => {
+        if (typeof Masonry === 'undefined') return;
+        // Destroy previous instance if any
+        if (gallery._msn) {
+          try { gallery._msn.destroy(); } catch (e) { /* ignore */ }
+        }
+        gallery._msn = new Masonry(gallery, {
+          itemSelector: '.gallery-image-wrapper',
+          columnWidth: gallery.querySelector('.gallery-image-wrapper') || '.gallery-image-wrapper',
+          gutter: 20,
+          fitWidth: false
+        });
+      };
+
+      // Give media a moment to load and then init Masonry
+      setTimeout(initializeMasonry, 120);
+
+      // Re-layout on window resize
+      let resizeTimer;
+      const relayoutOnResize = () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (gallery._msn) gallery._msn.layout();
+        }, 150);
+      };
+      window.addEventListener('resize', relayoutOnResize);
     });
     // Show popup
     popup.style.display = "block";

@@ -12,12 +12,12 @@
 
 	<body>
 		<!-- Updates Banner -->
-		<div class="updates-banner">
+		<!-- <div class="updates-banner">
 			<div class="updates-text">
 				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
 				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
 			</div>
-		</div>
+		</div> -->
 
 		<header class="site-header" role="banner">
 			<div class="container">
@@ -32,6 +32,11 @@
 		<main id="projects" class="projects-section" role="main" aria-labelledby="projects-title">
 			<h2 id="projects-title" class="visually-hidden">Projects</h2>
 			<div class="container">
+				<!-- SHORT ABOUT / INTRO (matches production page style) -->
+				<h2 style="text-align: center; margin-bottom: 1rem; font-weight: 300;"> Select Interactive Work</h2>
+				<p style="text-align: center; color: var(--muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+					Creative technologist and designer exploring overlooked microcosms through generative AI, programming, and mixed media, inviting audiences to reimagine their relationship with the unseen forces that shape our reality. 
+				</p>
 				<div class="projects-grid">
 
 					<!--  project cards -->
@@ -119,7 +124,7 @@
 						<li><a href="https://www.linkedin.com/in/christina-cappelli/" target="_blank" rel="noopener">LinkedIn</a></li>
 						<li><a href="https://github.com/christinacappelli" target="_blank" rel="noopener">GitHub</a></li>
 						<li><a href="https://www.behance.net/christinacappelli" target="_blank" rel="noopener">Behance</a></li>
-						<li><button id="aboutBtn" style="color: #333; text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li>
+						<!-- <li><button id="aboutBtn" style="color: #333; text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li> -->
 					</ul>
 				</nav>
 				<small class="copyright">© <span id="year"></span> Christina Cappelli</small>
@@ -144,17 +149,7 @@
                     <div class="popup-video-container"></div>
                     <div class="popup-body-text"></div>
                     
-                    <div class="popup-gallery-section">
-                        <div class="gallery-container">
-                            <h4 class="gallery-title">Gallery 1</h4>
-                            <div class="image-gallery gallery-1"></div>
-                        </div>
-                        
-                        <div class="gallery-container">
-                            <h4 class="gallery-title">Gallery 2</h4>
-                            <div class="image-gallery gallery-2"></div>
-                        </div>
-                    </div>
+					<div class="popup-gallery-section"></div>
                 </div>
             </div>
         </div>
@@ -169,12 +164,21 @@
         </div>
 
         <!-- About Popup -->
-        <div id="aboutPopup" class="about-popup" style="display: none;">
+        <!-- <div id="aboutPopup" class="about-popup" style="display: none;">
             <div class="popup-overlay"></div>
             <div class="popup-content">
                 <button class="popup-close" aria-label="Close about popup">&times;</button>
-                <h2>About</h2>
-				<p>I'm a creative technologist and interactive media artist exploring the intersections of art, science, and technology. Using emerging tools and speculative design, I explore hidden systems in nature and challenge the boundaries of perception. Through interactive installations and digital media, I create immersive experiences that invite audiences to reimagine their relationship to the unseen worlds that surround us.</p>
+                <h2>About</h2> -->
+				<!-- <p>I'm a creative technologist and interactive media artist exploring the intersections of art, science, and technology. Using emerging tools and speculative design, I explore hidden systems in nature and challenge the boundaries of perception. Through interactive installations and digital media, I create immersive experiences that invite audiences to reimagine their relationship to the unseen worlds that surround us.</p> -->
+	<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const taglineLinks = document.querySelectorAll(".site-tagline a");
+    taglineLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        window.location.href = link.href; // Navigate to the clicked link
+      });
+    });
+  });
+</script>
 	</body>
 	</html>
-		

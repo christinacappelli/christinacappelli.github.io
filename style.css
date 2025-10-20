@@ -1,42 +1,4 @@
-/* Justified gallery layout for all galleries */
-.justified-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-}
-
-.justified-gallery .gallery-image-wrapper {
-    flex: 0 0 auto;
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    margin-bottom: 0;
-}
-
-.justified-gallery .gallery-image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 8px;
-}
-
-.justified-gallery .gallery-video {
-.justified-gallery .gallery-caption {
-    margin-top: 4px;
-    font-size: 0.92rem;
-    color: var(--muted);
-    text-align: left;
-    line-height: 1.3;
-}
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
+/* Keep only Masonry (.image-gallery) and special void styles. */
 /* Center Sumbioun video with padding */
 .center-video {
     display: flex;
@@ -205,7 +167,7 @@ body {
 /* Projects section layout */
 .projects-section {
 	height: auto;
-	padding: 60px 0;  /* Increased vertical padding for more breathing room */
+    padding: 60px 0;  /* Increased vertical padding for more breathing room */
 }
 .projects-section .container {
 	padding: 0 32px;  /* Increased horizontal padding */
@@ -224,7 +186,13 @@ body {
 	gap: 40px;  /* Increased gap between project cards */
 	justify-content: start;
 	align-content: start;
-	margin-bottom: 40px;  /* More space before the next section */
+    margin-bottom: 20px;  /* Reduced space before the footer */
+}
+
+/* Extra spacing after section intro paragraphs so projects are visually separated */
+.projects-section > .container > p,
+.projects-section > .container > h2 + p {
+    margin-bottom: 48px;
 }
 
 /* Project card */
@@ -311,7 +279,7 @@ body {
 .site-footer {
 	border-top: 1px solid var(--line);
 	background: var(--bg);
-    margin-top: 60px; /* push footer lower on the page */
+    margin-top: 30px; /* smaller gap above footer */
 }
 /* FOOTER CONTAINER */
 .site-footer .container {
@@ -341,10 +309,10 @@ body {
 
 /* Clients marquee */
 .client-marquee {
-	width: 100%;
-	overflow: hidden;
-	padding: 40px 0;  /* More vertical space around marquee */
-	margin: 12px 0 2px;   /* Increased top margin by 20px */
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;  /* More vertical space around marquee */
+    margin: 44px 0 2px;   /* More space above marquee */
 }
 .client-marquee .marquee-track {
 	display: flex;
@@ -558,50 +526,33 @@ body {
 }
 
 .image-gallery {
-    /* Masonry layout - full width */
-    width: 100%;
-    position: relative;
-    margin: 0 auto; /* Center the gallery */
-}
-
-/* Masonry grid items */
-.gallery-image-wrapper {
-    width: 300px; /* Fixed width for consistent columns */
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    break-inside: avoid; /* Prevent breaking across columns */
-}
-
-/* Responsive Masonry widths */
-@media (max-width: 768px) {
-    .gallery-image-wrapper {
-        width: calc(50% - 10px); /* Two columns on smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .gallery-image-wrapper {
-        width: 100%; /* Single column on mobile */
-    }
-}
-
-.gallery-image {
-    width: 100%;
-    height: auto;
+    /* Stacked full-width gallery: each item fills the available width and stacks vertically */
     display: block;
-    transition: transform 0.2s ease;
-    object-fit: cover;
-    border-radius: 4px;
+    width: 100%;
 }
 
+/* Full-width stacked items */
+.gallery-image-wrapper {
+    width: calc((100% - 40px) / 3); /* default to 3 columns with gaps accounted */
+    margin-bottom: 20px;
+    display: block;
+}
+
+.gallery-image,
 .gallery-video {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+@media (max-width: 1280px) {
+    .gallery-image-wrapper { width: calc((100% - 20px) / 2); } /* 2 columns */
+}
+
+@media (max-width: 900px) {
+    .gallery-image-wrapper { width: 100%; } /* 1 column */
 }
 
 .gallery-image:hover {
@@ -721,15 +672,15 @@ body {
 }
 
 /* SPECIAL LAYOUT FOR THE VOID */
-.void-gallery {
+/* .void-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     grid-auto-rows: 200px;
     gap: 20px;
     width: 100%;
-}
+} */
 
-.void-gallery .gallery-image-wrapper {
+/* .void-gallery .gallery-image-wrapper {
     width: 200px;
     height: 200px;
     margin-bottom: 0;
@@ -756,41 +707,7 @@ body {
 
 .void-gallery .gallery-video:hover {
     transform: scale(1.02);
-}
-
-/* Sumbioun justified grid layout */
-.sumbioun-gallery {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-    align-items: stretch;
-    justify-content: space-between;
-}
-
-.sumbioun-gallery .gallery-image-wrapper {
-    flex: 1;
-    margin-bottom: 0;
-    display: flex;
-}
-
-.sumbioun-gallery .gallery-video {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    max-height: none;
-}
-
-.sumbioun-gallery .gallery-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
-.sumbioun-gallery .gallery-image:hover,
-.sumbioun-gallery .gallery-video:hover {
-    transform: scale(1.02);
-}
+} */
 
 .gallery-caption {
     font-size: 0.9rem;
