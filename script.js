@@ -5,7 +5,7 @@ const projectData = {
     title: "The Void",
     subtitle: "Interactive Digital Experience",
     description:
-      "An interactive exploration of digital identity and revealing how constant self-curation distorts authenticity, exposing a feedback loop where identity becomes shaped by the systems mediating it. Labels like “Soul Decay” and “Hollow Salvation” critique consumerism's parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. ",
+      "The Void is an interactive exploration of how people seek validation through digital spaces, curating idealized versions of themselves. Using webcam manipulation, it exposes the emptiness behind these self-presentations and reveals how we feed data into an impersonal system. Labels like “Soul Decay” and “Hollow Salvation” critique consumerism’s parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. The piece highlights the soul-sucking pursuit of validation and the hollow rituals of digital consumption in the search for fulfillment. The interactive element underscores the audience’s role in perpetuating this cycle, emphasizing the absurdity and emptiness at its core.",
     videoUrl: "https://vimeo.com/1061865042?fl=pl&fe=sh",
     galleries: {
       Process: [
