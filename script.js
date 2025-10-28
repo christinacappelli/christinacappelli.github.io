@@ -1,4 +1,3 @@
-
 // PROJECT DATA FOR ALL POP UPS
 const projectData = {
   void: {
@@ -9,26 +8,73 @@ const projectData = {
     videoUrl: "https://vimeo.com/1061865042?fl=pl&fe=sh",
     galleries: {
       Process: [
-        "./void/t4.gif",
-        "./void/t1.png",
-        "./void/t2.gif",
-        "./void/t3.gif",
-        "./void/t5.png",
-        "./void/t6.png",
-        "./void/t7.png",
+        {
+          src: "./Tech/void/t4.gif",  caption: "Process step 1: Initial design concepts",
+        },
+        {
+          src: "./Tech/void/t1.png",
+          caption: "Process step 2: Prototype development",
+        },
+        {
+          src: "./Tech/void/t2.gif",
+          caption: "Process step 3: Testing interactions",
+        },
+        {
+          src: "./Tech/void/t3.gif",
+          caption: "Process step 4: Refining visuals",
+        },
+        {
+          src: "./Tech/void/t5.png",
+          caption: "Process step 5: Final adjustments",
+        },
+        {
+          src: "./Tech/void/t6.png",
+          caption: "Process step 6: User feedback integration",
+        },
+        {
+          src: "./Tech/void/t7.png",
+          caption: "Process step 7: Final presentation",
+        },
       ],
       "Interface Components": [
-        "./void/ss1.png",
-        "./void/ss2.png",
-        "./void/ss3.png",
+        {
+          src: "./Tech/void/ss1.png",
+          caption: "Interface component: Main dashboard",
+        },
+        {
+          src: "./Tech/void/ss2.png",
+          caption: "Interface component: User profile view",
+        },
+        {
+          src: "./Tech/void/ss3.png",
+          caption: "Interface component: Interaction panel",
+        },
       ],
       "Show Snapshots": [
-        "./void/s1.png",
-        "./void/s2.png",
-        "./void/s3.png",
-        "./void/s4.png",
-        "./void/s6.png",
-        "./void/s7.png",
+        {
+          src: "./Tech/void/s1.png",
+          caption: "Snapshot: Opening scene",
+        },
+        {
+          src: "./Tech/void/s2.png",
+          caption: "Snapshot: Midway interaction",
+        },
+        {
+          src: "./Tech/void/s3.png",
+          caption: "Snapshot: User engagement",
+        },
+        {
+          src: "./Tech/void/s4.png",
+          caption: "Snapshot: Dynamic visuals",
+        },
+        {
+          src: "./Tech/void/s6.png",
+          caption: "Snapshot: Final scene",
+        },
+        {
+          src: "./Tech/void/s7.png",
+          caption: "Snapshot: Closing credits",
+        },
       ],
     },
   },
@@ -36,42 +82,42 @@ const projectData = {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
     description:
-      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes and then swipe through others past dreams in real time.",
+      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
     videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
         {
-          src: "./dream/recolor.jpg",
+          src: "./Tech/dream/recolor.jpg",
           caption: "Color images based on a set color pallete we created",
           layout: "pinterest",
         },
 
         {
-          src: "./dream/colorm1.jpg",
+          src: "./Tech/dream/colorm1.jpg",
           caption: "Color matching background to the feeling of the memory",
           layout: "pinterest",
         },
 
         {
-          src: "./dream/tracking.jpg",
+          src: "./Tech/dream/tracking.jpg",
           caption:
             "Media Pipe testing and tracker for user inputs and paint brush styling",
           layout: "pinterest",
         },
         {
-          src: "./dream/overlay.jpg",
+          src: "./Tech/dream/overlay.jpg",
           caption:
             "Implimenting past image overlays to hand gesture interactions ",
           layout: "pinterest",
         },
         {
-          src: "./dream/smoke.jpg",
+          src: "./Tech/dream/smoke.jpg",
           caption: "Smoke paintbrush testing",
           layout: "pinterest",
         },
 
         {
-          src: "./dream/tdappintegration.mp4",
+          src: "./Tech/dream/tdappintegration.mp4",
           type: "video",
           caption:
             "Integration of OpenAI into webapp and webapp into TouchDesigner",
@@ -90,27 +136,27 @@ const projectData = {
     galleries: {
       Process: [
         {
-          src: "./liminal/p1.jpg",
+          src: "./Tech/liminal/p1.jpg",
           caption: "Color tracking targets, microscope ",
           layout: "pinterest",
         },
         {
-          src: "./liminal/p2.jpg",
+          src: "./Tech/liminal/p2.jpg",
           caption: "Dual display threshold tracking",
           layout: "pinterest",
         },
         {
-          src: "./liminal/p3.jpg",
+          src: "./Tech/liminal/p3.jpg",
           caption: "Blob Tracking working with dual display tracking mirror ",
           layout: "pinterest",
         },
         {
-          src: "./liminal/p4.jpg",
+          src: "./Tech/liminal/p4.jpg",
           caption: "Blob tracking, tracking but not clearing",
           layout: "pinterest",
         },
         {
-          src: "./liminal/p5.jpg",
+          src: "./Tech/liminal/p5.jpg",
           caption: "Color Target Selections ",
           layout: "pinterest",
         },
@@ -118,6 +164,19 @@ const projectData = {
     },
   },
 
+  // "language-of-light": {
+  //   title: "Language of Light",
+  //   subtitle: "Immersive Light Installation",
+  //   // videoUrl: "https://vimeo.com/1234567890",
+  // },
+
+  // sumbioun: {
+  //   title: "Sumbioun",
+  //   subtitle: "Audio-Visual Performance",
+  //   description:
+  //     "Sumbioun is a live audio-visual performance that blends generative visuals with ambient soundscapes. It creates a meditative experience, immersing the audience in a symphony of light and sound.",
+  //   videoUrl: "https://vimeo.com/0987654321",
+  // },
 };
 
 // Popup functionality
@@ -173,128 +232,10 @@ document.addEventListener("DOMContentLoaded", () => {
       bodyTextContainer.style.display = "none";
     }
 
-    // Populate galleries
+    // Remove galleries for now
     const gallerySection = popupContent.querySelector(".popup-gallery-section");
-    gallerySection.innerHTML = ""; // Clear existing galleries
+    gallerySection.innerHTML = ""; // Clear gallery content
 
-    Object.entries(project.galleries).forEach(([title, images], index) => {
-      const galleryContainer = document.createElement("div");
-      galleryContainer.className = "gallery-container";
-
-      const galleryTitle = document.createElement("h4");
-      galleryTitle.className = "gallery-title";
-      galleryTitle.textContent = title;
-
-  const gallery = document.createElement("div");
-  // Use the unified gallery class for stacked full-width layout
-  gallery.className = `image-gallery gallery-${index + 1}`;
-      // Track loaded images (we simply reveal items when their media loads)
-      let loadedImages = 0;
-      const totalImages = images.length;
-
-  images.forEach((imageData) => {
-        const wrapper = document.createElement("div");
-        wrapper.className = "gallery-image-wrapper";
-
-        const isObject = typeof imageData === "object";
-        const isVideo =
-          isObject &&
-          (imageData.type === "video" ||
-            /\.(mp4|webm|mov)$/i.test(imageData.src));
-
-        if (isVideo) {
-          const video = document.createElement("video");
-          video.className = "gallery-video";
-          video.controls = true;
-          video.playsInline = true;
-          video.muted = true;
-          video.preload = "metadata";
-
-          const source = document.createElement("source");
-          source.src = imageData.src;
-          source.type = "video/mp4";
-          video.appendChild(source);
-
-          // Handle video load (metadata)
-          video.onloadedmetadata = function () {
-            wrapper.style.opacity = "1";
-            loadedImages++;
-          };
-
-          video.onerror = function () {
-            console.warn(`Failed to load video: ${imageData.src}`);
-            wrapper.style.display = "none";
-            loadedImages++;
-          };
-          wrapper.appendChild(video);
-        } else {
-          const img = document.createElement("img");
-          img.className = "gallery-image";
-          img.alt = isObject
-            ? imageData.caption
-            : `${project.title} gallery image`;
-
-          img.onerror = function () {
-            console.warn(
-              `Failed to load image: ${isObject ? imageData.src : imageData}`
-            );
-            wrapper.style.display = "none";
-            loadedImages++;
-          };
-
-          img.onload = function () {
-            wrapper.style.opacity = "1";
-            loadedImages++;
-          };
-
-          wrapper.appendChild(img);
-          img.src = isObject ? imageData.src : imageData;
-
-          img.addEventListener("click", () => {
-            expandMedia({ type: "image", src: img.src, alt: img.alt });
-          });
-        }
-
-        if (isObject && imageData.caption) {
-          const caption = document.createElement("div");
-          caption.className = "gallery-caption";
-          caption.textContent = imageData.caption;
-          wrapper.appendChild(caption);
-        }
-
-        gallery.appendChild(wrapper);
-      });
-      galleryContainer.appendChild(galleryTitle);
-      galleryContainer.appendChild(gallery);
-      gallerySection.appendChild(galleryContainer);
-      // Initialize Masonry for this gallery after a short timeout to ensure CSS widths applied
-      const initializeMasonry = () => {
-        if (typeof Masonry === 'undefined') return;
-        // Destroy previous instance if any
-        if (gallery._msn) {
-          try { gallery._msn.destroy(); } catch (e) { /* ignore */ }
-        }
-        gallery._msn = new Masonry(gallery, {
-          itemSelector: '.gallery-image-wrapper',
-          columnWidth: gallery.querySelector('.gallery-image-wrapper') || '.gallery-image-wrapper',
-          gutter: 20,
-          fitWidth: false
-        });
-      };
-
-      // Give media a moment to load and then init Masonry
-      setTimeout(initializeMasonry, 120);
-
-      // Re-layout on window resize
-      let resizeTimer;
-      const relayoutOnResize = () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-          if (gallery._msn) gallery._msn.layout();
-        }, 150);
-      };
-      window.addEventListener('resize', relayoutOnResize);
-    });
     // Show popup
     popup.style.display = "block";
     document.body.style.overflow = "hidden"; // Prevent scrolling
