@@ -4,12 +4,13 @@ const projectData = {
     title: "The Void",
     subtitle: "Interactive Digital Experience",
     description:
-      "The Void is an interactive exploration of how people seek validation through digital spaces, curating idealized versions of themselves. Using webcam manipulation, it exposes the emptiness behind these self-presentations and reveals how we feed data into an impersonal system. Labels like “Soul Decay” and “Hollow Salvation” critique consumerism’s parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. The piece highlights the soul-sucking pursuit of validation and the hollow rituals of digital consumption in the search for fulfillment. The interactive element underscores the audience’s role in perpetuating this cycle, emphasizing the absurdity and emptiness at its core.",
+      "<p>The Void is an interactive exploration of how people seek validation through digital spaces, curating idealized versions of themselves. Using webcam manipulation, it exposes the emptiness behind these self-presentations and reveals how we feed data into an impersonal system.</p>\n<p>Labels like 'Soul Decay' and 'Hollow Salvation' critique consumerism’s parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. The piece highlights the soul-sucking pursuit of validation and the hollow rituals of digital consumption in the search for fulfillment. The interactive element underscores the audience’s role in perpetuating this cycle, while finding fleeting joy in the very system that drains them.</p>",
     videoUrl: "https://vimeo.com/1061865042?fl=pl&fe=sh",
     galleries: {
       Process: [
         {
-          src: "./Tech/void/t4.gif",  caption: "Process step 1: Initial design concepts",
+          src: "./Tech/void/t4.gif",
+          caption: "Process step 1: Initial design concepts",
         },
         {
           src: "./Tech/void/t1.png",
@@ -208,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
     popupContent.querySelector(".popup-title").textContent = project.title;
     popupContent.querySelector(".popup-subtitle").textContent =
       project.subtitle;
-    popupContent.querySelector(".popup-description").textContent =
+    popupContent.querySelector(".popup-description").innerHTML =
       project.description;
 
     // Handle video embed
