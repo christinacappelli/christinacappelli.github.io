@@ -142,7 +142,7 @@
 						<li><button id="aboutBtn" style="color: #333; text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li>
 					</ul>
 				</nav>
-				<small class="copyright">© <span id="year"></span> Christina Cappelli</small>
+				<small class="copyright">© <span id="year"></span> <span class="copyright-name">Christina Cappelli</span></small>
 			</div>
 			
 			<script>
@@ -164,7 +164,6 @@
                     <p class="popup-description"></p>
                     <div class="popup-video-container"></div>
                     <div class="popup-body-text"></div>
-                    
 					<div class="popup-gallery-section"></div>
                 </div>
             </div>
@@ -200,8 +199,9 @@
 				<p>
 					I hold a BFA in Performing Arts and an MPS in Interactive Telecommunications from NYU’s Tisch School of the Arts. Whether through interactive installations, computational media, or speculative ecosystems, I aim to build experiences that reframe perception, invite inquiry, and bridge science with creative engagement.
 				</p>
-	<script>
-  document.addEventListener("DOMContentLoaded", () => {
+
+<script>
+ document.addEventListener("DOMContentLoaded", () => {
     const taglineLinks = document.querySelectorAll(".site-tagline a");
     taglineLinks.forEach(link => {
       link.addEventListener("click", () => {
