@@ -39,59 +39,59 @@ const projectData = {
       Snapshots: [
         {
           src: "./Tech/void/t4.gif",
-          caption: "Process step 1: Initial design concepts",
+          // caption: "Process step 1: Initial design concepts",
         },
         {
           src: "./Tech/void/t1.png",
-          caption: "Process step 2: Prototype development",
+          // caption: "Process step 2: Prototype development",
         },
         {
           src: "./Tech/void/t2.gif",
-          caption: "Process step 3: Testing interactions",
+          // caption: "Process step 3: Testing interactions",
         },
         {
           src: "./Tech/void/t5.png",
-          caption: "Process step 5: Final adjustments",
+          // caption: "Process step 5: Final adjustments",
         },
         {
           src: "./Tech/void/t6.png",
-          caption: "Process step 6: User feedback integration",
+          // caption: "Process step 6: User feedback integration",
         },
         {
           src: "./Tech/void/t7.png",
-          caption: "Process step 7: Final presentation",
+          // caption: "Process step 7: Final presentation",
         },
         {
           src: "./Tech/void/s1.png",
-          caption: "Snapshot: Opening scene",
+          // caption: "Snapshot: Opening scene",
         },
         {
           src: "./Tech/void/s2.png",
-          caption: "Snapshot: Midway interaction",
+          // caption: "Snapshot: Midway interaction",
         },
         {
           src: "./Tech/void/s3.png",
-          caption: "Snapshot: User engagement",
+          // caption: "Snapshot: User engagement",
         },
         {
           src: "./Tech/void/s4.png",
-          caption: "Snapshot: Dynamic visuals",
+          // caption: "Snapshot: Dynamic visuals",
         },
         {
           src: "./Tech/void/s6.png",
-          caption: "Snapshot: Final scene",
+          // caption: "Snapshot: Final scene",
         },
         {
           src: "./Tech/void/s7.png",
-          caption: "Snapshot: Closing credits",
+          // caption: "Snapshot: Closing credits",
         },
         {
           src: "./Tech/void/ss1.png",
-          caption: "Interface component: Main dashboard",
+          // caption: "Interface component: Main dashboard",
         },
         {
           src: "./Tech/void/ss2.png",
-          caption: "Interface component: User profile view",
+          // caption: "Interface component: User profile view",
         },
       ],
     },
@@ -100,46 +100,38 @@ const projectData = {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
     description:
-      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
+      "A web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
     videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
         {
           src: "./Tech/dream/recolor.jpg",
           caption: "Color images based on a set color pallete we created",
-          layout: "pinterest",
         },
 
         {
           src: "./Tech/dream/colorm1.jpg",
           caption: "Color matching background to the feeling of the memory",
-          layout: "pinterest",
         },
 
         {
           src: "./Tech/dream/tracking.jpg",
-          caption:
-            "Media Pipe testing and tracker for user inputs and paint brush styling",
-          layout: "pinterest",
+          caption:"Media Pipe testing and tracker for user inputs and paint brush styling",
         },
         {
           src: "./Tech/dream/overlay.jpg",
           caption:
             "Implimenting past image overlays to hand gesture interactions ",
-          layout: "pinterest",
         },
         {
           src: "./Tech/dream/smoke.jpg",
           caption: "Smoke paintbrush testing",
-          layout: "pinterest",
         },
 
         {
           src: "./Tech/dream/tdappintegration.mp4",
           type: "video",
-          caption:
-            "Integration of OpenAI into webapp and webapp into TouchDesigner",
-          layout: "pinterest",
+          caption: "Integration of OpenAI into webapp and webapp into TouchDesigner",
         },
       ],
     },
@@ -156,27 +148,22 @@ const projectData = {
         {
           src: "./Tech/liminal/p1.jpg",
           caption: "Color tracking targets, microscope ",
-          layout: "pinterest",
         },
         {
           src: "./Tech/liminal/p2.jpg",
           caption: "Dual display threshold tracking",
-          layout: "pinterest",
         },
         {
           src: "./Tech/liminal/p3.jpg",
           caption: "Blob Tracking working with dual display tracking mirror ",
-          layout: "pinterest",
         },
         {
           src: "./Tech/liminal/p4.jpg",
           caption: "Blob tracking, tracking but not clearing",
-          layout: "pinterest",
         },
         {
           src: "./Tech/liminal/p5.jpg",
           caption: "Color Target Selections ",
-          layout: "pinterest",
         },
       ],
     },
