@@ -33,7 +33,7 @@ const projectData = {
     title: "The Void",
     subtitle: "Interactive Digital Experience",
     description:
-      "<p>The Void is an interactive exploration of how people seek validation through digital spaces, curating idealized versions of themselves. Using webcam manipulation, it exposes the emptiness behind these self-presentations and reveals how we feed data into an impersonal system.</p>\n<p>Labels like 'Soul Decay' and 'Hollow Salvation' critique consumerism’s parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. The piece highlights the soul-sucking pursuit of validation and the hollow rituals of digital consumption in the search for fulfillment. The interactive element underscores the audience’s role in perpetuating this cycle, while finding fleeting joy in the very system that drains them.</p>",
+      "<p>An interactive performance examining how digital identity forms within mediated systems. Through a network of user interactions, livefeed input, and algorithmic processing, the work surfaces the feedback loops that influence how identity is constructed and perceived online.</p>",
     videoUrl: "https://vimeo.com/1061865042?fl=pl&fe=sh",
     galleries: {
       Snapshots: [
@@ -116,7 +116,8 @@ const projectData = {
 
         {
           src: "./Tech/dream/tracking.jpg",
-          caption:"Media Pipe testing and tracker for user inputs and paint brush styling",
+          caption:
+            "Media Pipe testing and tracker for user inputs and paint brush styling",
         },
         {
           src: "./Tech/dream/overlay.jpg",
@@ -131,7 +132,8 @@ const projectData = {
         {
           src: "./Tech/dream/tdappintegration.mp4",
           type: "video",
-          caption: "Integration of OpenAI into webapp and webapp into TouchDesigner",
+          caption:
+            "Integration of OpenAI into webapp and webapp into TouchDesigner",
         },
       ],
     },
