@@ -100,7 +100,7 @@ const projectData = {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
     description:
-      "A web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
+      "Dream Collector is an AI-powered web app and installation that visualizes the unstable terrain of dream memory. It investigates the limits of human recall, the biases and imaginations of AI, and the possibilities of building a shared dream archive. Designed as both a personal tool and participatory artwork, the project transforms fleeting dream fragments into visual narratives—creating a growing collective portrait of what we forget, misremember, or invent, and prompting viewers to reflect on how we remember—and how machines reshape—our most ephemeral experiences.",
     videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
