@@ -319,6 +319,29 @@ body {
     .copyright-name {
         display: none;
     }
+
+    /* Stack footer content: links above, copyright below */
+    .site-footer .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 16px;
+        text-align: center;
+    }
+
+    .site-footer .contact-links {
+        justify-content: center;
+        gap: 12px;
+        margin: 0 0 4px 0;
+    }
+
+    .site-footer .contact-links a { display: inline-block; }
+
+    .site-footer small.copyright {
+        display: block;
+        margin-top: 4px;
+    }
 }
 
 /* Clients marquee */
