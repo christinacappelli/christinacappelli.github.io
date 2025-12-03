@@ -33,7 +33,7 @@ const projectData = {
     title: "The Void",
     subtitle: "Interactive Digital Experience",
     description:
-      "<p>An interactive performance examining how digital identity forms within mediated systems. Through a network of user interactions, livefeed input, and algorithmic processing, the work surfaces the feedback loops that influence how identity is constructed and perceived online.</p>",
+      "<p>The Void is an interactive exploration of how people seek validation through digital spaces, curating idealized versions of themselves. Using webcam manipulation, it exposes the emptiness behind these self-presentations and reveals how we feed data into an impersonal system.</p>\n<p>Labels like 'Soul Decay' and 'Hollow Salvation' critique consumerism’s parasitic nature, suggesting that while we surrender our souls, we remain trapped in a self-perpetuating cycle that we eagerly return to. The piece highlights the soul-sucking pursuit of validation and the hollow rituals of digital consumption in the search for fulfillment. The interactive element underscores the audience’s role in perpetuating this cycle, while finding fleeting joy in the very system that drains them.</p>",
     videoUrl: "https://vimeo.com/1061865042?fl=pl&fe=sh",
     galleries: {
       Snapshots: [
@@ -100,7 +100,7 @@ const projectData = {
     title: "Dream Collector",
     subtitle: "AI-Powered Dream Archive",
     description:
-      "Dream Collector is an AI-powered web app and installation that visualizes the unstable terrain of dream memory. It investigates the limits of human recall, the biases and imaginations of AI, and the possibilities of building a shared dream archive. Designed as both a personal tool and participatory artwork, the project transforms fleeting dream fragments into visual narratives—creating a growing collective portrait of what we forget, misremember, or invent, and prompting viewers to reflect on how we remember—and how machines reshape—our most ephemeral experiences.",
+      "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
     videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
@@ -116,8 +116,7 @@ const projectData = {
 
         {
           src: "./Tech/dream/tracking.jpg",
-          caption:
-            "Media Pipe testing and tracker for user inputs and paint brush styling",
+          caption:"Media Pipe testing and tracker for user inputs and paint brush styling",
         },
         {
           src: "./Tech/dream/overlay.jpg",
@@ -132,8 +131,7 @@ const projectData = {
         {
           src: "./Tech/dream/tdappintegration.mp4",
           type: "video",
-          caption:
-            "Integration of OpenAI into webapp and webapp into TouchDesigner",
+          caption: "Integration of OpenAI into webapp and webapp into TouchDesigner",
         },
       ],
     },

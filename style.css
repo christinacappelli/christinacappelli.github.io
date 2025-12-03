@@ -357,8 +357,15 @@ body {
 
 /* Responsive tweaks */
 @media (max-width: 720px) {
-	.site-header .container { align-items: center; }
-	.site-tagline { display: none; }
+    .site-header .container { align-items: center; flex-direction: column; gap: 6px; }
+    /* Show tagline on mobile and keep links accessible */
+    .site-tagline {
+        display: block;
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+        text-align: center;
+    }
 	.project-link { grid-template-rows: 140px auto auto auto; }
     
     .popup-content {
@@ -786,5 +793,67 @@ body {
     transform: scale(1.02);
     z-index: 1;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* Additional mobile responsiveness tweaks */
+@media (max-width: 720px) {
+    .projects-grid {
+        gap: 18px;
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        grid-template-rows: 120px auto auto auto;
+        padding: 12px;
+    }
+
+    .project-card .thumb {
+        height: 120px;
+        background-size: cover;
+    }
+
+    /* Make the small action links flow inline instead of being absolute */
+    .project-link-small {
+        position: static;
+        bottom: auto;
+        right: auto;
+        margin-left: 8px;
+    }
+
+    /* Tighter gallery spacing on mobile */
+    .popup-gallery-section {
+        margin-top: 24px;
+        gap: 24px;
+    }
+
+    /* Force single-column masonry on smaller screens */
+    .image-gallery {
+        column-count: 1;
+        column-gap: 12px;
+    }
+
+    /* Slightly smaller embedded videos */
+    .video-scroll .video-embed { width: 220px; }
+
+    /* Make popup full-screen on small devices (already similar elsewhere) */
+    .popup-content {
+        padding: 16px;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    /* Ensure scroller arrows remain visible and touch-friendly */
+    .video-scroll-arrow { width: 44px; height: 44px; font-size: 20px; }
+}
+
+@media (max-width: 480px) {
+    .video-scroll .video-embed { width: 180px; }
+    .video-scroll-arrow { width: 36px; height: 36px; font-size: 18px; }
+    .project-card { grid-template-rows: 110px auto auto auto; padding: 10px; }
+    .project-card .thumb { height: 110px; }
 }
 
