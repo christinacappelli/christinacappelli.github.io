@@ -101,7 +101,7 @@ const projectData = {
     subtitle: "AI-Powered Dream Archive",
     description:
       "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
-    videoUrl: "https://vimeo.com/1098886681?fl=pl&fe=sh",
+    videoUrl: "https://vimeo.com/1138216311?fl=pl&fe=sh",
     galleries: {
       "Process Documentation": [
         {
@@ -170,6 +170,51 @@ const projectData = {
       ],
     },
   },
+  fsf_26: {
+    title: "Future Stages Festival 2026",
+    subtitle: "Immersive Performance",
+    description:
+      "An immersive, technology-driven performance series hosted by the Center for Creative Technology at the Juilliard School.",
+    bodyText:
+      "Collaborating with choreographers and performers to create audio-reactive visual environments that respond in real-time to movement and sound. Each piece explores the boundary between physical and digital space, transforming the stage into a living ecosystem of light, texture, and responsive design.",
+    youtubeUrl: "https://www.youtube.com/watch?v=mOBHAV6wuo4",
+    articleUrl: "https://www.juilliard.edu/news/184866/conversation-christina-cappelli",
+    galleries: {
+      Process: [
+        {
+          src: "./Tech/fsf_26/Dancer_TouchDeisgnerEffect.jpeg",
+          caption:
+            "Performer interaction with TouchDesigner video effects and real time muji interactions.",
+        },
+        {
+          src: "./Tech/fsf_26/FSF.mp4",
+          type: "video",
+          caption: "Future Stages Festival process video",
+        },
+        {
+          src: "./Tech/fsf_26/background Meshworks P3.jpeg",
+          caption: "Animated background design for Meshworks P3",
+        },
+        {
+          src: "./Tech/fsf_26/background sketch test.jpeg",
+          caption: "Conceptual background sketch test",
+        },
+        // {
+        //   src: "./Tech/fsf_26/moving background_Meshworks P2.jpg",
+        //   caption: "Animated background design for Meshworks P2",
+        // },
+        {
+          src: "./Tech/fsf_26/moving background_meshworks PI.jpeg",
+          caption: "Dynamic background design for Meshworks P1",
+        },
+        {
+          src: "./Tech/fsf_26/mossy_tdEffect.mp4",
+          type: "video",
+          caption: "Dancer + TouchDesigner effects",
+        },
+      ],
+    },
+  },
 };
 
 // Popup functionality
@@ -216,7 +261,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (isVideo) {
           const video = document.createElement("video");
           video.className = "gallery-video";
-          video.controls = true;
+          video.controls = false;
+          video.preload = "metadata";
           const source = document.createElement("source");
           source.src = item.src;
           source.type = "video/mp4";
@@ -246,6 +292,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
       section.appendChild(imageGallery);
       container.appendChild(section);
+    }
+  }
+
+  function getYouTubeId(url) {
+    if (!url) return "";
+    try {
+      const parsedUrl = new URL(url);
+      if (parsedUrl.hostname.includes("youtu.be")) {
+        return parsedUrl.pathname.replace("/", "");
+      }
+      return parsedUrl.searchParams.get("v") || "";
+    } catch {
+      if (url.includes("youtu.be/")) {
+        return url.split("youtu.be/")[1]?.split("?")[0] || "";
+      }
+      return url.split("v=")[1]?.split("&")[0] || "";
     }
   }
 
@@ -351,11 +413,36 @@ document.addEventListener("DOMContentLoaded", () => {
         // Initialize arrow state
         requestAnimationFrame(updateArrows);
       }
+    } else if (project.youtubeUrl) {
+      const youtubeId = getYouTubeId(project.youtubeUrl);
+      if (youtubeId) {
+        videoContainer.innerHTML = `
+          <iframe
+            src="https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        `;
+        videoContainer.classList.add("has-video");
+      }
     } else if (project.videoUrl && project.videoUrl.includes("vimeo.com")) {
       // Fallback: single video
       const videoId = project.videoUrl.split("?")[0].split("/").pop();
       videoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
       videoContainer.classList.add("has-video");
+
+    }
+
+    // Add article link at the bottom if exists
+    if (project.articleUrl) {
+      const articleLink = document.createElement("p");
+      articleLink.style.marginTop = "40px";
+      articleLink.style.textAlign = "right";
+      articleLink.style.borderTop = "1px solid var(--line)";
+      articleLink.style.paddingTop = "20px";
+      articleLink.innerHTML = `<a href="${project.articleUrl}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Interview at Juilliard</a>`;
+      popupContent.querySelector(".popup-body").appendChild(articleLink);
     }
 
     // Show popup
@@ -410,6 +497,15 @@ document.addEventListener("DOMContentLoaded", () => {
   function showExpandedMedia() {
     const overlay = document.getElementById("imageOverlay");
     const expandedImg = overlay.querySelector(".expanded-image");
+    let expandedVideo = overlay.querySelector(".expanded-video");
+    if (!expandedVideo) {
+      expandedVideo = document.createElement("video");
+      expandedVideo.className = "expanded-video";
+      expandedVideo.controls = true;
+      expandedVideo.setAttribute("playsinline", "");
+      expandedVideo.setAttribute("aria-label", "Expanded gallery video");
+      expandedImg.insertAdjacentElement("afterend", expandedVideo);
+    }
     const counter = overlay.querySelector(".image-counter");
     const prevBtn = overlay.querySelector(".image-nav-prev");
     const nextBtn = overlay.querySelector(".image-nav-next");
@@ -417,8 +513,27 @@ document.addEventListener("DOMContentLoaded", () => {
     if (allMedia.length === 0) return;
 
     const current = allMedia[currentImageIndex];
-    expandedImg.src = current.src;
-    expandedImg.alt = current.alt;
+    const isVideo = current.type === "video";
+
+    if (isVideo) {
+      expandedImg.removeAttribute("src");
+      expandedImg.alt = "";
+      expandedImg.style.display = "none";
+
+      expandedVideo.src = current.src;
+      expandedVideo.style.display = "block";
+      expandedVideo.currentTime = 0;
+      expandedVideo.play().catch(() => {});
+    } else {
+      expandedVideo.pause();
+      expandedVideo.removeAttribute("src");
+      expandedVideo.load();
+      expandedVideo.style.display = "none";
+
+      expandedImg.src = current.src;
+      expandedImg.alt = current.alt;
+      expandedImg.style.display = "block";
+    }
 
     // Update counter
     counter.textContent = `${currentImageIndex + 1} / ${allMedia.length}`;
@@ -445,6 +560,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeExpandedImage() {
     const overlay = document.getElementById("imageOverlay");
+    const expandedVideo = overlay.querySelector(".expanded-video");
+    if (expandedVideo) {
+      expandedVideo.pause();
+      expandedVideo.removeAttribute("src");
+      expandedVideo.load();
+      expandedVideo.style.display = "none";
+    }
     overlay.classList.remove("active");
     document.body.style.overflow = "";
     allMedia = [];
