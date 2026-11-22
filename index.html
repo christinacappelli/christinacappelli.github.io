@@ -6,28 +6,49 @@
 		<title>Christina Cappelli · Portfolio</title>
 		<meta name="description" content="Portfolio of projects by Christina Cappelli" />
 		<link rel="stylesheet" href="./style.css" />
-		<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+		<script>
+			(function () {
+				try {
+					var saved = localStorage.getItem("theme");
+					var theme =
+						saved ||
+						(window.matchMedia("(prefers-color-scheme: dark)").matches
+							? "dark"
+							: "light");
+					document.documentElement.setAttribute("data-theme", theme);
+				} catch (e) {
+					document.documentElement.setAttribute("data-theme", "light");
+				}
+			})();
+		</script>
 		<script src="./script.js" defer></script>
 	</head>
 
 	<body>
-		<!-- Updates Banner -->
-		<div class="updates-banner">
-			<div class="updates-text">
-				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates
-				<span>updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- updates in progress -- </span>
-			</div>
-		</div>
-
 		<header class="site-header" role="banner">
 			<div class="container">
 				<h1 class="site-title">Christina Cappelli</h1>
-		<p class="site-tagline">
-   			 <a href="index.html" style="text-decoration: none;font-weight:450; color: blue;">Technologist</a> |
-   			 <a href="production.html" style="text-decoration: none; color: inherit;">Producer</a> 
-  			 <!-- <a href="design.html" style="text-decoration: none; color: inherit;">Designer</a> -->
-		</p>
-					</div>
+				<div class="header-right">
+					<p class="site-tagline">
+						<a href="index.html" class="is-active">Creative Technologist</a>
+						<!-- <a href="design.html">Designer</a> -->
+					</p>
+					<button
+						type="button"
+						class="theme-toggle"
+						aria-label="Toggle light and dark mode"
+						title="Toggle theme"
+					>
+						<svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path>
+						</svg>
+						<svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+							<circle cx="12" cy="12" r="4"></circle>
+							<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+						</svg>
+					</button>
+				</div>
+			</div>
 		</header>
 
 
@@ -37,7 +58,7 @@
 			<h2 id="projects-title" class="visually-hidden">Projects</h2>
 			<div class="container">
 				<!-- SHORT ABOUT / INTRO (matches production page style) -->
-				<h2 style="text-align: center; margin-bottom: 1rem; font-weight: 200;"> Select Tech Work with a focus on software and generative AI </h2>
+				<!-- <h2 style="text-align: center; margin-bottom: 1rem; font-weight: 200;"> Select Tech Work with a focus on software and generative AI </h2> -->
 				<p style="text-align: center; color: var(--muted); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">
 					<!-- Creative technologist and designer exploring overlooked microcosms through generative AI, programming, and mixed media, inviting audiences to reimagine their relationship with the unseen forces that shape our reality.  -->
 				</p>
@@ -45,6 +66,79 @@
 
 
 					<!--  project cards -->
+
+				<!-- FIREFLIES (FSF 2026) -->
+				<article class="project-card clickable-thumb" data-project="fireflies_fsf26">
+					<div class="thumb" aria-hidden="true" style="background-image: url('./Tech/fireflies_fsf26/Screenshot 2026-11-22 151919.png');"></div>
+					<h3 class="project-title">Fireflies</h3>
+					<p class="project-desc">A TouchDesigner performance piece from Future Stages Festival 2026 using OSC-driven live visuals for stage performance.</p>
+					<ul class="project-tags">
+						<li>TouchDesigner</li><li>OSC</li><li>Live Show</li>
+					</ul>
+					<p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibit: <span>Juilliard Center for Creative Technology</span></p>
+				</article>
+
+				<!-- SUM OF PARTS -->
+				<article class="project-card clickable-thumb" data-project="sum1_fsf26">
+					<div class="thumb" aria-hidden="true" style="background-image: url('./Tech/sum1_fsf26/sum2.png');"></div>
+					<h3 class="project-title">Sum of Parts</h3>
+					<p class="project-desc">A TouchDesigner live-show visual project built with OSC control and real-time stage-responsive composition.</p>
+					<ul class="project-tags">
+						<li>TouchDesigner</li><li>OSC</li><li>Live Show</li>
+					</ul>
+					<p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibit: <span>Juilliard Center for Creative Technology</span></p>
+				</article>
+
+				<!-- IMAGINARY SPACES -->
+				<article class="project-card clickable-thumb" data-project="imaginary_spaces">
+					<div class="thumb" aria-hidden="true" style="background-image: url('./Tech/imaginary spaces_liveVR/environments/live/cineCam3.png');"></div>
+					<h3 class="project-title">Imaginary Spaces</h3>
+					<p class="project-desc">In-progress Unreal world-building for live performance and VR — process studies in environment, camera, and light.</p>
+					<ul class="project-tags">
+						<li>Unreal Engine</li><li>Live Visuals</li><li>VR</li><li>Process</li>
+					</ul>
+					<p class="project-client" style="font-size: 0.75rem; text-align: right;">Status: <span>In Progress</span></p>
+				</article>
+
+				<!-- LANGUAGE OF LIGHT - PROGRAMMING (hidden for now) -->
+				<!--
+				<article class="project-card materials clickable-thumb" data-project="language-of-light">
+					<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/glow.jpg');"></div>
+				<h3 class="project-title">Something Between Science and Magic</h3>
+					<p class="project-desc">An interaction that simulates bacterial quorum sensing from human movement, transform microbial communication into an embodied, participatory experience.</p>
+					<ul class="project-tags">
+						<li>Computer Vision</li><li>Javascript</li><li>Interactive Installation</li>
+					</ul>
+					<p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibited: <span>New York University</span></p>
+				</article>
+				-->
+
+				 <!-- GENERATIVE WORK -->
+                <!-- <article class="project-card generativeAI" data-project="generativeWork">
+                    <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/ysl.jpg');"></div>
+                    <h3 class="project-title">Generative Work</h3>
+                    <p class="project-desc">A series of generative image and video samples from branded and client work as well as artist concepts and general experimentation.</p>
+                    <ul class="project-tags">
+                        <li>Generative AI</li><li>Prompt Engineering</li>
+                    </ul>
+                     <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibited: <span>New York University</span></p>
+
+                </article> -->
+
+                <!-- TRANSFERENCE (hidden from tech grid for now — photo/materials work) -->
+				<!--
+				<article class="project-card materials clickable-thumb" data-project="transference">
+					<div class="thumb" aria-hidden="true" style="background-image: url('./Design/transference/1.jpg');"></div>
+                    <h3 class="project-title">Transference</h3>
+					<p class="project-desc">A photo series documenting ancestral dyeing practices and natural pigments from my time in San Jose Delgado, Mexico.</p>
+                    <ul class="project-tags">
+						<li>Photo Series</li><li>Traditional Dying</li><li>Organic Materials</li>
+                    </ul>
+                     <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibit: <span> BioBat - Fabrics with Lolo Ostia </span></p>
+
+                </article>
+				-->
+
 				<!-- DREAM COLLECTOR -- COMPUTATIONAL VIDEO / FRONT END DEV (TOUCHDESIGNER) -->	
 					<article class="project-card" data-project="dream">
 						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/dream.jpg');"></div>
@@ -55,6 +149,18 @@
 						</ul>
 						 <p class="project-client" style="font-size: 0.75rem; text-align: left;">Exhibited: <span> School of Visual Arts, NY </span></p>
 						<!-- <a class="project-link-small" href="https://vimeo.com/1098886681?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
+					</article>
+
+                <!-- LIMINAL LENS - PROGRAMMING -->
+					<article class="project-card clickable-thumb" data-project="liminal">
+						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/liminal.jpg');"></div>
+						<h3 class="project-title">Liminal Lens</h3>
+						<p class="project-desc">An interactive installation inviting participants to reflect on scale, perception, and their entanglement with microscopic life.</p>
+						<ul class="project-tags">
+							<li>openFrameworks</li><li>OpenCV</li><li>Computer Vision</li>
+						</ul>
+						<p class="project-client" style="font-size: 0.75rem; text-align: left;">Exhibited: <span> New York University, NY </span></p>
+						<!-- <a class="project-link-small" href="https://vimeo.com/791984894?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
 					</article>
 
                 <!-- THE VOID -- PROGRAMMING (C++) -->
@@ -70,53 +176,6 @@
 						   <!-- <a class="project-link-small" href="https://vimeo.com/1061865042?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
 					   </article>
 
-                <!-- LIMINAL LENS - PROGRAMMING -->
-					<article class="project-card clickable-thumb" data-project="liminal">
-						<div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/liminal.jpg');"></div>
-						<h3 class="project-title">Liminal Lens</h3>
-						<p class="project-desc">An interactive installation inviting participants to reflect on scale, perception, and their entanglement with microscopic life.</p>
-						<ul class="project-tags">
-							<li>openFrameworks</li><li>OpenCV</li><li>Computer Vision</li>
-						</ul>
-						<p class="project-client" style="font-size: 0.75rem; text-align: left;">Exhibited: <span> New York University, NY </span></p>
-						<!-- <a class="project-link-small" href="https://vimeo.com/791984894?fl=pl&fe=sh" target="_blank" rel="noopener">watch</a> -->
-					</article>
-
-                <!-- LANGUAGE OF LIGHT - PROGRAMMING -->
-                <article class="project-card materials" data-project="language-of-light">
-                    <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/glow.jpg');"></div>
-                    <h3 class="project-title">Language of Light</h3>
-                    <p class="project-desc">An interaction that simulates bacterial quorum sensing from human movement, transform microbial communication into an embodied, participatory experience.</p>
-                    <ul class="project-tags">
-                        <li>Computer Vision</li><li>Javascript</li><li>Coming Soon</li>
-                    </ul>
-                    <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibited: <span>New York University</span></p>
-                </article>
-
-				 <!-- GENERATIVE WORK -->
-                <!-- <article class="project-card generativeAI" data-project="generativeWork">
-                    <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/ysl.jpg');"></div>
-                    <h3 class="project-title">Generative Work</h3>
-                    <p class="project-desc">A series of generative image and video samples from branded and client work as well as artist concepts and general experimentation.</p>
-                    <ul class="project-tags">
-                        <li>Generative AI</li><li>Prompt Engineering</li>
-                    </ul>
-                     <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibited: <span>New York University</span></p>
-
-                </article> -->
-
-                <!-- TRANSFERENCE -->
-                <article class="project-card materials">
-                    <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/material.jpg');"></div>
-                    <h3 class="project-title">Transference</h3>
-                    <p class="project-desc">Research in ancestral dyeing practices and natural pigments. This project currently showcases research documentation from my time in San Jose Delgado, Mexico.</p>
-                    <ul class="project-tags">
-                        <li>Traditional Dying</li><li>Organic Materials</li><li>Coming Soon</li>
-                    </ul>
-                     <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibit: <span> BioBat - Fabrics with Lolo Ostia </span></p>
-
-                </article>
-
                 <!-- SUMBIOUN -->
                 <!-- <article class="project-card generativeAI">
                     <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/sumbioun.jpg');"></div>
@@ -127,17 +186,6 @@
                     </ul>
                 </article> -->
 
-				<!-- FSF -->
-                <article class="project-card TouchDesigner" data-project="fsf_26">
-                    <div class="thumb" aria-hidden="true" style="background-image: url('./thumbs/dancerfsf.PNG');"></div>
-                    <h3 class="project-title">Future Stages Festival 2026</h3>
-                    <p class="project-desc">An immersive, technology-driven performance series hosted by the Center for Creative Technology at the Juilliard School. </p>
-                    <ul class="project-tags">
-                        <li>TouchDesigner</li><li>MUJIC</li><li>Blender</li><li>Resolume</li>
-                    </ul>
-					 <p class="project-client" style="font-size: 0.75rem; text-align: right;">Exhibit: <span> Juilliard Center for Creative Technology </span></p>
-                </article>
-				
 				</div>
 		</main>
 
@@ -146,11 +194,12 @@
 			<div class="container">
 				<nav aria-label="Contact links">
 					<ul class="contact-links">
+						<li><a href="production.html">Producer</a></li>
 						<li><a href="mailto:christinacapp130@gmail.com" rel="noopener">Email</a></li>
 						<li><a href="https://www.linkedin.com/in/christina-cappelli/" target="_blank" rel="noopener">LinkedIn</a></li>
 						<li><a href="https://github.com/christinacappelli" target="_blank" rel="noopener">GitHub</a></li>
 						<li><a href="https://www.behance.net/christinacappelli" target="_blank" rel="noopener">Behance</a></li>
-						<li><button id="aboutBtn" style="color: #333; text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li>
+						<li><button id="aboutBtn" style="color: var(--text); text-decoration: none; background: none; border: none; padding: 0; font: inherit; cursor: pointer; font-weight: bold;">About</button></li>
 					</ul>
 				</nav>
 				<small class="copyright">© <span id="year"></span> <span class="copyright-name">Christina Cappelli</span></small>

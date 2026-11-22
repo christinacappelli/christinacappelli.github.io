@@ -1,3 +1,47 @@
+// Theme toggle (light / dark)
+function getPreferredTheme() {
+  const saved = localStorage.getItem("theme");
+  if (saved === "light" || saved === "dark") return saved;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.setAttribute(
+      "aria-label",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
+    btn.setAttribute(
+      "title",
+      theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+    );
+  });
+}
+
+function initThemeToggle() {
+  const theme = getPreferredTheme();
+  applyTheme(theme);
+  document.querySelectorAll(".theme-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const next =
+        document.documentElement.getAttribute("data-theme") === "dark"
+          ? "light"
+          : "dark";
+      applyTheme(next);
+    });
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initThemeToggle);
+} else {
+  initThemeToggle();
+}
+
 // PROJECT DATA FOR ALL POP UPS
 const projectData = {
   nyu: {
@@ -102,6 +146,7 @@ const projectData = {
     description:
       "An web app and interactive installation that uses AI to turn your scattered dream memories into vivid visuals. On the web app, you type in the fragments of a dream you recall, and an AI engine generates three images. In the TouchDesigner installation, the AI-generated images materialize in a darkened space. Using hand gestures, you peel back a virtual veil to reveal your own dreamscapes.",
     videoUrl: "https://vimeo.com/1138216311?fl=pl&fe=sh",
+    keepGalleryVideos: true,
     galleries: {
       "Process Documentation": [
         {
@@ -170,47 +215,270 @@ const projectData = {
       ],
     },
   },
-  fsf_26: {
-    title: "Future Stages Festival 2026",
-    subtitle: "Immersive Performance",
+  "language-of-light": {
+    title: "Something Between Science and Magic",
+    subtitle: "Language of Light · Interactive Installation",
     description:
-      "An immersive, technology-driven performance series hosted by the Center for Creative Technology at the Juilliard School.",
-    bodyText:
-      "Collaborating with choreographers and performers to create audio-reactive visual environments that respond in real-time to movement and sound. Each piece explores the boundary between physical and digital space, transforming the stage into a living ecosystem of light, texture, and responsive design.",
-    youtubeUrl: "https://www.youtube.com/watch?v=mOBHAV6wuo4",
-    articleUrl: "https://www.juilliard.edu/news/184866/conversation-christina-cappelli",
+      "An interaction that simulates bacterial quorum sensing from human movement, transforming microbial communication into an embodied, participatory experience.",
+    articleUrl: "https://itp.nyu.edu/thesis/2023/projects/?student-id=24",
+    articleLabel: "NYU Thesis",
+    demoUrl: "https://vimeo.com/826412484?fl=pl&fe=sh",
+    demoLabel: "Demo Video",
     galleries: {
-      Process: [
+      Gallery: [
         {
-          src: "./Tech/fsf_26/Dancer_TouchDeisgnerEffect.jpeg",
+          src: "./Tech/langoflight/demo1.gif",
+        },
+        {
+          src: "./Tech/langoflight/demo3.gif",
+        },
+        {
+          src: "./Tech/langoflight/demo4.jpg",
+        },
+        {
+          src: "./Tech/langoflight/demo5.jpg",
+        },
+        {
+          src: "./Tech/langoflight/test.gif",
+        },
+        {
+          src: "./Tech/langoflight/test1.jpg",
+        },
+        {
+          src: "./Tech/langoflight/test2.gif",
+        },
+        {
+          src: "./Tech/langoflight/test3.gif",
+        },
+      ],
+    },
+  },
+  fireflies_fsf26: {
+    title: "Fireflies",
+    subtitle: "Future Stages Festival 2026 Piece",
+    description:
+      "A TouchDesigner performance piece developed for Future Stages Festival 2026, using OSC and live control to drive responsive stage visuals in real time.",
+    demoUrl: "https://www.youtube.com/watch?v=mOBHAV6wuo4",
+    demoLabel: "Future Stages Video",
+    articleUrl: "https://www.juilliard.edu/news/184866/conversation-christina-cappelli",
+    articleLabel: "Interview at Juilliard",
+    galleries: {
+      Gallery: [
+        {
+          src: "./Tech/fireflies_fsf26/FSF2026_Fireflies.mp4",
+          type: "video",
+        },
+      ],
+    },
+  },
+  sum1_fsf26: {
+    title: "Sum of Parts",
+    subtitle: "Live Show Visual System",
+    description:
+      "A TouchDesigner and OSC-driven visual system for live performance. I built the backgrounds and layered TouchDesigner processing over AI-generated material for responsive, stage-ready composition.",
+    demoUrl: "https://www.youtube.com/watch?v=mOBHAV6wuo4",
+    demoLabel: "Future Stages Video",
+    articleUrl: "https://www.juilliard.edu/news/184866/conversation-christina-cappelli",
+    articleLabel: "Interview at Juilliard",
+    galleries: {
+      Gallery: [
+        {
+          src: "./Tech/sum1_fsf26/sum_part1.mp4",
+          type: "video",
+          featured: true,
+          poster: "./Tech/sum1_fsf26/sum2.png",
+        },
+        {
+          src: "./Tech/sum1_fsf26/sum1.png",
+          caption: "Visual design sample 1.",
+        },
+        {
+          src: "./Tech/sum1_fsf26/sum2.png",
+          caption: "Visual design sample 2.",
+        },
+        {
+          src: "./Tech/sum1_fsf26/Dancer_TouchDeisgnerEffect.jpeg",
           caption:
-            "Performer interaction with TouchDesigner video effects and real time muji interactions.",
+            "Performer interaction with TouchDesigner video effects and real-time OSC interactions.",
         },
         {
-          src: "./Tech/fsf_26/FSF.mp4",
-          type: "video",
-          caption: "Future Stages Festival process video",
+          src: "./Tech/sum1_fsf26/dancerfsf.PNG",
+          caption: "Stage performer with live visual system.",
         },
         {
-          src: "./Tech/fsf_26/background Meshworks P3.jpeg",
-          caption: "Animated background design for Meshworks P3",
+          src: "./Tech/sum1_fsf26/background Meshworks P3.jpeg",
+          caption: "Animated background design for Meshworks P3.",
         },
         {
-          src: "./Tech/fsf_26/background sketch test.jpeg",
-          caption: "Conceptual background sketch test",
-        },
-        // {
-        //   src: "./Tech/fsf_26/moving background_Meshworks P2.jpg",
-        //   caption: "Animated background design for Meshworks P2",
-        // },
-        {
-          src: "./Tech/fsf_26/moving background_meshworks PI.jpeg",
-          caption: "Dynamic background design for Meshworks P1",
+          src: "./Tech/sum1_fsf26/background sketch test.jpeg",
+          caption: "Conceptual background sketch test.",
         },
         {
-          src: "./Tech/fsf_26/mossy_tdEffect.mp4",
-          type: "video",
-          caption: "Dancer + TouchDesigner effects",
+          src: "./Tech/sum1_fsf26/moving background_meshworks PI.jpeg",
+          caption: "Dynamic background design for Meshworks P1.",
+        },
+        {
+          src: "./Tech/sum1_fsf26/moving background_Meshworks P2.jpg",
+          caption: "Dynamic background design for Meshworks P2.",
+        },
+      ],
+    },
+  },
+  imaginary_spaces: {
+    title: "Imaginary Spaces",
+    subtitle: "Unreal Process — Live Show & VR",
+    description:
+      "In-progress Unreal world-building for live performance and VR. This is process work — environments, control systems, and avatar/capture tests — documenting how the piece is being developed rather than a finished show.",
+    bodyText:
+      "Organized by focus: live environments, VR environments, OSC/live control systems, then avatar and capture studies.",
+    groupVideosWithGalleries: true,
+    sections: [
+      {
+        title: "Environments — Live",
+        intro:
+          "Camera framing, atmosphere, and composition tests for live-show environments.",
+        items: [
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/camMain.png",
+            caption: "Primary camera framing and overall environment composition.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cam2.png",
+            caption: "Alternate camera perspective.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cam3.png",
+            caption: "Secondary view study.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cam4.png",
+            caption: "Wide framing test.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/camFog.png",
+            caption: "Fog and depth pass for atmosphere testing.",
+          },
+        ],
+      },
+      {
+        note: "Moving more towards creating the structures by light and shadow to flow through the scene.",
+      },
+      {
+        title: "Environments — Live Light & Shadow",
+        items: [
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/light-shadow-study.mp4",
+            type: "video",
+            caption: "Material, light, and shadow comparison study.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cineCam1.png",
+            caption: "Cinematic camera 1.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cinecam2.png",
+            caption: "Cinematic camera 2.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cineCam3.png",
+            caption: "Cinematic camera 3.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/live/cine4.png",
+            caption: "Building with shadow.",
+          },
+        ],
+      },
+      {
+        title: "Environments — VR",
+        intro: "VR walkthrough of the Unreal environment.",
+        items: [
+          {
+            src: "./Tech/imaginary spaces_liveVR/environments/vr/VR_environment_10.14.26_EOD_Recording.mp4",
+            type: "video",
+            caption:
+              "Full VR environment walkthrough with audio — end-of-day recording.",
+          },
+        ],
+      },
+      {
+        title: "Systems — OSC / Live Control",
+        intro:
+          "Live control tests linking OSC to Unreal environments for performance.",
+        items: [
+          {
+            src: "./Tech/imaginary spaces_liveVR/systems-osc/environment01_OSCControls.mp4",
+            type: "video",
+            caption: "Environment 01 — OSC control pass.",
+          },
+        ],
+      },
+      {
+        title: "Avatars & Capture",
+        intro:
+          "Mocap, volumetric capture, and avatar presence studies feeding into the live/VR pipeline.",
+        items: [
+          {
+            src: "./Tech/imaginary spaces_liveVR/avatars-mocap/floraFreestyle_GlowTD.mp4",
+            type: "video",
+            caption: "Flora freestyle — TouchDesigner glow treatment.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/avatars-mocap/mocap1.png",
+            caption: "Mocap capture still 1.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/avatars-mocap/mocap2.JPG",
+            caption: "Mocap capture still 2.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/avatars-mocap/volumetric-filming.JPG",
+            caption: "Volumetric filming setup.",
+          },
+          {
+            src: "./Tech/imaginary spaces_liveVR/avatars-mocap/volumetric-filming1.JPG",
+            caption: "Volumetric filming capture.",
+          },
+        ],
+      },
+    ],
+  },
+  transference: {
+    title: "Transference",
+    subtitle: "Photo Series",
+    description:
+      "A photo series documenting ancestral dyeing practices and natural pigments from my time in San Jose Delgado, Mexico.",
+    galleries: {
+      Gallery: [
+        {
+          src: "./Design/transference/1.jpg",
+        },
+        {
+          src: "./Design/transference/2.jpg",
+        },
+        {
+          src: "./Design/transference/3.jpg",
+        },
+        {
+          src: "./Design/transference/4.jpg",
+        },
+        {
+          src: "./Design/transference/5.jpg",
+        },
+        {
+          src: "./Design/transference/6.jpg",
+        },
+        {
+          src: "./Design/transference/7.jpg",
+        },
+        {
+          src: "./Design/transference/8.jpg",
+        },
+        {
+          src: "./Design/transference/9.jpg",
+        },
+        {
+          src: "./Design/transference/10.jpg",
         },
       ],
     },
@@ -222,6 +490,8 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM loaded, initializing popup functionality...");
   
   const popup = document.getElementById("projectPopup");
+  if (!popup) return;
+
   const popupContent = popup.querySelector(".popup-content");
   const closeButton = popup.querySelector(".popup-close");
   const projectCards = document.querySelectorAll(".project-card[data-project]");
@@ -233,10 +503,74 @@ document.addEventListener("DOMContentLoaded", () => {
     projectCardsCount: projectCards.length
   });
 
+  function isMediaVideo(item) {
+    return item?.type === "video" || /\.mp4(\?.*)?$/i.test(item?.src || "");
+  }
+
+  function protectVideo(video, { controls = true, poster } = {}) {
+    video.controls = controls;
+    video.preload = "metadata";
+    video.setAttribute("playsinline", "");
+    video.setAttribute("controlsList", "nodownload noplaybackrate");
+    video.setAttribute("disablePictureInPicture", "");
+    video.disablePictureInPicture = true;
+    if (poster) {
+      video.poster = poster;
+    }
+    video.addEventListener("contextmenu", (e) => e.preventDefault());
+    return video;
+  }
+
+  function createSectionVideo(item) {
+    const wrap = document.createElement("div");
+    wrap.className = "section-video";
+
+    const video = protectVideo(document.createElement("video"), {
+      poster: item.poster,
+    });
+    video.setAttribute("aria-label", item.caption || "Gallery video");
+    const source = document.createElement("source");
+    source.src = item.src;
+    source.type = "video/mp4";
+    video.appendChild(source);
+    wrap.appendChild(video);
+
+    if (item.caption) {
+      const cap = document.createElement("div");
+      cap.className = "gallery-caption";
+      cap.textContent = item.caption;
+      wrap.appendChild(cap);
+    }
+
+    return wrap;
+  }
+
+  function normalizeGallerySections(galleriesOrSections) {
+    if (!galleriesOrSections) return [];
+    if (Array.isArray(galleriesOrSections)) return galleriesOrSections;
+    return Object.entries(galleriesOrSections).map(([title, items]) => ({
+      title,
+      items,
+    }));
+  }
+
   // Build galleries into the popup from projectData
-  function buildGalleries(galleries, container) {
+  function buildGalleries(galleries, container, options = {}) {
     if (!galleries) return;
-    for (const [title, items] of Object.entries(galleries)) {
+    const groupVideos = options.groupVideosWithGalleries === true;
+    const sections = normalizeGallerySections(galleries);
+
+    sections.forEach((sectionData) => {
+      if (sectionData.note && !sectionData.items) {
+        const note = document.createElement("p");
+        note.className = "gallery-bridge-note";
+        note.textContent = sectionData.note;
+        container.appendChild(note);
+        return;
+      }
+
+      const title = sectionData.title || "";
+      const items = Array.isArray(sectionData.items) ? sectionData.items : [];
       const section = document.createElement("section");
       section.className = "gallery-section";
 
@@ -248,51 +582,99 @@ document.addEventListener("DOMContentLoaded", () => {
         section.appendChild(h3);
       }
 
-      const imageGallery = document.createElement("div");
-      imageGallery.className = "image-gallery";
+      if (sectionData.intro) {
+        const intro = document.createElement("p");
+        intro.className = "gallery-section-intro";
+        intro.textContent = sectionData.intro;
+        section.appendChild(intro);
+      }
 
+      const videos = [];
+      const images = [];
       items.forEach((item) => {
-        const wrap = document.createElement("div");
-        wrap.className = "gallery-image-wrapper";
+        if (isMediaVideo(item)) videos.push(item);
+        else images.push(item);
+      });
 
-        const isVideo =
-          item.type === "video" || /\.mp4(\?.*)?$/i.test(item.src || "");
+      // Keep section videos with their matching image group
+      if (groupVideos && videos.length) {
+        const videoStack = document.createElement("div");
+        videoStack.className = "section-video-stack";
+        videos.forEach((item) => {
+          videoStack.appendChild(createSectionVideo(item));
+        });
+        section.appendChild(videoStack);
+      }
 
-        if (isVideo) {
-          const video = document.createElement("video");
+      if (images.length) {
+        const imageGallery = document.createElement("div");
+        imageGallery.className = "image-gallery";
+
+        images.forEach((item) => {
+          const wrap = document.createElement("div");
+          wrap.className = "gallery-image-wrapper";
+
+          const img = document.createElement("img");
+          img.className = "gallery-image";
+          img.loading = "lazy";
+          img.decoding = "async";
+          img.src = item.src;
+          img.alt = item.caption || "";
+          img.addEventListener("click", () => expandMedia(img));
+          wrap.appendChild(img);
+
+          if (item.caption) {
+            const cap = document.createElement("div");
+            cap.className = "gallery-caption";
+            cap.textContent = item.caption;
+            wrap.appendChild(cap);
+          }
+
+          imageGallery.appendChild(wrap);
+        });
+
+        section.appendChild(imageGallery);
+      }
+
+      // Fallback: keep gallery videos as masonry tiles when not grouped
+      if (!groupVideos && videos.length && options.keepGalleryVideos) {
+        const imageGallery =
+          section.querySelector(".image-gallery") ||
+          (() => {
+            const gallery = document.createElement("div");
+            gallery.className = "image-gallery";
+            section.appendChild(gallery);
+            return gallery;
+          })();
+
+        videos.forEach((item) => {
+          const wrap = document.createElement("div");
+          wrap.className = "gallery-image-wrapper";
+          const video = protectVideo(document.createElement("video"), {
+            controls: false,
+          });
           video.className = "gallery-video";
-          video.controls = false;
-          video.preload = "metadata";
           const source = document.createElement("source");
           source.src = item.src;
           source.type = "video/mp4";
           video.appendChild(source);
           video.setAttribute("aria-label", item.caption || "Gallery video");
-          // Click to open in overlay navigation
           video.addEventListener("click", () => expandMedia(video));
           wrap.appendChild(video);
-        } else {
-          const img = document.createElement("img");
-          img.className = "gallery-image";
-          img.src = item.src;
-          img.alt = item.caption || "";
-          img.addEventListener("click", () => expandMedia(img));
-          wrap.appendChild(img);
-        }
+          if (item.caption) {
+            const cap = document.createElement("div");
+            cap.className = "gallery-caption";
+            cap.textContent = item.caption;
+            wrap.appendChild(cap);
+          }
+          imageGallery.appendChild(wrap);
+        });
+      }
 
-        if (item.caption) {
-          const cap = document.createElement("div");
-          cap.className = "gallery-caption";
-          cap.textContent = item.caption;
-          wrap.appendChild(cap);
-        }
-
-        imageGallery.appendChild(wrap);
-      });
-
-      section.appendChild(imageGallery);
-      container.appendChild(section);
-    }
+      if (section.children.length) {
+        container.appendChild(section);
+      }
+    });
   }
 
   function getYouTubeId(url) {
@@ -337,82 +719,141 @@ document.addEventListener("DOMContentLoaded", () => {
       bodyTextContainer.style.display = "none";
     }
 
-    // Build galleries (images/videos)
-    const gallerySection = popupContent.querySelector(".popup-gallery-section");
-    gallerySection.innerHTML = ""; // Clear previous
-    if (project.galleries) {
-      buildGalleries(project.galleries, gallerySection);
+    // When groupVideosWithGalleries is set, keep each video with its gallery
+    // section. Otherwise lift gallery videos into the centered player stack.
+    const groupVideosWithGalleries = project.groupVideosWithGalleries === true;
+    const keepGalleryVideos = project.keepGalleryVideos === true;
+    const galleryVideos = [];
+    let galleryPayload = null;
+
+    if (Array.isArray(project.sections) && project.sections.length) {
+      if (groupVideosWithGalleries) {
+        galleryPayload = project.sections;
+      } else {
+        galleryPayload = project.sections
+          .map((sectionData) => {
+            if (sectionData.note && !sectionData.items) return sectionData;
+            const galleryItems = [];
+            (sectionData.items || []).forEach((item) => {
+              if (isMediaVideo(item) && !keepGalleryVideos) {
+                galleryVideos.push(item);
+                return;
+              }
+              galleryItems.push(item);
+            });
+            return { ...sectionData, items: galleryItems };
+          })
+          .filter(
+            (sectionData) =>
+              sectionData.note ||
+              (Array.isArray(sectionData.items) && sectionData.items.length)
+          );
+      }
+    } else if (project.galleries) {
+      const imageOnlyGalleries = {};
+      for (const [title, items] of Object.entries(project.galleries)) {
+        if (groupVideosWithGalleries) {
+          imageOnlyGalleries[title] = items;
+          continue;
+        }
+
+        const galleryItems = [];
+        items.forEach((item) => {
+          if (isMediaVideo(item) && !keepGalleryVideos) {
+            galleryVideos.push(item);
+            return;
+          }
+          galleryItems.push(item);
+        });
+
+        if (galleryItems.length) {
+          imageOnlyGalleries[title] = galleryItems;
+        }
+      }
+      galleryPayload = imageOnlyGalleries;
     }
 
-    // Now handle video embed(s) AFTER galleries so photos are visible first
+    // Render image galleries (and grouped section videos when enabled)
+    const gallerySection = popupContent.querySelector(".popup-gallery-section");
+    gallerySection.innerHTML = ""; // Clear previous
+    if (
+      galleryPayload &&
+      (Array.isArray(galleryPayload)
+        ? galleryPayload.length
+        : Object.keys(galleryPayload).length)
+    ) {
+      buildGalleries(galleryPayload, gallerySection, {
+        groupVideosWithGalleries,
+        keepGalleryVideos,
+      });
+    }
+
+    // Render centered video(s) above galleries
     const videoContainer = popupContent.querySelector(".popup-video-container");
     // Reset container state
     videoContainer.innerHTML = "";
-    videoContainer.classList.remove("has-video", "has-scroll");
+    videoContainer.classList.remove("has-video", "has-scroll", "center-video");
 
-    if (Array.isArray(project.videoUrls) && project.videoUrls.length) {
-      // Build horizontal scroll of multiple Vimeo links
-      const scroller = document.createElement("div");
-      scroller.className = "video-scroll";
+    if (Array.isArray(project.centeredVideos) && project.centeredVideos.length) {
+      const stack = document.createElement("div");
+      stack.className = "center-video-stack";
 
-      project.videoUrls.forEach((url) => {
-        if (!url || typeof url !== "string") return;
-        const vid = url.split("?")[0].split("/").pop();
-        const iframe = document.createElement("iframe");
-        iframe.src = `https://player.vimeo.com/video/${vid}?title=0&byline=0&portrait=0`;
-        iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
-        iframe.setAttribute("allowfullscreen", "");
-        iframe.className = "video-embed";
-        scroller.appendChild(iframe);
-      });
+      project.centeredVideos.forEach((entry) => {
+        const src =
+          typeof entry === "string"
+            ? entry
+            : (entry && (entry.src || entry.url)) || "";
+        if (!src) return;
 
-      if (scroller.children.length) {
-        videoContainer.appendChild(scroller);
-        videoContainer.classList.add("has-scroll");
-
-        // Add left/right arrows for scroller navigation
-        const prev = document.createElement("button");
-        prev.className = "video-scroll-arrow video-scroll-prev";
-        prev.setAttribute("aria-label", "Scroll videos left");
-        prev.textContent = "‹";
-
-        const next = document.createElement("button");
-        next.className = "video-scroll-arrow video-scroll-next";
-        next.setAttribute("aria-label", "Scroll videos right");
-        next.textContent = "›";
-
-        const scrollByAmount = () => Math.max(280, Math.floor(scroller.clientWidth * 0.9));
-        prev.addEventListener("click", () => {
-          scroller.scrollBy({ left: -scrollByAmount(), behavior: "smooth" });
-        });
-        next.addEventListener("click", () => {
-          scroller.scrollBy({ left: scrollByAmount(), behavior: "smooth" });
-        });
-
-        // Show/hide arrows based on scroll position and overflow
-        function updateArrows() {
-          const canScroll = scroller.scrollWidth > scroller.clientWidth + 4;
-          if (!canScroll) {
-            prev.style.display = "none";
-            next.style.display = "none";
-            return;
-          }
-          prev.style.display = "flex";
-          next.style.display = "flex";
-          const atStart = scroller.scrollLeft <= 2;
-          const atEnd = Math.ceil(scroller.scrollLeft + scroller.clientWidth) >= scroller.scrollWidth - 2;
-          prev.disabled = atStart;
-          next.disabled = atEnd;
+        const isMp4 =
+          (entry && entry.type === "video") || /\.mp4(\?.*)?$/i.test(src);
+        if (isMp4) {
+          const video = protectVideo(document.createElement("video"), {
+            poster: entry && entry.poster,
+          });
+          const source = document.createElement("source");
+          source.src = src;
+          source.type = "video/mp4";
+          video.appendChild(source);
+          stack.appendChild(video);
+          return;
         }
 
-        scroller.addEventListener("scroll", updateArrows, { passive: true });
-        window.addEventListener("resize", updateArrows);
+        if (src.includes("youtube.com") || src.includes("youtu.be")) {
+          const youtubeId = getYouTubeId(src);
+          if (!youtubeId) return;
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`;
+          iframe.title = "YouTube video player";
+          iframe.setAttribute(
+            "allow",
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          );
+          iframe.setAttribute("allowfullscreen", "");
+          stack.appendChild(iframe);
+          return;
+        }
 
-        videoContainer.appendChild(prev);
-        videoContainer.appendChild(next);
-        // Initialize arrow state
-        requestAnimationFrame(updateArrows);
+        if (src.includes("vimeo.com")) {
+          const videoId = src.split("?")[0].split("/").pop();
+          if (!videoId) return;
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0`;
+          iframe.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
+          iframe.setAttribute("allowfullscreen", "");
+          stack.appendChild(iframe);
+        }
+      });
+
+      if (stack.children.length) {
+        videoContainer.appendChild(stack);
+        videoContainer.classList.add("center-video");
       }
+    } else if (Array.isArray(project.videoUrls) && project.videoUrls.length) {
+      const firstUrl = project.videoUrls[0];
+      const vid = firstUrl.split("?")[0].split("/").pop();
+      videoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${vid}?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
+      videoContainer.classList.add("center-video");
     } else if (project.youtubeUrl) {
       const youtubeId = getYouTubeId(project.youtubeUrl);
       if (youtubeId) {
@@ -424,25 +865,85 @@ document.addEventListener("DOMContentLoaded", () => {
             allowfullscreen
           ></iframe>
         `;
-        videoContainer.classList.add("has-video");
+        videoContainer.classList.add("center-video");
       }
     } else if (project.videoUrl && project.videoUrl.includes("vimeo.com")) {
-      // Fallback: single video
       const videoId = project.videoUrl.split("?")[0].split("/").pop();
       videoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoId}?title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-      videoContainer.classList.add("has-video");
-
+      videoContainer.classList.add("center-video");
+    } else if (!groupVideosWithGalleries && galleryVideos.length) {
+      const stack = document.createElement("div");
+      stack.className = "center-video-stack";
+      galleryVideos.forEach((item) => {
+        if (!item?.src) return;
+        const video = protectVideo(document.createElement("video"), {
+          poster: item.poster,
+        });
+        const source = document.createElement("source");
+        source.src = item.src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+        stack.appendChild(video);
+      });
+      if (stack.children.length) {
+        videoContainer.appendChild(stack);
+        videoContainer.classList.add("center-video");
+      }
     }
 
-    // Add article link at the bottom if exists
+    // Render external links at the bottom (demo, thesis/article, etc.)
+    const popupBody = popupContent.querySelector(".popup-body");
+    const existingLinks = popupBody.querySelector(".popup-external-links");
+    if (existingLinks) existingLinks.remove();
+
+    const externalLinks = [];
+    if (project.demoUrl) {
+      externalLinks.push({
+        url: project.demoUrl,
+        label: project.demoLabel || "Demo",
+      });
+    }
     if (project.articleUrl) {
-      const articleLink = document.createElement("p");
-      articleLink.style.marginTop = "40px";
-      articleLink.style.textAlign = "right";
-      articleLink.style.borderTop = "1px solid var(--line)";
-      articleLink.style.paddingTop = "20px";
-      articleLink.innerHTML = `<a href="${project.articleUrl}" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: underline;">Interview at Juilliard</a>`;
-      popupContent.querySelector(".popup-body").appendChild(articleLink);
+      externalLinks.push({
+        url: project.articleUrl,
+        label: project.articleLabel || "Read More",
+      });
+    }
+    if (Array.isArray(project.externalLinks)) {
+      project.externalLinks.forEach((link) => {
+        if (link && link.url) {
+          externalLinks.push({
+            url: link.url,
+            label: link.label || "Link",
+          });
+        }
+      });
+    }
+
+    if (externalLinks.length) {
+      const linksWrap = document.createElement("div");
+      linksWrap.className = "popup-external-links";
+      linksWrap.style.marginTop = "40px";
+      linksWrap.style.textAlign = "right";
+      linksWrap.style.borderTop = "1px solid var(--line)";
+      linksWrap.style.paddingTop = "20px";
+      linksWrap.style.display = "flex";
+      linksWrap.style.justifyContent = "flex-end";
+      linksWrap.style.gap = "16px";
+      linksWrap.style.flexWrap = "wrap";
+
+      externalLinks.forEach((link) => {
+        const a = document.createElement("a");
+        a.href = link.url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.style.color = "var(--accent)";
+        a.style.textDecoration = "underline";
+        a.textContent = link.label;
+        linksWrap.appendChild(a);
+      });
+
+      popupBody.appendChild(linksWrap);
     }
 
     // Show popup
@@ -499,12 +1000,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const expandedImg = overlay.querySelector(".expanded-image");
     let expandedVideo = overlay.querySelector(".expanded-video");
     if (!expandedVideo) {
-      expandedVideo = document.createElement("video");
+      expandedVideo = protectVideo(document.createElement("video"));
       expandedVideo.className = "expanded-video";
-      expandedVideo.controls = true;
-      expandedVideo.setAttribute("playsinline", "");
       expandedVideo.setAttribute("aria-label", "Expanded gallery video");
       expandedImg.insertAdjacentElement("afterend", expandedVideo);
+    } else {
+      protectVideo(expandedVideo);
     }
     const counter = overlay.querySelector(".image-counter");
     const prevBtn = overlay.querySelector(".image-nav-prev");
@@ -671,24 +1172,26 @@ document.addEventListener("DOMContentLoaded", () => {
   // About popup functionality
   const aboutBtn = document.getElementById("aboutBtn");
   const aboutPopup = document.getElementById("aboutPopup");
-  const aboutCloseBtn = aboutPopup.querySelector(".popup-close");
+  if (aboutBtn && aboutPopup) {
+    const aboutCloseBtn = aboutPopup.querySelector(".popup-close");
 
-  aboutBtn.addEventListener("click", () => {
-    aboutPopup.style.display = "block";
-    document.body.style.overflow = "hidden";
-  });
+    aboutBtn.addEventListener("click", () => {
+      aboutPopup.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
 
-  aboutCloseBtn.addEventListener("click", () => {
-    aboutPopup.style.display = "none";
-    document.body.style.overflow = "";
-  });
+    aboutCloseBtn.addEventListener("click", () => {
+      aboutPopup.style.display = "none";
+      document.body.style.overflow = "";
+    });
 
-  aboutPopup.querySelector(".popup-overlay").addEventListener("click", () => {
-    aboutPopup.style.display = "none";
-    document.body.style.overflow = "";
-  });
+    aboutPopup.querySelector(".popup-overlay").addEventListener("click", () => {
+      aboutPopup.style.display = "none";
+      document.body.style.overflow = "";
+    });
 
-  aboutPopup.querySelector(".popup-content").addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
+    aboutPopup.querySelector(".popup-content").addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
   });
